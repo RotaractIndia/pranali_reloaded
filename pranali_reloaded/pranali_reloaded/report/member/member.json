@@ -1,0 +1,17 @@
+{
+ "add_total_row": 1, 
+ "apply_user_permissions": 1, 
+ "creation": "2015-03-20 17:01:51.600198", 
+ "disabled": 0, 
+ "docstatus": 0, 
+ "doctype": "Report", 
+ "is_standard": "Yes", 
+ "modified": "2015-03-20 17:10:59.862067", 
+ "modified_by": "Administrator", 
+ "module": "Pranali Reloaded", 
+ "name": "Member", 
+ "owner": "Administrator", 
+ "ref_doctype": "Member", 
+ "report_name": "Member", 
+ "report_type": "Report Builder"
+}

@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include pranali_reloaded *.css
+recursive-include pranali_reloaded *.csv
+recursive-include pranali_reloaded *.html
+recursive-include pranali_reloaded *.ico
+recursive-include pranali_reloaded *.js
+recursive-include pranali_reloaded *.json
+recursive-include pranali_reloaded *.md
+recursive-include pranali_reloaded *.png
+recursive-include pranali_reloaded *.py
+recursive-include pranali_reloaded *.svg
+recursive-include pranali_reloaded *.txt
+recursive-exclude pranali_reloaded *.pyc
