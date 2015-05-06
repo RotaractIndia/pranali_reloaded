@@ -1,7 +1,7 @@
 {
  "allow_copy": 0, 
  "allow_import": 0, 
- "allow_rename": 0, 
+ "allow_rename": 1, 
  "autoname": "field:club_name", 
  "creation": "2015-03-19 12:45:41.509852", 
  "custom": 0, 
@@ -57,14 +57,14 @@
   {
    "allow_on_submit": 0, 
    "fieldname": "zone", 
-   "fieldtype": "Link", 
+   "fieldtype": "Select", 
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "in_filter": 0, 
    "in_list_view": 0, 
    "label": "Zone", 
    "no_copy": 0, 
-   "options": "Zone", 
+   "options": "\nZone 1A\nZone 1B\nZone 2A\nZone 2B\nZone 3A\nZone 3B", 
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
@@ -252,7 +252,7 @@
  "is_submittable": 0, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2015-04-28 20:10:04.775525", 
+ "modified": "2015-04-29 11:24:29.944033", 
  "modified_by": "Administrator", 
  "module": "Pranali Reloaded", 
  "name": "Club", 
@@ -279,6 +279,7 @@
    "write": 1
   }, 
   {
+   "apply_user_permissions": 1, 
    "create": 0, 
    "delete": 0, 
    "email": 1, 
