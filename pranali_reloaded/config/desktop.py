@@ -34,5 +34,14 @@ def get_data():
 			"link": "List/Club",
 			"doctype": "Club",
 			"type": "list"
+		},
+		
+		"Meeting": {
+			"color": "#f94a32",
+			"icon": "octicon octicon-gist-secret",
+			"label": _("Meeting"),
+			"link": "List/Meeting",
+			"doctype": "Meeting",
+			"type": "list"
 		}
 	}
