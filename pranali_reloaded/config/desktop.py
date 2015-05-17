@@ -43,5 +43,13 @@ def get_data():
 			"link": "List/Meeting",
 			"doctype": "Meeting",
 			"type": "list"
+		},
+		
+		"Directory": {
+			"color": "#f94a32",
+			"icon": "octicon octicon-gist-secret",
+			"label": _("Directory"),
+			"link": "query-report/Directory",
+			"type": "query-report"
 		}
 	}

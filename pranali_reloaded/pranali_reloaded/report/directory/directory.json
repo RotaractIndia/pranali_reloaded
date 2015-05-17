@@ -1,0 +1,18 @@
+{
+ "add_total_row": 0, 
+ "apply_user_permissions": 1, 
+ "creation": "2015-05-17 10:30:04.469565", 
+ "disabled": 0, 
+ "docstatus": 0, 
+ "doctype": "Report", 
+ "is_standard": "Yes", 
+ "modified": "2015-05-17 10:47:39.662023", 
+ "modified_by": "Administrator", 
+ "module": "Pranali Reloaded", 
+ "name": "Directory", 
+ "owner": "Administrator", 
+ "query": "select member_name as \"Member Name::250\", contact_number as \"Contact Number::150\", email as \"Email ID:: 200\", designation as \"Designation:: 200\", club as \"Club::180\", zone as \"Zone::100\" from tabMember where in_directory=1", 
+ "ref_doctype": "Member", 
+ "report_name": "Directory", 
+ "report_type": "Query Report"
+}

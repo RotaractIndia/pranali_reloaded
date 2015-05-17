@@ -114,10 +114,10 @@
    "precision": ""
   }, 
   {
-   "fieldname": "level", 
+   "fieldname": "designation", 
    "fieldtype": "Select", 
-   "label": "Level", 
-   "options": "\nManagement", 
+   "label": "Designation", 
+   "options": "Member\nPresident\nSecretary\nFinance\nChairman Avenues\nVice President\nJoint Secretary\nJoint Finance\nClub Serve\nCommunity Serve\nProfessional Development\nWeb Communications", 
    "permlevel": 0, 
    "precision": ""
   }, 
@@ -128,10 +128,9 @@
    "precision": ""
   }, 
   {
-   "fieldname": "designation", 
-   "fieldtype": "Select", 
-   "label": "Designation", 
-   "options": "\n", 
+   "fieldname": "in_directory", 
+   "fieldtype": "Check", 
+   "label": "Show in Directory", 
    "permlevel": 0, 
    "precision": ""
   }, 
@@ -226,7 +225,7 @@
  "is_submittable": 0, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2015-04-29 19:08:51.890278", 
+ "modified": "2015-05-17 10:53:18.880307", 
  "modified_by": "Administrator", 
  "module": "Pranali Reloaded", 
  "name": "Member", 
