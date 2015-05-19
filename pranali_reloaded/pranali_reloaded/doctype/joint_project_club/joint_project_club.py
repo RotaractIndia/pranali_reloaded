@@ -6,8 +6,5 @@ from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
 
-class Club(Document):
-	def validate(self):
-		club_list = frappe.new_doc("Club List")
-		club_list.club_name = self.club_name
-		club_list.save()
+class JointProjectClub(Document):
+	pass

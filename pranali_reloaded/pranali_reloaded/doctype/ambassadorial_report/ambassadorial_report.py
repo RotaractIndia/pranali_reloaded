@@ -6,8 +6,13 @@ from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
 
-class Club(Document):
+class AmbassadorialReport(Document):
 	def validate(self):
-		club_list = frappe.new_doc("Club List")
-		club_list.club_name = self.club_name
-		club_list.save()
+		self.set_zone()
+
+	def set_zone(self):
+		self.zone = frappe.db.get_value("Club", self.club, "zone")
+
+@frappe.whitelist()
+def get_member_name(id):
+	return frappe.db.get_value("Member", id, "member_name")

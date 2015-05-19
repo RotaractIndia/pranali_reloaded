@@ -2,15 +2,17 @@ from frappe import _
 
 def get_data():
 	return {
-		"Pranali Reloaded": {
-			"color": "#ff0080",
-			"icon": "octicon octicon-cloud-upload",
-			"type": "module",
-			"label": _("Pranali Reloaded")
+		"Ambassadorial Report": {
+			"color": "#9b59b6",
+			"icon": "icon-globe",
+			"icon": "octicon octicon-globe",
+			"link": "List/Ambassadorial Report",
+			"doctype": "Ambassadorial Report",
+			"type": "list"
 		},
 		
 		"Member": {
-			"color": "#0080ff",
+			"color": "#ff9a00",
 			"icon": "octicon octicon-organization",
 			"label": _("Member"),
 			"link": "List/Member",
@@ -19,7 +21,7 @@ def get_data():
 		},
 		
 		"Project": {
-			"color": "#00ff80",
+			"color": "#c23c59",
 			"icon": "octicon octicon-rocket",
 			"label": _("Project"),
 			"link": "List/Project",
@@ -28,7 +30,7 @@ def get_data():
 		},
 		
 		"Club": {
-			"color": "#f94a32",
+			"color": "#53b436",
 			"icon": "octicon octicon-home",
 			"label": _("Club"),
 			"link": "List/Club",
@@ -37,7 +39,7 @@ def get_data():
 		},
 		
 		"Meeting": {
-			"color": "#f94a32",
+			"color": "#0cb4d8",
 			"icon": "octicon octicon-gist-secret",
 			"label": _("Meeting"),
 			"link": "List/Meeting",
@@ -46,7 +48,7 @@ def get_data():
 		},
 		
 		"Directory": {
-			"color": "#f94a32",
+			"color": "#dd004e",
 			"icon": "octicon octicon-gist-secret",
 			"label": _("Directory"),
 			"link": "query-report/Directory",
