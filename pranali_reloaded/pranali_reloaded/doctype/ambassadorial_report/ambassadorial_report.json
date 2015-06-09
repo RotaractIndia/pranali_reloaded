@@ -189,6 +189,16 @@
    "unique": 0
   }, 
   {
+   "fieldname": "document_status", 
+   "fieldtype": "Link", 
+   "hidden": 1, 
+   "label": "Document Status", 
+   "options": "Document Status", 
+   "permlevel": 0, 
+   "precision": "", 
+   "read_only": 1
+  }, 
+  {
    "fieldname": "amended_from", 
    "fieldtype": "Link", 
    "label": "Amended From", 
@@ -206,7 +216,7 @@
  "is_submittable": 1, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2015-06-03 23:24:59.355475", 
+ "modified": "2015-06-15 22:49:44.870733", 
  "modified_by": "Administrator", 
  "module": "Pranali Reloaded", 
  "name": "Ambassadorial Report", 
@@ -229,15 +239,15 @@
    "role": "Administrator", 
    "set_user_permissions": 0, 
    "share": 1, 
-   "submit": 0, 
+   "submit": 1, 
    "write": 1
   }, 
   {
    "amend": 0, 
    "apply_user_permissions": 0, 
-   "cancel": 0, 
+   "cancel": 1, 
    "create": 1, 
-   "delete": 0, 
+   "delete": 1, 
    "email": 1, 
    "export": 1, 
    "import": 0, 

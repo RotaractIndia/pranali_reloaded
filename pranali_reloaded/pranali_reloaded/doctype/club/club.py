@@ -8,6 +8,7 @@ from frappe.model.document import Document
 
 class Club(Document):
 	def validate(self):
-		club_list = frappe.new_doc("Club List")
-		club_list.club_name = self.club_name
-		club_list.save()
+		if not frappe.db.exists("Club List", self.club_name):
+			club_list = frappe.new_doc("Club List")
+			club_list.club_name = self.club_name
+			club_list.save()

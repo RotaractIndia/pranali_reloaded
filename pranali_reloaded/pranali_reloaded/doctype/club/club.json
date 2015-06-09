@@ -24,7 +24,7 @@
    "print_hide": 0, 
    "read_only": 0, 
    "report_hide": 0, 
-   "reqd": 0, 
+   "reqd": 1, 
    "search_index": 0, 
    "set_only_once": 1
   }, 
@@ -33,7 +33,8 @@
    "fieldtype": "Data", 
    "label": "Sponsoring Rotary", 
    "permlevel": 0, 
-   "precision": ""
+   "precision": "", 
+   "reqd": 1
   }, 
   {
    "allow_on_submit": 0, 
@@ -51,7 +52,7 @@
    "print_hide": 0, 
    "read_only": 0, 
    "report_hide": 0, 
-   "reqd": 0, 
+   "reqd": 1, 
    "search_index": 0, 
    "set_only_once": 0
   }, 
@@ -77,7 +78,7 @@
    "print_hide": 0, 
    "read_only": 0, 
    "report_hide": 0, 
-   "reqd": 0, 
+   "reqd": 1, 
    "search_index": 0, 
    "set_only_once": 0
   }, 
@@ -196,7 +197,7 @@
  "is_submittable": 0, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2015-06-07 17:02:16.748838", 
+ "modified": "2015-06-10 09:54:54.864512", 
  "modified_by": "Administrator", 
  "module": "Pranali Reloaded", 
  "name": "Club", 

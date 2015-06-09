@@ -14,12 +14,22 @@
    "fieldtype": "Date", 
    "label": "Date", 
    "permlevel": 0, 
-   "precision": ""
+   "precision": "", 
+   "reqd": 1
   }, 
   {
-   "fieldname": "from_time", 
+   "fieldname": "start_time", 
    "fieldtype": "Time", 
-   "label": "From Time", 
+   "label": "Start Time", 
+   "permlevel": 0, 
+   "precision": "", 
+   "reqd": 1
+  }, 
+  {
+   "fieldname": "type_of_meeting", 
+   "fieldtype": "Select", 
+   "label": "Type of meeting", 
+   "options": "GBM\nBOD Meet\nJoint Meet\nAny Other", 
    "permlevel": 0, 
    "precision": ""
   }, 
@@ -34,14 +44,16 @@
    "fieldtype": "Data", 
    "label": "Venue", 
    "permlevel": 0, 
-   "precision": ""
+   "precision": "", 
+   "reqd": 1
   }, 
   {
-   "fieldname": "to_time", 
+   "fieldname": "end_time", 
    "fieldtype": "Time", 
-   "label": "To Time", 
+   "label": "End Time", 
    "permlevel": 0, 
-   "precision": ""
+   "precision": "", 
+   "reqd": 1
   }, 
   {
    "fieldname": "section_break_5", 
@@ -64,7 +76,7 @@
    "print_hide": 0, 
    "read_only": 0, 
    "report_hide": 0, 
-   "reqd": 0, 
+   "reqd": 1, 
    "search_index": 0, 
    "set_only_once": 0
   }, 
@@ -80,7 +92,8 @@
    "fieldtype": "Int", 
    "label": "Home Club", 
    "permlevel": 0, 
-   "precision": ""
+   "precision": "", 
+   "reqd": 1
   }, 
   {
    "fieldname": "rotarians", 
@@ -138,48 +151,6 @@
    "precision": ""
   }, 
   {
-   "fieldname": "bod_meet", 
-   "fieldtype": "Check", 
-   "label": "BOD Meet", 
-   "permlevel": 0, 
-   "precision": ""
-  }, 
-  {
-   "fieldname": "column_break_20", 
-   "fieldtype": "Column Break", 
-   "permlevel": 0, 
-   "precision": ""
-  }, 
-  {
-   "fieldname": "joint_meet", 
-   "fieldtype": "Check", 
-   "label": "Joint Meet", 
-   "permlevel": 0, 
-   "precision": ""
-  }, 
-  {
-   "depends_on": "joint_meet", 
-   "fieldname": "section_break_22", 
-   "fieldtype": "Section Break", 
-   "permlevel": 0, 
-   "precision": ""
-  }, 
-  {
-   "fieldname": "meet_clubs", 
-   "fieldtype": "Table", 
-   "label": "Meet Clubs", 
-   "options": "Joint Meet Club", 
-   "permlevel": 0, 
-   "precision": ""
-  }, 
-  {
-   "depends_on": "joint_meet", 
-   "fieldname": "section_break_24", 
-   "fieldtype": "Section Break", 
-   "permlevel": 0, 
-   "precision": ""
-  }, 
-  {
    "fieldname": "club", 
    "fieldtype": "Link", 
    "label": "Club", 
@@ -210,6 +181,16 @@
    "precision": ""
   }, 
   {
+   "fieldname": "document_status", 
+   "fieldtype": "Link", 
+   "hidden": 1, 
+   "label": "Document Status", 
+   "options": "Document Status", 
+   "permlevel": 0, 
+   "precision": "", 
+   "read_only": 1
+  }, 
+  {
    "fieldname": "amended_from", 
    "fieldtype": "Link", 
    "label": "Amended From", 
@@ -227,7 +208,7 @@
  "is_submittable": 1, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2015-06-08 20:05:25.951972", 
+ "modified": "2015-06-15 22:45:16.841471", 
  "modified_by": "Administrator", 
  "module": "Pranali Reloaded", 
  "name": "Meeting", 
@@ -268,8 +249,9 @@
   }, 
   {
    "apply_user_permissions": 1, 
+   "cancel": 1, 
    "create": 1, 
-   "delete": 0, 
+   "delete": 1, 
    "email": 0, 
    "export": 0, 
    "permlevel": 0, 

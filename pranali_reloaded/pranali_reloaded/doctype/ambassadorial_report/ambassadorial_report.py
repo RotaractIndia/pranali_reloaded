@@ -9,10 +9,13 @@ from frappe.model.document import Document
 class AmbassadorialReport(Document):
 	def validate(self):
 		self.set_zone()
+		self.document_status='draft'
+
+	def on_submit(self):
+		frappe.db.set_value('Ambassadorial Report', self.name, 'document_status', 'submitted')
+	
+	def on_cancel(self):
+		frappe.db.set_value('Ambassadorial Report', self.name, 'document_status', 'cancelled')
 
 	def set_zone(self):
 		self.zone = frappe.db.get_value("Club", self.club, "zone")
-
-@frappe.whitelist()
-def get_member_name(id):
-	return frappe.db.get_value("Member", id, "member_name")
