@@ -53,5 +53,15 @@ def get_data():
 			"label": _("Directory"),
 			"link": "query-report/Directory",
 			"type": "query-report"
+		},
+		
+		"Check In": {
+			"color": "#f1c40f",
+			"icon": "icon-check",
+			"icon": "octicon octicon-check",
+			"label": _("Check In"),
+			"link": "Form/Check In",
+			"doctype": "Check In",
+			"type": "Form"
 		}
 	}
