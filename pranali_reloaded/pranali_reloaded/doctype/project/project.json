@@ -105,7 +105,7 @@
    "in_list_view": 0, 
    "label": "Avenue 1", 
    "no_copy": 0, 
-   "options": "\nClub Service\nCommunity Service\nInternational Service\nProfessional Development\nSports", 
+   "options": "\nClub Service\nCommunity Service\nInternational Service\nProfessional Development\nSports\nPR\nEditorial\nWeb Communications\nPIS\nHRD", 
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
@@ -143,7 +143,7 @@
    "in_list_view": 0, 
    "label": "Avenue 2", 
    "no_copy": 0, 
-   "options": "\nPR\nEditorial\nWeb Communications\nPIS\nHRD", 
+   "options": "\nClub Service\nCommunity Service\nInternational Service\nProfessional Development\nSports\nPR\nEditorial\nWeb Communications\nPIS\nHRD", 
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
@@ -264,9 +264,10 @@
    "precision": ""
   }, 
   {
+   "description": "Testing", 
    "fieldname": "aim", 
    "fieldtype": "Text Editor", 
-   "label": "Aim", 
+   "label": "Aim / Concept", 
    "permlevel": 0, 
    "precision": "", 
    "reqd": 1
@@ -278,15 +279,15 @@
    "precision": ""
   }, 
   {
-   "fieldname": "concept", 
+   "fieldname": "ground_work", 
    "fieldtype": "Text Editor", 
-   "label": "Concept", 
+   "label": "Groundwork (Pre-project)", 
    "permlevel": 0, 
    "precision": "", 
    "reqd": 1
   }, 
   {
-   "fieldname": "section_break_18", 
+   "fieldname": "section_break_17", 
    "fieldtype": "Section Break", 
    "permlevel": 0, 
    "precision": ""
@@ -300,35 +301,7 @@
    "reqd": 1
   }, 
   {
-   "fieldname": "section_break_17", 
-   "fieldtype": "Section Break", 
-   "permlevel": 0, 
-   "precision": ""
-  }, 
-  {
-   "fieldname": "ground_work", 
-   "fieldtype": "Text Editor", 
-   "label": "Ground Work", 
-   "permlevel": 0, 
-   "precision": "", 
-   "reqd": 1
-  }, 
-  {
    "fieldname": "section_break_29", 
-   "fieldtype": "Section Break", 
-   "permlevel": 0, 
-   "precision": ""
-  }, 
-  {
-   "fieldname": "actual_event", 
-   "fieldtype": "Text Editor", 
-   "label": "Actual Event", 
-   "permlevel": 0, 
-   "precision": "", 
-   "reqd": 1
-  }, 
-  {
-   "fieldname": "section_break_20", 
    "fieldtype": "Section Break", 
    "permlevel": 0, 
    "precision": ""
@@ -336,7 +309,7 @@
   {
    "fieldname": "follow_up", 
    "fieldtype": "Text Editor", 
-   "label": "Follow Up", 
+   "label": "Follow Up / Feedback", 
    "permlevel": 0, 
    "precision": ""
   }, 
@@ -612,7 +585,7 @@
  "is_submittable": 1, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2015-06-15 18:48:09.925446", 
+ "modified": "2015-07-05 01:13:00.122892", 
  "modified_by": "Administrator", 
  "module": "Pranali Reloaded", 
  "name": "Project", 
