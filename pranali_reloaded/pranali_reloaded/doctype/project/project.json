@@ -264,7 +264,7 @@
    "precision": ""
   }, 
   {
-   "description": "Testing", 
+   "description": "", 
    "fieldname": "aim", 
    "fieldtype": "Text Editor", 
    "label": "Aim / Concept", 
@@ -585,7 +585,7 @@
  "is_submittable": 1, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2015-07-05 01:13:00.122892", 
+ "modified": "2015-07-11 20:14:50.215684", 
  "modified_by": "Administrator", 
  "module": "Pranali Reloaded", 
  "name": "Project", 
