@@ -28,6 +28,7 @@
   {
    "fieldname": "type_of_meeting", 
    "fieldtype": "Select", 
+   "in_list_view": 0, 
    "label": "Type of meeting", 
    "options": "GBM\nBOD Meet\nJoint Meet\nAny Other", 
    "permlevel": 0, 
@@ -153,6 +154,7 @@
   {
    "fieldname": "club", 
    "fieldtype": "Link", 
+   "in_list_view": 1, 
    "label": "Club", 
    "options": "Club", 
    "permlevel": 0, 
@@ -208,7 +210,7 @@
  "is_submittable": 1, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2015-06-15 22:45:16.841471", 
+ "modified": "2015-07-31 10:53:40.596721", 
  "modified_by": "Administrator", 
  "module": "Pranali Reloaded", 
  "name": "Meeting", 
@@ -244,6 +246,7 @@
    "read": 1, 
    "report": 0, 
    "role": "DCM", 
+   "set_user_permissions": 1, 
    "share": 0, 
    "write": 0
   }, 
@@ -259,6 +262,7 @@
    "read": 1, 
    "report": 0, 
    "role": "presec", 
+   "set_user_permissions": 1, 
    "share": 0, 
    "submit": 1, 
    "write": 1
