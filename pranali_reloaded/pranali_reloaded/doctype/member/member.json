@@ -26,7 +26,7 @@
    "report_hide": 0, 
    "reqd": 1, 
    "search_index": 1, 
-   "set_only_once": 1
+   "set_only_once": 0
   }, 
   {
    "fieldname": "dob", 
@@ -165,7 +165,7 @@
  "is_submittable": 0, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2015-06-08 22:45:38.112874", 
+ "modified": "2015-08-02 16:19:27.565523", 
  "modified_by": "Administrator", 
  "module": "Pranali Reloaded", 
  "name": "Member", 

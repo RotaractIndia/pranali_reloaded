@@ -34,7 +34,7 @@
    "label": "Sponsoring Rotary", 
    "permlevel": 0, 
    "precision": "", 
-   "reqd": 1
+   "reqd": 0
   }, 
   {
    "allow_on_submit": 0, 
@@ -197,7 +197,7 @@
  "is_submittable": 0, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2015-06-10 09:54:54.864512", 
+ "modified": "2015-08-02 16:18:38.383596", 
  "modified_by": "Administrator", 
  "module": "Pranali Reloaded", 
  "name": "Club", 
