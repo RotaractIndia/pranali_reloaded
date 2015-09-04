@@ -9,6 +9,7 @@ from frappe.model.document import Document
 
 class Project(Document):
 	def validate(self):
+		self.validate_date()
 		self.set_status()
 		self.validate_ambassadorial()
 		self.calculate_totals()
@@ -44,3 +45,9 @@ class Project(Document):
 	def set_zone(self):
 		self.zone = frappe.db.get_value("Club", self.club, "zone")
 
+	def validate_date(self):
+		if self.end_time > now():
+			frappe.throw("Did you fix the Flux Capacitor ? \n Project End Time is Greater than today.")
+			
+		if self.start_time > self.end_time:
+			frappe.throw("Start Time cannot be graeter than End Time.")

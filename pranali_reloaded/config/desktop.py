@@ -63,5 +63,15 @@ def get_data():
 			"link": "Form/Check In",
 			"doctype": "Check In",
 			"type": "Form"
+		},
+		
+		"Club Event": {
+			"color": "#f1c40f",
+			"icon": "icon-device-mobile",
+			"icon": "octicon octicon-device-mobile",
+			"label": _("Club Event"),
+			"link": "List/Club Event",
+			"doctype": "Club Event",
+			"type": "List"
 		}
 	}
