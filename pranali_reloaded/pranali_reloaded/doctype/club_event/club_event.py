@@ -3,7 +3,7 @@
 # For license information, please see license.txt
 
 from __future__ import unicode_literals
-import requests
+import requests, frappe
 from frappe.model.document import Document
 
 class ClubEvent(Document):
@@ -13,7 +13,7 @@ class ClubEvent(Document):
 	def send_date(self):
 		event = {
 			"event-title": self.event_name,
-			"club-name": self.club,
+			"club-id": frappe.db.get_value("Club", self.club, "uid"),
 			"image-url": self.image_url,
 			"event-excerpt": self.event_summary,
 			"event-venue": self.venue,
