@@ -21,4 +21,5 @@ class ClubEvent(Document):
 			"event-start-time": self.start_time,
 			"event-end-time": self.end_time
 		}
-		requests.post("http://api.rotaract3140.org/taskAddEntry.php?type=events", data=event)
+		response = requests.post("http://api.rotaract3140.org/taskAddEntry.php?type=events", data=event)
+		frappe.msgprint("Response {0}".format(response.status_code))
