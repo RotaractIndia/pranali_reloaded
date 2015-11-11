@@ -50,4 +50,4 @@ class Project(Document):
 			frappe.throw("Did you fix the Flux Capacitor ? \n Project End Time is Greater than today.")
 			
 		if self.start_time > self.end_time:
-			frappe.throw("Start Time cannot be graeter than End Time.")
+			frappe.throw("Start Time cannot be greater than End Time.")
