@@ -11,12 +11,14 @@
  "fields": [
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "date", 
    "fieldtype": "Date", 
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "in_filter": 0, 
-   "in_list_view": 0, 
+   "in_list_view": 1, 
    "label": "Date", 
    "no_copy": 0, 
    "permlevel": 0, 
@@ -31,6 +33,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "start_time", 
    "fieldtype": "Time", 
    "hidden": 0, 
@@ -51,15 +55,17 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "type_of_meeting", 
    "fieldtype": "Select", 
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "in_filter": 0, 
-   "in_list_view": 0, 
+   "in_list_view": 1, 
    "label": "Type of meeting", 
    "no_copy": 0, 
-   "options": "GBM\nBOD Meet\nJoint Meet\nAny Other", 
+   "options": "GBM\nBOD Meet\nJoint Meet\nOCV\nAny Other", 
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
@@ -72,6 +78,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "column_break_3", 
    "fieldtype": "Column Break", 
    "hidden": 0, 
@@ -91,6 +99,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "venue", 
    "fieldtype": "Data", 
    "hidden": 0, 
@@ -111,6 +121,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "end_time", 
    "fieldtype": "Time", 
    "hidden": 0, 
@@ -131,6 +143,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "section_break_5", 
    "fieldtype": "Section Break", 
    "hidden": 0, 
@@ -150,6 +164,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "minutes", 
    "fieldtype": "Text Editor", 
    "hidden": 0, 
@@ -170,6 +186,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "section_break_2", 
    "fieldtype": "Section Break", 
    "hidden": 0, 
@@ -190,6 +208,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "home_club", 
    "fieldtype": "Int", 
    "hidden": 0, 
@@ -210,6 +230,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "rotarians", 
    "fieldtype": "Int", 
    "hidden": 0, 
@@ -230,6 +252,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "guest", 
    "fieldtype": "Int", 
    "hidden": 0, 
@@ -250,6 +274,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "column_break_10", 
    "fieldtype": "Column Break", 
    "hidden": 0, 
@@ -269,6 +295,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "other_club", 
    "fieldtype": "Int", 
    "hidden": 0, 
@@ -289,6 +317,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "alumini", 
    "fieldtype": "Int", 
    "hidden": 0, 
@@ -309,6 +339,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "pis", 
    "fieldtype": "Int", 
    "hidden": 0, 
@@ -329,6 +361,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "total", 
    "fieldtype": "Int", 
    "hidden": 0, 
@@ -349,6 +383,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "section_break_4", 
    "fieldtype": "Section Break", 
    "hidden": 0, 
@@ -368,6 +404,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "club", 
    "fieldtype": "Link", 
    "hidden": 0, 
@@ -389,6 +427,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "column_break_4", 
    "fieldtype": "Column Break", 
    "hidden": 0, 
@@ -408,6 +448,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "zone", 
    "fieldtype": "Select", 
    "hidden": 0, 
@@ -429,6 +471,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "section_break_6", 
    "fieldtype": "Section Break", 
    "hidden": 0, 
@@ -448,6 +492,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "document_status", 
    "fieldtype": "Link", 
    "hidden": 1, 
@@ -469,6 +515,8 @@
   }, 
   {
    "allow_on_submit": 0, 
+   "bold": 0, 
+   "collapsible": 0, 
    "fieldname": "amended_from", 
    "fieldtype": "Link", 
    "hidden": 0, 
@@ -495,7 +543,7 @@
  "is_submittable": 1, 
  "issingle": 0, 
  "istable": 0, 
- "modified": "2015-10-17 21:58:51.162039", 
+ "modified": "2015-11-11 16:27:17.394708", 
  "modified_by": "Administrator", 
  "module": "Pranali Reloaded", 
  "name": "Meeting", 
@@ -505,7 +553,7 @@
   {
    "amend": 0, 
    "apply_user_permissions": 0, 
-   "cancel": 0, 
+   "cancel": 1, 
    "create": 1, 
    "delete": 1, 
    "email": 1, 
@@ -519,7 +567,7 @@
    "role": "Administrator", 
    "set_user_permissions": 0, 
    "share": 1, 
-   "submit": 0, 
+   "submit": 1, 
    "write": 1
   }, 
   {
@@ -566,5 +614,6 @@
  "read_only": 0, 
  "read_only_onload": 0, 
  "sort_field": "modified", 
- "sort_order": "DESC"
+ "sort_order": "DESC", 
+ "title_field": "club"
 }
