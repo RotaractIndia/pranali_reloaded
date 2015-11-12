@@ -1,0 +1,1 @@
+cur_frm.add_fetch("Member", "member_name", "member_name");

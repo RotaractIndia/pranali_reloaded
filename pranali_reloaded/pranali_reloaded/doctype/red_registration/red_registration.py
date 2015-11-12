@@ -11,6 +11,7 @@ class REDRegistration(Document):
 		self.single_day = 0
 		self.both_days = 0
 		for d in self.members:
+			d.member_name = frappe.db.get_value("Member", d.member, "member_name")
 			if d.day1 and d.day2:
 				self.both_days +=1
 			elif d.day1 or d.day2:
