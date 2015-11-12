@@ -1,1 +1,1 @@
-cur_frm.add_fetch("Member", "member_name", "member_name");
+cur_frm.add_fetch("member", "member_name", "member_name");
