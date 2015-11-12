@@ -82,5 +82,13 @@ def get_data():
 			"link": "List/RED Registration",
 			"doctype": "RED Registration",
 			"type": "List"
+		},
+		
+		"Messages": {
+					"color": "#9b59b6",
+					"icon": "icon-comments",
+					"label": _("Messages"),
+					"link": "messages",
+					"type": "page"
 		}
 	}
