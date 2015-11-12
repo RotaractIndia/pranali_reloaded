@@ -73,5 +73,14 @@ def get_data():
 			"link": "List/Club Event",
 			"doctype": "Club Event",
 			"type": "List"
+		},
+		
+		"RED Registration": {
+			"color": "#dd004e",
+			"icon": "octicon octicon-check",
+			"label": _("RED Registration"),
+			"link": "List/RED Registration",
+			"doctype": "RED Registration",
+			"type": "List"
 		}
 	}
