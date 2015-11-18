@@ -2,6 +2,34 @@ frappe.ui.form.on("Club", {
 	refresh: function(frm) {
 		if(!frm.doc.__islocal) {
 			cur_frm.cscript.update_statistics(frm);
+			
+			frm.add_custom_button(__("Members"), function() {
+				frappe.route_options = {
+					club: frm.doc.name
+				}
+				frappe.set_route("List", "Member");
+			});
+		
+			frm.add_custom_button(__("Projects"), function() {
+				frappe.route_options = {
+					club: frm.doc.name
+				}
+				frappe.set_route("List", "Project");
+			});
+		
+			frm.add_custom_button(__("Meetings"), function() {
+				frappe.route_options = {
+					club: frm.doc.name
+				}
+				frappe.set_route("List", "Meeting");
+			});
+		
+			frm.add_custom_button(__("Ambassadorial Reports"), function() {
+				frappe.route_options = {
+					club: frm.doc.name
+				}
+				frappe.set_route("List", "Ambassadorial Report");
+			});
 		}
 	}
 });
