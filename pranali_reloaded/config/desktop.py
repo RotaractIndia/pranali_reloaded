@@ -55,16 +55,6 @@ def get_data():
 			"type": "query-report"
 		},
 		
-		"Check In": {
-			"color": "#f1c40f",
-			"icon": "icon-check",
-			"icon": "octicon octicon-check",
-			"label": _("Check In"),
-			"link": "Form/Check In",
-			"doctype": "Check In",
-			"type": "Form"
-		},
-		
 		"Club Event": {
 			"color": "#f1c40f",
 			"icon": "icon-device-mobile",
@@ -74,16 +64,7 @@ def get_data():
 			"doctype": "Club Event",
 			"type": "List"
 		},
-		
-		"RED Registration": {
-			"color": "#dd004e",
-			"icon": "octicon octicon-check",
-			"label": _("RED Registration"),
-			"link": "List/RED Registration",
-			"doctype": "RED Registration",
-			"type": "List"
-		},
-		
+
 		"Messages": {
 					"color": "#9b59b6",
 					"icon": "icon-comments",
