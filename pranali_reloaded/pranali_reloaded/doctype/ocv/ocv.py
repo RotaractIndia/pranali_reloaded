@@ -60,7 +60,7 @@ class OCV(Document):
 		if self.financial_accounts:
 			self.points += 3000
 			
-		if nowdate() <= "2016-02-28":
+		if nowdate() <= "2016-03-31":
 			self.points += 5000
 	
 	def set_zone(self):
