@@ -55,16 +55,6 @@ def get_data():
 			"type": "query-report"
 		},
 		
-		"Club Event": {
-			"color": "#f1c40f",
-			"icon": "icon-device-mobile",
-			"icon": "octicon octicon-device-mobile",
-			"label": _("Club Event"),
-			"link": "List/Club Event",
-			"doctype": "Club Event",
-			"type": "List"
-		},
-
 		"Messages": {
 					"color": "#9b59b6",
 					"icon": "icon-comments",
