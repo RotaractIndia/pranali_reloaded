@@ -7,4 +7,19 @@ import frappe
 from frappe.model.document import Document
 
 class Receipt(Document):
-	pass
+	def on_submit(self):
+		if self.credit_amount:
+			balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
+			frappe.db.set_value("Club", self.club, "balance_amount", balance_amount + self.amount)
+		
+		total_amount = frappe.db.get_value("Club", self.club, "total_amount")
+		frappe.db.set_value("Club", self.club, "total_amount", total_amount + self.amount)
+		
+	def on_cancel(self):
+		if self.credit_amount:
+			balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
+			frappe.db.set_value("Club", self.club, "balance_amount", balance_amount - self.amount)
+		
+		total_amount = frappe.db.get_value("Club", self.club, "total_amount")
+		frappe.db.set_value("Club", self.club, "total_amount", total_amount - self.amount)
+		

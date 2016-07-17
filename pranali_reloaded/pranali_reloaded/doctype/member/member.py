@@ -15,9 +15,9 @@ class Member(Document):
 		
 	def validate_dues(self):
 		if not self.dues_paid:
-			balance_amount = frappe.db.get_value("Club", "balance_amount")
+			balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
 			if balance_amount < 50:
 				frappe.throw("You cannot add a new Member")
 			else:
 				self.dues_paid = 1
-				frappe.db.set_value("Club", self.club, "balance_amount", balance_amount)
+				frappe.db.set_value("Club", self.club, "balance_amount", balance_amount - 50)
