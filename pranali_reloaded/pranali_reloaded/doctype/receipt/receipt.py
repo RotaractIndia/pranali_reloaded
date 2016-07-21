@@ -5,9 +5,11 @@
 from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
+from frappe.utils import now
 
 class Receipt(Document):
 	def on_submit(self):
+		self.date = now()
 		if self.credit_amount:
 			balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
 			frappe.db.set_value("Club", self.club, "balance_amount", balance_amount + self.amount)

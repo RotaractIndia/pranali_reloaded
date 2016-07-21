@@ -61,5 +61,14 @@ def get_data():
 					"label": _("Messages"),
 					"link": "messages",
 					"type": "page"
-		}
+		},
+		
+		"Receipt": {
+			"color": "#0cb408",
+			"icon": "octicon octicon-gist-secret",
+			"label": _("Receipt"),
+			"link": "List/Receipt",
+			"doctype": "Receipt",
+			"type": "list"
+		},
 	}

@@ -30,6 +30,13 @@ frappe.ui.form.on("Club", {
 				}
 				frappe.set_route("List", "Ambassadorial Report");
 			});
+			
+			frm.add_custom_button(__("Receipts"), function() {
+				frappe.route_options = {
+					club: frm.doc.name
+				}
+				frappe.set_route("List", "Receipt");
+			});
 		}
 	}
 });
