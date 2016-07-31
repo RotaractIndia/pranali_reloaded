@@ -647,7 +647,7 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
- "modified": "2016-07-17 12:36:32.935131", 
+ "modified": "2016-07-31 11:17:45.617527", 
  "modified_by": "Administrator", 
  "module": "Pranali Reloaded", 
  "name": "Meeting", 
@@ -720,6 +720,7 @@
  "read_only_onload": 0, 
  "sort_field": "modified", 
  "sort_order": "DESC", 
+ "timeline_field": "club", 
  "title_field": "club", 
  "track_seen": 0
 }

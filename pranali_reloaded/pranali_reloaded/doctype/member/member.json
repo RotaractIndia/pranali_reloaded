@@ -471,7 +471,7 @@
  "issingle": 0, 
  "istable": 0, 
  "max_attachments": 0, 
- "modified": "2016-07-17 13:28:14.005210", 
+ "modified": "2016-07-31 11:18:14.591036", 
  "modified_by": "Administrator", 
  "module": "Pranali Reloaded", 
  "name": "Member", 
@@ -546,6 +546,7 @@
  "search_fields": "member_name", 
  "sort_field": "modified", 
  "sort_order": "DESC", 
+ "timeline_field": "club", 
  "title_field": "member_name", 
  "track_seen": 0
 }

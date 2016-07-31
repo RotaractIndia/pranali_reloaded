@@ -4,6 +4,7 @@
 
 from __future__ import unicode_literals
 import frappe
+from frappe.utils import add_years
 from frappe.model.document import Document
 
 class Club(Document):
@@ -13,12 +14,11 @@ class Club(Document):
 			club_list.club_name = self.club_name
 			club_list.save()
 
-@frappe.whitelist()
-def update_statistics(club):
-	members = frappe.db.sql("select count(name) from `tabMember` where club= %s", club)
-	meetings = frappe.db.sql("select count(name) from `tabMeeting` where club= %s", club)
-	projects = frappe.db.sql("select count(name) from `tabProject` where club= %s", club)
-	ambassodorial_reports = frappe.db.sql("select count(name) from `tabAmbassadorial Report` where club= %s", club)
-	frappe.db.sql("update `tabClub` set members= %s, meetings= %s, projects= %s, \
-		ambassadorial_reports= %s where name= %s", (members, meetings, projects, ambassodorial_reports, club))
-	
+def get_timeline_data(doctype, name):
+	'''returns timeline data for the past one year'''
+	from frappe.desk.form.load import get_communication_data
+	data = get_communication_data(doctype, name,
+		fields = 'unix_timestamp(date(creation)), count(name)',
+		after = add_years(None, -1).strftime('%Y-%m-%d'),
+		group_by='group by date(creation)', as_dict=False)
+	return dict(data)
