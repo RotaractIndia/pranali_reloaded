@@ -1,8 +1,7 @@
-// Copyright (c) 2016, Rtr.Neil Trini Lasrado and contributors
-// For license information, please see license.txt
+cur_frm.add_fetch("club", "club_email", "receivers_email_id")
 
-frappe.ui.form.on('Receipt', {
-	refresh: function(frm) {
-
+frappe.ui.form.on("Receipt", {
+	club: function(frm) {
+		frm.set_value("receivers_name", frm.doc.club);
 	}
 });
