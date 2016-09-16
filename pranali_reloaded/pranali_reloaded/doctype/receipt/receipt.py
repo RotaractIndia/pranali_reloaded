@@ -16,6 +16,7 @@ class Receipt(Document):
 		self.date = now()
 		if self.club:
 			if self.credit_amount:
+				print 
 				balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
 				frappe.db.set_value("Club", self.club, "balance_amount", balance_amount + self.amount)
 		
