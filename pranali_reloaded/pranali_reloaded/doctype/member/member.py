@@ -21,3 +21,12 @@ class Member(Document):
 			else:
 				self.dues_paid = 1
 				frappe.db.set_value("Club", self.club, "balance_amount", balance_amount - 50)
+				members_registered = frappe.db.get_value("Club", self.club, "members_registered")
+				frappe.db.set_value("Club", self.club, "members_registered", members_registered + 1 )
+
+	def on_trash(self):
+		if self.dues_paid:
+			balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
+			frappe.db.set_value("Club", self.club, "balance_amount", balance_amount + 50)
+			frappe.db.set_value("Club", self.club, "members_registered", members_registered - 1 )
+		
