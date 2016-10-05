@@ -9,6 +9,7 @@ class Member(Document):
 	def validate(self):
 		self.set_zone()
 		self.validate_dues()
+		self.member_name = self.member_name.title()
 		
 	def set_zone(self):
 		self.zone = frappe.db.get_value("Club", self.club, "zone")
