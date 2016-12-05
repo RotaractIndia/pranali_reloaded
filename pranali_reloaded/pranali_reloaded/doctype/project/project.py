@@ -33,6 +33,15 @@ class Project(Document):
 			self.project_status = "Early"
 		else:
 			self.project_status = "On Time"
+
+		if self.reporting_month in ["July", "August", "September"]:
+			self.quarter = "One"
+		elif self.reporting_month in ["October", "November", "December"]:
+			self.quarter = "Two"
+		elif self.reporting_month in ["January", "Febuary", "March"]:
+			self.quarter = "Three"
+		elif self.reporting_month in ["April", "May", "June"]:
+			self.quarter = "Four"
 	
 	def validate_ambassadorial(self):
 		if not self.ambassadorial:
