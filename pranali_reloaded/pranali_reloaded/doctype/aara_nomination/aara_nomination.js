@@ -25,8 +25,7 @@ frappe.ui.form.on('AARA Nomination', {
                 filters: {
                     "docstatus": 1,
                     "quarter": frm.doc.quarter,
-                    "project_status": ["in", ["On Time", "Early"]],
-                    "reporting_month": ["in", ["December"]]
+                    "project_status": ["in", ["On Time", "Early"]]
                 }
             }
         });
