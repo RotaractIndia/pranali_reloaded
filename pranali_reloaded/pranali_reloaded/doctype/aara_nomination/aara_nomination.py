@@ -41,4 +41,4 @@ class AARANomination(Document):
 
 @frappe.whitelist()
 def get_nomination_avenue(project=None, avenue=None):
-	return frappe.db.get_value("project", project, frappe.scrub(avenue))
+	return frappe.db.get_value("Project", project, frappe.scrub(avenue))
