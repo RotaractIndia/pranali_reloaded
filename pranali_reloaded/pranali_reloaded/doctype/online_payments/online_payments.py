@@ -8,7 +8,7 @@ from frappe.model.document import Document
 
 class OnlinePayments(Document):
 	def validate(self):
-		self.amount = 500
+		pass
 
 	def on_payment_authorized(self, *args, **kwargs):
 			self.db_set('paid', 1)
