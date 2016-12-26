@@ -16,4 +16,3 @@ class OnlinePayments(Document):
 			frappe.db.set_value("Club", self.club, "total_amount_credited_in_wallet", total_amount_credited_in_wallet + self.amount)
 			balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
 			frappe.db.set_value("Club", self.club, "balance_amount", balance_amount + self.amount)
-

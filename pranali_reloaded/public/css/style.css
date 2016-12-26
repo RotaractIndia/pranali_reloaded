@@ -1,0 +1,252 @@
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Mountains+of+Christmas:700);
+/* Stylin' Styles */
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+body {
+	display: table;
+	background: #111;
+	overflow: hidden;
+}
+
+.hideMe {
+	visibility: hidden !important;
+}
+
+/***************************
+
+BEGIN OF FLYING SANTA
+
+***************************/
+.santa {
+	z-index: 600;
+	cursor: pointer;
+	-webkit-animation: FlyingSanta 38s infinite linear;
+	-moz-animation: FlyingSanta 38s infinite linear;
+	-ms-animation: FlyingSanta 38s infinite linear;
+	-o-animation: FlyingSanta 38s infinite linear;
+	animation: FlyingSanta 38s infinite linear;
+	bottom: 0%;
+	left: 0%;
+	position: absolute;
+}
+@keyframes FlyingSanta {
+25% {
+bottom: 80%;
+left: 85%;
+transform: rotateY(0deg);
+}
+26% {
+transform: rotateY(180deg);
+}
+50% {
+ bottom:60%;
+ left: 0%;
+ transform: rotateY(180deg);
+}
+51% {
+ transform: rotateY(0deg);
+}
+75% {
+ bottom:40%;
+ left: 85%;
+ transform: rotateY(0deg);
+}
+76% {
+ bottom:40%;
+ left: 85%;
+ transform: rotateY(180deg);
+}
+99% {
+ transform: rotateY(180deg);
+}
+}
+
+/***************************
+
+//// END OF FLYING SANTA ///
+
+***************************/
+
+
+/***************************
+
+Clip Text for Festive Sparkles
+
+***************************/
+
+
+
+h1 {
+	font-size: 6.5vw;
+	padding-top: 3%;
+	font-family: 'Mountains of Christmas', cursive;
+	background: -o-linear-gradient(transparent, transparent) !important;
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	font-weight: 900;
+	width: 100%;
+	text-align: center;
+	letter-spacing: 1px;
+	z-index: 999999;
+	-webkit-background-clip: text;
+}
+
+
+
+.Absolute-Center {
+	margin: auto;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+}
+
+.santa-house {width:25%;z-index:300}
+
+/***************************
+****************************
+Text Glitter Styles
+****************************
+***************************/
+.Gold-Glitter {
+	color: gold;
+	background: -webkit-linear-gradient(transparent, transparent), url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/gold_glitter.gif) repeat;
+}
+.Blue-Glitter {
+	color: blue;
+	background: -webkit-linear-gradient(transparent, transparent), url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/sparklesskyblue.gif) repeat;
+}
+.HotPink-Glitter {
+	color: blue;
+	background: -webkit-linear-gradient(transparent, transparent), url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/sparkleshotpink.gif) repeat;
+}
+.HotPink-Glitter span { 
+  background-image:url('http://www.siskopoulos.gr/playground/Christmas-Hat-PNG-Picture.png'); 
+  background-repeat:no-repeat;
+  width:200px; height:200px;
+   background-size: 30%;
+  position:absolute;
+  
+}
+
+.Pink-Glitter {
+	color: pink;
+	background: -webkit-linear-gradient(transparent, transparent), url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/pink_glitter.gif) repeat;
+}
+.Green-Glitter {
+	color: green;
+	background: -webkit-linear-gradient(transparent, transparent), url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/green_glitter.gif) repeat;
+}
+/***************************
+****************************
+Toggle Switch
+****************************
+***************************/
+
+h2 {
+	color: #FFF;
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin-right: 50px;
+	z-index: 999999999;
+	cursor: pointer;
+	font-family: 'Mountains of Christmas', cursive;
+}
+h2:hover {
+	color: #F00;
+}
+
+
+#Meteors {
+	position: absolute;
+	overflow: hidden;
+	margin: 0 0 0 0;
+	border: 0px !important;
+	width: 100%;
+	height: 100%;
+}
+
+
+
+#snow {
+	background: none;
+	z-index: 200;
+	background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/flake1.png'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/flake2.png'), url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/flake3.png');
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	-webkit-animation: snow 10s linear infinite;
+	-moz-animation: snow 10s linear infinite;
+	-ms-animation: snow 10s linear infinite;
+	animation: snow 10s linear infinite;
+}
+@keyframes snow {
+ 0% {
+background-position: 0px 0px, 0px 0px, 0px 0px;
+}
+ 50% {
+background-position: 500px 500px, 100px 200px, -100px 150px;
+}
+ 100% {
+background-position: 500px 1000px, 200px 400px, -100px 300px;
+}
+}
+@-moz-keyframes snow {
+ 0% {
+background-position: 0px 0px, 0px 0px, 0px 0px;
+}
+ 50% {
+background-position: 500px 500px, 100px 200px, -100px 150px;
+}
+ 100% {
+background-position: 400px 1000px, 200px 400px, 100px 300px;
+}
+}
+@-webkit-keyframes snow {
+ 0% {
+background-position: 0px 0px, 0px 0px, 0px 0px;
+}
+ 50% {
+background-position: 500px 500px, 100px 200px, -100px 150px;
+}
+ 100% {
+background-position: 500px 1000px, 200px 400px, -100px 300px;
+}
+}
+@-ms-keyframes snow {
+ 0% {
+background-position: 0px 0px, 0px 0px, 0px 0px;
+}
+ 50% {
+background-position: 500px 500px, 100px 200px, -100px 150px;
+}
+ 100% {
+background-position: 500px 1000px, 200px 400px, -100px 300px;
+}
+}
+.NorthPole {z-index:500; height:35%;padding-right:25%;}
+.floating {
+  -webkit-animation-name: Floating;
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+}
+
+@-webkit-keyframes Floating{
+    from {transform:translate(0, 0px);}
+    50% {transform:translate(0, 30px);}
+    to {transform: translate(0, -0px);    }    
+}
