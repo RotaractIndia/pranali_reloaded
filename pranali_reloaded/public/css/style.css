@@ -1,7 +1,7 @@
 
 
 
-@import url(http://fonts.googleapis.com/css?family=Mountains+of+Christmas:700);
+@import url(https://fonts.googleapis.com/css?family=Mountains+of+Christmas:700);
 /* Stylin' Styles */
 html, body {
 	width: 100%;
@@ -131,7 +131,7 @@ Text Glitter Styles
 	background: -webkit-linear-gradient(transparent, transparent), url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/191814/sparkleshotpink.gif) repeat;
 }
 .HotPink-Glitter span { 
-  background-image:url('http://www.siskopoulos.gr/playground/Christmas-Hat-PNG-Picture.png'); 
+  background-image:url('https://www.siskopoulos.gr/playground/Christmas-Hat-PNG-Picture.png'); 
   background-repeat:no-repeat;
   width:200px; height:200px;
    background-size: 30%;
