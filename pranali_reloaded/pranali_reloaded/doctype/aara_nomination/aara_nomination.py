@@ -20,12 +20,12 @@ class AARANomination(Document):
 			nomination_avenue = ["April", "May"]
 
 		for d in self.projects:
-			d.avenue = frappe.db.get_value("project", d.project, frappe.scrub(d.nominate_for))
+			d.avenue = frappe.db.get_value("Project", d.project, frappe.scrub(d.nominate_for))
 
-			if frappe.db.get_value("project", d.project, "project_status")== "Late":
+			if frappe.db.get_value("Project", d.project, "project_status")== "Late":
 				frappe.throw("You cannot nominate project {0} - {1} as it was reported late".format(d.project, d.project_name))
 			
-			reporting_month = frappe.db.get_value("project", d.project, "reporting_month")
+			reporting_month = frappe.db.get_value("Project", d.project, "reporting_month")
 			if reporting_month not in nomination_avenue:
 				frappe.throw("You cannot Nominate {0} - {1} for Quarter {2} as it was reported in the month of {3}"
 					.format(d.project, d.project_name, self.quarter, reporting_month))
