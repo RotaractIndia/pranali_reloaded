@@ -4,4 +4,6 @@ import frappe
 
 def get_context(context):
 	# do your magic here
-	pass
+	if context.doc and context.doc.paid:
+		context.read_only = 1
+
