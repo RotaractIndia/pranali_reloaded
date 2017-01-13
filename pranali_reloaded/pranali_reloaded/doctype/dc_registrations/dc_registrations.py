@@ -8,12 +8,13 @@ from frappe.model.document import Document
 
 class DCRegistrations(Document):
 	def validate(self):
-		print "Call"
 		if self.nightout:
 			if self.dcm:
-				self.amount = 350
+				self.amount = 300
 			else:
-				self.amount = 450
+				self.amount = 400
 		else:
 			self.amount = 100
 		
+	def on_payment_authorized(self, *args, **kwargs):
+			self.db_set('paid', 1)
