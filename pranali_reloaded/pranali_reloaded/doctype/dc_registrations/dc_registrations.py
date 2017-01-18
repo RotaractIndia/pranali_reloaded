@@ -18,3 +18,5 @@ class DCRegistrations(Document):
 		
 	def on_payment_authorized(self, *args, **kwargs):
 			self.db_set('paid', 1)
+			self.db_set('docstatus', 1)
+			frappe.get_doc('Email Alert', "DC Ticket").send(self)
