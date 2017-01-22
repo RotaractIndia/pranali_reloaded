@@ -12,9 +12,9 @@ class DCRegistrations(Document):
 			if self.dcm:
 				self.amount = 300
 			else:
-				self.amount = 400
+				self.amount = 450
 		else:
-			self.amount = 100
+			self.amount = 150
 		
 	def on_payment_authorized(self, *args, **kwargs):
 			self.db_set('paid', 1)
