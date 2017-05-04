@@ -38,7 +38,7 @@ class Project(Document):
 			self.quarter = "One"
 		elif self.reporting_month in ["October", "November", "December"]:
 			self.quarter = "Two"
-		elif self.reporting_month in ["January", "Febuary", "March"]:
+		elif self.reporting_month in ["January", "February", "March"]:
 			self.quarter = "Three"
 		elif self.reporting_month in ["April", "May", "June"]:
 			self.quarter = "Four"
