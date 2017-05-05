@@ -15,7 +15,7 @@ class AARANomination(Document):
 		elif self.quarter == "Two":
 			nomination_avenue = ["October", "November", "December"]
 		elif self.quarter == "Three":
-			nomination_avenue = ["January", "Febuary", "March"]
+			nomination_avenue = ["January", "February", "March"]
 		elif self.quarter == "Four":
 			nomination_avenue = ["April", "May"]
 
