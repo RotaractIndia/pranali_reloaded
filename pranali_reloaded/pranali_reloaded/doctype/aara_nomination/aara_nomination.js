@@ -4,17 +4,22 @@
 frappe.ui.form.on('AARA Nomination Project', {
     nominate_for: function(frm, cdn, cdt) {
         var local = locals[cdn][cdt];
-        frappe.call({
-            method: "pranali_reloaded.pranali_reloaded.doctype.aara_nomination.aara_nomination.get_nomination_avenue",
-            args: {
-                "project": local.project,
-                "avenue": local.nominate_for
-            },
-            callback: function(r) {
-                local.avenue = r.message;
-                frm.refresh_fields("projects");
-            }
-        })
+        if (local.nominate_for == "Joint") {
+            local.avenue = "Joint Project";
+            frm.refresh_fields("projects");
+        } else {
+            frappe.call({
+                method: "pranali_reloaded.pranali_reloaded.doctype.aara_nomination.aara_nomination.get_nomination_avenue",
+                args: {
+                    "project": local.project,
+                    "avenue": local.nominate_for
+                },
+                callback: function(r) {
+                    local.avenue = r.message;
+                    frm.refresh_fields("projects");
+                }
+            })
+        }
     }
 });
 
