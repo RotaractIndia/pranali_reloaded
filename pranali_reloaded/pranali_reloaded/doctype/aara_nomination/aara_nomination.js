@@ -7,6 +7,9 @@ frappe.ui.form.on('AARA Nomination Project', {
         if (local.nominate_for == "Joint") {
             local.avenue = "Joint Project";
             frm.refresh_fields("projects");
+        } else if (local.nominate_for == "Ongoing") {
+            local.avenue = "Ongoing";
+            frm.refresh_fields("projects");
         } else {
             frappe.call({
                 method: "pranali_reloaded.pranali_reloaded.doctype.aara_nomination.aara_nomination.get_nomination_avenue",
