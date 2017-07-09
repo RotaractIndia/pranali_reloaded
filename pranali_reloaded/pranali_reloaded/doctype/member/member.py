@@ -15,7 +15,7 @@ class Member(Document):
 		self.zone = frappe.db.get_value("Club", self.club, "zone")
 		
 	def validate_dues(self):
-		if not self.dues_paid:
+		if not self.dues_paid and self.is_new():
 			balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
 			if balance_amount < 50:
 				frappe.throw("You cannot add a new Member")

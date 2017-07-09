@@ -15,6 +15,7 @@ class Project(Document):
 		self.calculate_totals()
 		self.set_zone()
 		self.document_status='draft'
+		self.rotaract_year=frappe.db.get_single_value("Pranali Settings", "current_rotaract_year")
 	
 	def on_submit(self):
 		frappe.db.set_value('Project', self.name, 'document_status', 'submitted')
