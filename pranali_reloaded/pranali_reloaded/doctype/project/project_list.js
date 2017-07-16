@@ -1,5 +1,5 @@
 frappe.listview_settings['Project'] = {
-    add_fields: ["project_status"],
+    add_fields: ["project_status", "rotaract_year"],
     filters: [
         ["rotaract_year", "=", "2016-17"]
     ],
