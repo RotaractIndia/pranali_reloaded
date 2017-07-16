@@ -13,6 +13,7 @@ class AmbassadorialReport(Document):
 		self.document_status='draft'
 		self.check_duplicates()
 		self.count_total()
+		self.rotaract_year=frappe.db.get_single_value("Pranali Settings", "current_rotaract_year")
 
 	def on_submit(self):
 		self.time_stamp = now()
