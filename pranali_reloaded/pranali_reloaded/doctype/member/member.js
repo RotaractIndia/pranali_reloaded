@@ -6,11 +6,16 @@ frappe.ui.form.on('Member', {
         if (!frm.doc.dues_paid && !frm.is_new() && frm.perm[0].write) {
             frm.add_custom_button(__("Re-Register Member"), function() {
                 frappe.call({
-                    method: "pranali_reloaded.",
+                    method: "pranali_reloaded.pranali_reloaded.doctype.member.member.register_member",
                     args: {
-                        member: frm.doc.name
+                        member_name: frm.doc.name
                     },
-                    callback: function(r) {}
+                    callback: function(r) {
+                        if (r.message) {
+                            frappe.msgprint("Member Registered.");
+                            frm.reload_doc();
+                        }
+                    }
                 });
             });
         }
