@@ -8,6 +8,7 @@ from frappe.model.document import Document
 
 class AARANomination(Document):
 	def validate(self):
+		self.rotaract_year=frappe.db.get_single_value("Pranali Settings", "current_rotaract_year")
 		avenue_list = {}
 		joint = 0
 		ongoing = 0
