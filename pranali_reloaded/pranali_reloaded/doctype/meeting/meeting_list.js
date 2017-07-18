@@ -3,12 +3,12 @@ frappe.listview_settings['Meeting'] = {
     onload: function(listview) {
         if (!frappe.route_options) { //remove this condition if not required
             frappe.route_options = {
-                "rotaract_year": ["=", "2016-17"]
+                "rotaract_year": ["=", "2017-18"]
             };
         }
     },
     filters: [
-        ["rotaract_year", "=", "2016-17"]
+        ["rotaract_year", "=", "2017-18"]
     ],
     get_indicator: function(doc) {
         if (doc.type_of_meeting == "GBM") {
