@@ -1,5 +1,12 @@
 frappe.listview_settings['Meeting'] = {
     add_fields: ["type_of_meeting", "rotaract_year"],
+    onload: function(listview) {
+        if (!frappe.route_options) { //remove this condition if not required
+            frappe.route_options = {
+                "rotaract_year": ["=", "2016-17"]
+            };
+        }
+    },
     filters: [
         ["rotaract_year", "=", "2016-17"]
     ],
