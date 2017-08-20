@@ -7,6 +7,9 @@ app_color = "grey"
 app_email = "neil@rotaractsuncity.in"
 app_version = "0.0.1"
 
+doctype_js = {
+	"User": "public/js/user.js"
+}
 # Includes in <head>
 # ------------------
 
