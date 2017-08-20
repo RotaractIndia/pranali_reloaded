@@ -10,6 +10,9 @@ app_version = "0.0.1"
 doctype_js = {
 	"User": "public/js/user.js"
 }
+
+app_include_js = ["/assets/pranali_reloaded/js/desk_common.js"]
+
 # Includes in <head>
 # ------------------
 
