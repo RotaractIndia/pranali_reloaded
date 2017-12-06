@@ -17,7 +17,7 @@
  "is_standard": 1, 
  "login_required": 0, 
  "max_attachment_size": 0, 
- "modified": "2017-12-06 00:56:20.887248", 
+ "modified": "2017-12-06 15:24:17.224915", 
  "modified_by": "Administrator", 
  "module": "Pranali Reloaded", 
  "name": "council-applications-2017-18", 
@@ -28,8 +28,8 @@
  "route": "council-applications-2017-18", 
  "show_sidebar": 0, 
  "sidebar_items": [], 
- "success_message": "Thank You !", 
- "success_url": "/council-applications-2017-18", 
+ "success_message": "Thank You for applying! You will receive an confirmation email shortly.", 
+ "success_url": "https://pranali.rotaract3142.org/council51", 
  "title": "Council Applications", 
  "web_form_fields": [
   {
