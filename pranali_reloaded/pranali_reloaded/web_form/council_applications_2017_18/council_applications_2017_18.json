@@ -17,7 +17,7 @@
  "is_standard": 1, 
  "login_required": 0, 
  "max_attachment_size": 0, 
- "modified": "2017-12-06 15:24:17.224915", 
+ "modified": "2017-12-06 17:32:20.405805", 
  "modified_by": "Administrator", 
  "module": "Pranali Reloaded", 
  "name": "council-applications-2017-18", 
@@ -28,7 +28,7 @@
  "route": "council-applications-2017-18", 
  "show_sidebar": 0, 
  "sidebar_items": [], 
- "success_message": "Thank You for applying! You will receive an confirmation email shortly.", 
+ "success_message": "Thank You for applying! You will receive a confirmation email shortly.\nPlease note:\nCarrying gifts and food items for the interviewers is not looked upon as bribe. On the other hand applicants being kind to us will be given special preference :p \nWe do not accept money because we are scared of another demonitisation announcement.", 
  "success_url": "https://pranali.rotaract3142.org/council51", 
  "title": "Council Applications", 
  "web_form_fields": [
