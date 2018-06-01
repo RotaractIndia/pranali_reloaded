@@ -32,6 +32,8 @@ class AARANomination(Document):
 					else:
 						ongoing = joint + 1
 					
+			elif d.nominate_for == "Flagship":
+				pass
 			else:
 				reporting_month = frappe.db.get_value("Project", d.project, "reporting_month")
 				if reporting_month not in nomination_avenue:
