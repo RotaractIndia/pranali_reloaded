@@ -1,15 +1,5 @@
 frappe.listview_settings['Meeting'] = {
-    add_fields: ["type_of_meeting", "rotaract_year"],
-    onload: function(listview) {
-        if (!frappe.route_options) { //remove this condition if not required
-            frappe.route_options = {
-                "rotaract_year": ["=", "2017-18"]
-            };
-        }
-    },
-    filters: [
-        ["rotaract_year", "=", "2017-18"]
-    ],
+    add_fields: ["type_of_meeting"],
     get_indicator: function(doc) {
         if (doc.type_of_meeting == "GBM") {
             return [__("GBM"), "green", "type_of_meeting,=,GBM"];

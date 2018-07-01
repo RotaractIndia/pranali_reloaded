@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-# Copyright (c) 2017, Rtr.Neil Trini Lasrado and Contributors
+# Copyright (c) 2018, Rtr.Neil Trini Lasrado and Contributors
 # See license.txt
 from __future__ import unicode_literals
 
 import frappe
 import unittest
 
-class TestRotaractYear(unittest.TestCase):
+class TestPranaliSettings(unittest.TestCase):
 	pass

@@ -13,7 +13,6 @@ class AmbassadorialReport(Document):
 		self.document_status='draft'
 		self.check_duplicates()
 		self.count_total()
-		self.rotaract_year=frappe.db.get_single_value("Pranali Settings", "current_rotaract_year")
 		if self.project_of=="Others" and not self.name_of_the_club:
 			frappe.throw("Please enter name of the Club")
 

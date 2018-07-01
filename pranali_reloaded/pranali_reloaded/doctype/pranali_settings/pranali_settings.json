@@ -14,12 +14,13 @@
  "fields": [
   {
    "allow_bulk_edit": 0, 
+   "allow_in_quick_entry": 0, 
    "allow_on_submit": 0, 
    "bold": 0, 
    "collapsible": 0, 
    "columns": 0, 
-   "fieldname": "current_rotaract_year", 
-   "fieldtype": "Link", 
+   "fieldname": "membership_dues", 
+   "fieldtype": "Int", 
    "hidden": 0, 
    "ignore_user_permissions": 0, 
    "ignore_xss_filter": 0, 
@@ -27,10 +28,10 @@
    "in_global_search": 0, 
    "in_list_view": 1, 
    "in_standard_filter": 0, 
-   "label": "Current Rotaract Year", 
+   "label": "Membership Dues", 
    "length": 0, 
    "no_copy": 0, 
-   "options": "Rotaract Year", 
+   "options": "", 
    "permlevel": 0, 
    "precision": "", 
    "print_hide": 0, 
@@ -41,6 +42,7 @@
    "reqd": 1, 
    "search_index": 0, 
    "set_only_once": 0, 
+   "translatable": 0, 
    "unique": 0
   }
  ], 
@@ -54,7 +56,7 @@
  "issingle": 1, 
  "istable": 0, 
  "max_attachments": 0, 
- "modified": "2017-07-08 17:10:20.922292", 
+ "modified": "2018-07-01 11:57:21.841690", 
  "modified_by": "Administrator", 
  "module": "Pranali Reloaded", 
  "name": "Pranali Settings", 
@@ -63,7 +65,6 @@
  "permissions": [
   {
    "amend": 0, 
-   "apply_user_permissions": 0, 
    "cancel": 0, 
    "create": 1, 
    "delete": 1, 
@@ -89,5 +90,6 @@
  "sort_field": "modified", 
  "sort_order": "DESC", 
  "track_changes": 1, 
- "track_seen": 0
+ "track_seen": 0, 
+ "track_views": 0
 }

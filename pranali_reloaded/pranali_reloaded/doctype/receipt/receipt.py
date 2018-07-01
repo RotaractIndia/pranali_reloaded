@@ -9,7 +9,6 @@ from frappe.utils import now
 
 class Receipt(Document):
 	def validate(self):
-		self.rotaract_year = frappe.db.get_single_value("Pranali Settings", "current_rotaract_year")
 		if not self.club:
 			self.title = self.receivers_name
 			
