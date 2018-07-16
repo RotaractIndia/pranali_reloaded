@@ -4,6 +4,7 @@
 from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
+from frappe.utils import flt
 
 class Member(Document):
 	def validate(self):
@@ -15,7 +16,7 @@ class Member(Document):
 		self.zone = frappe.db.get_value("Club", self.club, "zone")
 		
 	def validate_dues(self):
-		district_dues = frappe.db.get_single_value("Pranali Settings", "membership_dues")
+		district_dues = flt(frappe.db.get_single_value("Pranali Settings", "membership_dues"))
 		if not self.dues_paid:
 			balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
 			if balance_amount < district_dues:
@@ -28,7 +29,7 @@ class Member(Document):
 
 	def on_trash(self):
 		if self.dues_paid:	
-			district_dues = frappe.db.get_single_value("Pranali Settings", "membership_dues")
+			district_dues = flt(frappe.db.get_single_value("Pranali Settings", "membership_dues"))
 			balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
 			frappe.db.set_value("Club", self.club, "balance_amount", balance_amount + district_dues)
 			members_registered = frappe.db.get_value("Club", self.club, "members_registered")
