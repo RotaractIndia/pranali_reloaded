@@ -25,8 +25,6 @@
   "end_time",
   "section_break_19",
   "project_level",
-  "column_break_20",
-  "frequency",
   "section_break_14",
   "aim",
   "section_break_16",
@@ -172,17 +170,6 @@
    "fieldtype": "Select",
    "label": "Project Level",
    "options": "Club\nInter Club\nZone\nDistrict\nInter District",
-   "reqd": 1
-  },
-  {
-   "fieldname": "column_break_20",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "frequency",
-   "fieldtype": "Select",
-   "label": "Frequency",
-   "options": "One Time Only\nWeekly\nFortnightly\nMonthly\nBi-Monthly\nQuarterly\nHalf-Yearly\nAnnually",
    "reqd": 1
   },
   {
@@ -376,7 +363,7 @@
  ],
  "hide_toolbar": 1,
  "is_submittable": 1,
- "modified": "2019-08-04 23:30:15.663824",
+ "modified": "2019-08-05 00:00:46.370310",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Project",
