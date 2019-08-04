@@ -69,6 +69,12 @@ def set_desktop_icons():
 				"type": 'query-report',
 				"name": 'Directory',
 				"link": '#query-report/Directory',
+			},
+			{
+				"category": "Administration",
+				"label": _('Pay Dues'),
+				"icon": "octicon octicon-file-submodule",
+				"link": '/pay',
 			}
 		]
 	}
