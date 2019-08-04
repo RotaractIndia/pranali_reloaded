@@ -13,6 +13,18 @@ doctype_js = {
 
 app_include_js = ["/assets/pranali_reloaded/js/desk_common.js"]
 
+app_logo_url = "/assets/pranali_reloaded/img/rotary-wheel.png"
+
+website_context = {
+	"favicon": "/assets/pranali_reloaded/img/rotary-wheel.png",
+	"splash_image": "/assets/pranali_reloaded/img/rotary-wheel.png",
+}
+
+override_whitelisted_methods = {
+ 	"frappe.desk.moduleview.get_desktop_settings": "pranali_reloaded.desk.set_desktop_icons"
+}
+
+
 # Includes in <head>
 # ------------------
 
@@ -106,8 +118,3 @@ app_include_js = ["/assets/pranali_reloaded/js/desk_common.js"]
 # Overriding Whitelisted Methods
 # ------------------------------
 #
-
-override_whitelisted_methods = {
- 	"frappe.desk.moduleview.get_desktop_settings": "pranali_reloaded.desk.set_desktop_icons"
-}
-
