@@ -106,7 +106,8 @@ app_include_js = ["/assets/pranali_reloaded/js/desk_common.js"]
 # Overriding Whitelisted Methods
 # ------------------------------
 #
-# override_whitelisted_methods = {
-# 	"frappe.desk.doctype.event.event.get_events": "pranali_reloaded.event.get_events"
-# }
+
+override_whitelisted_methods = {
+ 	"frappe.desk.moduleview.get_desktop_settings": "pranali_reloaded.desk.set_desktop_icons"
+}
 
