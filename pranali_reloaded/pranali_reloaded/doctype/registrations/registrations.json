@@ -7,10 +7,12 @@
  "field_order": [
   "first_name",
   "last_name",
+  "amended_from",
   "column_break_3",
   "email",
   "club",
-  "amended_from"
+  "user",
+  "enabled"
  ],
  "fields": [
   {
@@ -56,10 +58,25 @@
    "options": "Registrations",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "depends_on": "user",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
   }
  ],
  "is_submittable": 1,
- "modified": "2019-08-05 00:35:03.739026",
+ "modified": "2019-08-06 00:20:55.306182",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Registrations",
@@ -85,7 +102,9 @@
    "read": 1,
    "report": 1,
    "role": "presec",
-   "share": 1
+   "share": 1,
+   "submit": 1,
+   "write": 1
   }
  ],
  "quick_entry": 1,

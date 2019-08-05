@@ -7,7 +7,7 @@ import frappe
 from frappe.model.document import Document
 
 class Registrations(Document):
-	def on_submit(self):
+	def before_submit(self):
 		user = frappe.new_doc("User")
 		user.update({
 			"first_name": self.first_name,
@@ -22,8 +22,16 @@ class Registrations(Document):
 			]
 		})
 		user.save()
+		self.user = user.name
+		self.enabled=True
 		permission = frappe.new_doc("User Permission")
 		permission.user = user.name
 		permission.allow = "Club"
 		permission.for_value = self.club
 		permission.save()
+
+	def on_update_after_submit(self):
+		if self.user:
+			user=frappe.get_doc("User", self.user)
+			user.enabled=self.enabled
+			user.save()
