@@ -24,6 +24,16 @@ override_whitelisted_methods = {
  	"frappe.desk.moduleview.get_desktop_settings": "pranali_reloaded.desk.set_desktop_icons"
 }
 
+# Document Events
+# ---------------
+# Hook on document methods and events
+
+doc_events = {
+ 	"User": {
+ 		"validate": "pranali_reloaded.hook_events.user.set_user_permissions_for_dcm"
+	}
+}
+
 
 # Includes in <head>
 # ------------------
@@ -75,18 +85,6 @@ override_whitelisted_methods = {
 #
 # has_permission = {
 # 	"Event": "frappe.desk.doctype.event.event.has_permission",
-# }
-
-# Document Events
-# ---------------
-# Hook on document methods and events
-
-# doc_events = {
-# 	"*": {
-# 		"on_update": "method",
-# 		"on_cancel": "method",
-# 		"on_trash": "method"
-#	}
 # }
 
 # Scheduled Tasks
