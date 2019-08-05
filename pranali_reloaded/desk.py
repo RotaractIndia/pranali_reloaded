@@ -64,7 +64,7 @@ def set_desktop_icons():
 			},
 			{
 				"category": "Administration",
-				"label": _('Directory'),
+				"label": _('District E-Directory'),
 				"icon": "octicon octicon-file-submodule",
 				"type": 'query-report',
 				"name": 'Directory',
