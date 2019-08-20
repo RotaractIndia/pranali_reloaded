@@ -15,23 +15,23 @@ class Registrations(Document):
 			"email": self.email,
 			"send_welcome_email": 1
 		})
-		user.save()
+		user.save(ignore_permissions=True)
 		user.update({
 			"roles": [
 				{"role": "presec"}
 			]
 		})
-		user.save()
+		user.save(ignore_permissions=True)
 		self.user = user.name
 		self.enabled=True
 		permission = frappe.new_doc("User Permission")
 		permission.user = user.name
 		permission.allow = "Club"
 		permission.for_value = self.club
-		permission.save()
+		permission.save(ignore_permissions=True)
 
 	def on_update_after_submit(self):
 		if self.user:
 			user=frappe.get_doc("User", self.user)
 			user.enabled=self.enabled
-			user.save()
+			user.save(ignore_permissions=True)
