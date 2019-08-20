@@ -9,6 +9,7 @@ from frappe.model.document import Document
 
 class Project(Document):
 	def validate(self):
+		self.validate_account()
 		self.validate_date()
 		self.set_status()
 		self.validate_ambassadorial()
@@ -60,3 +61,8 @@ class Project(Document):
 			
 		if self.start_time > self.end_time:
 			frappe.throw("Start Time cannot be greater than End Time.")
+
+	def validate_account(self):
+		balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
+		if balance_amount < 0:
+			frappe.throw("Your account has been locked due to Negative funds in your wallet. Please pay INR {0} to Unlock !".format(abs(balance_amount)))
