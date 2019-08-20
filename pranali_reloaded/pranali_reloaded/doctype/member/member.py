@@ -28,9 +28,11 @@ class Member(Document):
 				frappe.db.set_value("Club", self.club, "members_registered", members_registered + 1 )
 
 	def on_trash(self):
-		if self.dues_paid:	
+		if self.dues_paid:
 			district_dues = flt(frappe.db.get_single_value("Pranali Settings", "membership_dues"))
-			balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
-			frappe.db.set_value("Club", self.club, "balance_amount", balance_amount + district_dues)
-			members_registered = frappe.db.get_value("Club", self.club, "members_registered")
+			total_amount = frappe.db.sql(" select sum(amount) from tabReceipt where credit_amount=1 and club=%s",self.club)
+			if total_amount:
+				total_amount=total_amount[0][0]
+			
+			members_registered =  frappe.db.sql(" select count(name) from tabMember where credit_amount=1 and club=%s",self.club)
 			frappe.db.set_value("Club", self.club, "members_registered", members_registered - 1 )

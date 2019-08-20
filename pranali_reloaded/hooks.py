@@ -34,12 +34,12 @@ doc_events = {
 	}
 }
 
+app_include_css = "/assets/pranali_reloaded/css/pranali_reloaded.css"
 
 # Includes in <head>
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/pranali_reloaded/css/pranali_reloaded.css"
 # app_include_js = "/assets/pranali_reloaded/js/pranali_reloaded.js"
 
 # include js, css files in header of web template

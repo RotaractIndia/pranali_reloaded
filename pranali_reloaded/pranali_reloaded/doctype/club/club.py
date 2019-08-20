@@ -13,3 +13,5 @@ class Club(Document):
 			club_list = frappe.new_doc("Club List")
 			club_list.club_name = self.club_name
 			club_list.save()
+
+		
