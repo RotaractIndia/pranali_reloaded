@@ -14,17 +14,9 @@ class Receipt(Document):
 			
 	def on_submit(self):
 		self.date = now()
-		if self.club:
-			if self.credit_amount:
-				total_amount_credited_in_wallet = frappe.db.get_value("Club", self.club, "total_amount_credited_in_wallet")
-				frappe.db.set_value("Club", self.club, "total_amount_credited_in_wallet", total_amount_credited_in_wallet + self.amount)
-				balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
-				frappe.db.set_value("Club", self.club, "balance_amount", balance_amount + self.amount)
+		if self.club and self.credit_amount:
+			frappe.get_doc("Club", self.club).save()
 
 	def on_cancel(self):
-		if self.club:
-			if self.credit_amount:
-				total_amount_credited_in_wallet = frappe.db.get_value("Club", self.club, "total_amount_credited_in_wallet")
-				frappe.db.set_value("Club", self.club, "total_amount_credited_in_wallet", total_amount_credited_in_wallet - self.amount)
-				balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
-				frappe.db.set_value("Club", self.club, "balance_amount", balance_amount - self.amount)
+		if self.club and self.credit_amount:
+			frappe.get_doc("Club", self.club).save()

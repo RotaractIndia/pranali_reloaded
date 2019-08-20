@@ -18,7 +18,7 @@
  "is_standard": 1,
  "login_required": 0,
  "max_attachment_size": 0,
- "modified": "2019-08-05 01:00:17.827315",
+ "modified": "2019-08-20 20:42:57.454534",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "registrations",
@@ -32,7 +32,7 @@
  "show_sidebar": 0,
  "sidebar_items": [],
  "success_message": "Thank You! You will receive an email once your account is approved.",
- "success_url": "/",
+ "success_url": "/website",
  "title": "Registrations",
  "web_form_fields": [
   {
