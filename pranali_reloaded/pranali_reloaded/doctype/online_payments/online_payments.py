@@ -12,7 +12,6 @@ class OnlinePayments(Document):
 
 	def on_payment_authorized(self, *args, **kwargs):
 			self.db_set('paid', 1)
-			print "on payment auth called "
 			self.make_payment_entry()
 
 
