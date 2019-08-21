@@ -12,7 +12,20 @@ class OnlinePayments(Document):
 
 	def on_payment_authorized(self, *args, **kwargs):
 			self.db_set('paid', 1)
-			total_amount_credited_in_wallet = frappe.db.get_value("Club", self.club, "total_amount_credited_in_wallet")
-			frappe.db.set_value("Club", self.club, "total_amount_credited_in_wallet", total_amount_credited_in_wallet + self.amount)
-			balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
-			frappe.db.set_value("Club", self.club, "balance_amount", balance_amount + self.amount)
+			print "on payment auth called "
+			self.make_payment_entry()
+
+
+	def make_payment_entry(self):
+		receipt = frappe.new_doc("Receipt")
+		receipt.update({
+			"club":self.club,
+			"receivers_name": self.club,
+			"amount": self.amount,
+			"receivers_email_id": self.owner,
+			"description": " Online Payment ID: " + self.name,
+			"credit_amount": True
+		})
+		receipt.flags.ignore_permissions = 1
+		receipt.save()
+		receipt.submit()
