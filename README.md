@@ -16,6 +16,8 @@ Step #3: Press Enter
 Step #4: Type
 ```bench --site site1.local install-app pranali_reloaded```
 
+Step #5: Press Enter
+
 #### Learn Frappe
 
 To learn more about Frappe, consult their [documentation](https://frappe.io/docs/user/en)!
