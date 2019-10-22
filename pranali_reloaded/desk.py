@@ -83,6 +83,14 @@ def set_desktop_icons():
 				"type": 'doctype',
 				"name": 'Registrations',
 				"link": '#List/Registrations/List'
+			},
+			{
+				"category": "Administration",
+				"label": _('Insight Engine'),
+				"icon": "octicon octicon-light-bulb",
+				"type": 'page',
+				"name": 'Insight Engine',
+				"link": '#insight-engine'
 			}
 		]
 	}

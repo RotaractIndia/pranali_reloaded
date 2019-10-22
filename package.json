@@ -1,0 +1,18 @@
+{
+    "name": "pranali_reloaded",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/RotaractIndia/pranali_reloaded.git"
+    },
+    "author": "Rotaract India",
+    "license": "MIT",
+    "bugs": {
+      "url": "https://github.com/RotaractIndia/pranali_reloaded/issues"
+    },
+    "dependencies": {
+      "chart.js": "^2.8.0"
+    },
+    "devDependencies": {
+      "chart.js": "^2.8.0"
+    }
+  }
