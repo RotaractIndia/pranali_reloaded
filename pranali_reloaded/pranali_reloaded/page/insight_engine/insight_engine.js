@@ -114,11 +114,8 @@ InsightEngine = class InsightEngine {
 				layout: { padding: 30 },
 				legend: { position: 'left' },
 				tooltips: {
-					callbacks: {
-						label(tooltipItem, data) {
-							return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-						}
-					}
+					intersect : false,
+					mode:'nearest'
 				}
 			}
 		});
@@ -175,10 +172,9 @@ InsightEngine = class InsightEngine {
 					}]
 				},
 				tooltips: {
-					callbacks: {
-						label(tooltipItem, data) {
-							return tooltipItem.value;
-						}
+					tooltips: {
+						intersect : false,
+						mode:'nearest'
 					}
 				}
 			}
