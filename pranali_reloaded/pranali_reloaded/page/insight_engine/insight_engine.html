@@ -1,0 +1,80 @@
+<div class="wrapper">
+    <div class="revenue-section">
+        <div class="row">
+            <div class="col-md-3 col-xs-12 total-monthly-revenue">
+                <div class="container">
+                    <span class="amount">₹ {{ format_currency(total_income) }}</span>
+                    <span class="name">TOTAL FUNDS RAISED</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-12 total-weekly-revenue">
+                <div class="container">
+                    <span class="amount">₹ {{ format_currency(total_expenses) }}</span>
+                    <span class="name">TOTAL EXPENSES</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-12 yesterday-revenue">
+                <div class="container">
+                    <span class="amount">₹ {{ format_currency(net_profit) }}</span>
+                    <span class="name">NET PROFIT</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-12 average-monthly-revenue">
+                <div class="container">
+                    <span class="amount">{{ total_footfall }}</span>
+                    <span class="name">TOTAL FOOTFALL</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="category-product-info parent-container">
+        <div class="row">
+            <div class="col-md-6 col-xs-12 donut-chart">
+                <div class="section-heading">
+                    <p class="heading">
+                        REPORTING STATUS
+                    </p>
+                </div>
+                <canvas class="graphics"></canvas>
+            </div>
+            <div class="col-md-6 col-xs-12 table-data">
+                <div class="section-heading">
+                    <p class="heading">
+                        MOST PROFITABLE PROJECTS
+                        <span>
+                            by Revenue
+                        </span>
+                    </p>
+                </div>
+                <div class="products">
+                    <table width="100%" cellpadding="5">
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Project</th>
+                                <th>Avenue 1</th>
+                                <th>Avenue 2</th>
+                                <th>Net Profit</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="chart-container parent-container">
+        <div class="row">
+            <div class="section-heading">
+                <p class="heading">
+                    PROJECT COUNT
+                    <span>
+                        by Avenue
+                    </span>
+                </p>
+            </div>
+            <canvas class="chart-graphics"></canvas>
+        </div>
+    </div>
+
+</div>
