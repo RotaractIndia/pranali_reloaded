@@ -95,40 +95,8 @@ InsightEngine = class InsightEngine {
 
 	renderCharts() {
 		const opacity = 0.6;
-		const colors = {
-			hex: [
-				// no opacity
-				'#F58767',
-				'#505362',
-				'#69829E',
-				'#80BD9E',
-				'#ADBD38',
-				'#598233',
-				// hack to repeat colors
-				'#F58767',
-				'#505362',
-				'#69829E',
-				'#80BD9E',
-				'#ADBD38',
-				'#598233'
-			],
-			rgba: [
-				// applied opacity
-				`rgba(245, 135, 103, ${opacity})`,
-				`rgba(80, 83, 98, ${opacity})`,
-				`rgba(105, 130, 158, ${opacity})`,
-				`rgba(128, 189, 158, ${opacity})`,
-				`rgba(173, 189, 56, ${opacity})`,
-				`rgba(89, 130, 5, ${opacity})`,
-				// hack to repeat colors
-				`rgba(245, 135, 103, ${opacity})`,
-				`rgba(80, 83, 98, ${opacity})`,
-				`rgba(105, 130, 158, ${opacity})`,
-				`rgba(128, 189, 158, ${opacity})`,
-				`rgba(173, 189, 56, ${opacity})`,
-				`rgba(89, 130, 5, ${opacity})`
-			]
-		}
+		const colors = ['#eeef37','#ff6a05','#0c8d00','#21bda9', '#7bf2bf', 
+			'#f0c789', '#704041', '#adf2f1', '#ef9798', '#f4b02f', '#009fff', '#197a64']
 
 		// Reporting Status
 		new Chart($(".category-product-info .donut-chart .graphics"), {
@@ -137,8 +105,8 @@ InsightEngine = class InsightEngine {
 				labels: this.dashboard_data.reporting_status.map(elem => elem.status),
 				datasets: [{
 					data: this.dashboard_data.reporting_status.map(elem => elem.count),
-					backgroundColor: colors.rgba,
-					borderColor: colors.hex,
+					backgroundColor: colors,
+					borderColor: colors,
 					borderWidth: 1.5
 				}]
 			},
@@ -148,7 +116,7 @@ InsightEngine = class InsightEngine {
 				tooltips: {
 					callbacks: {
 						label(tooltipItem, data) {
-							return format_currency(data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index]);
+							return data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
 						}
 					}
 				}
@@ -169,14 +137,14 @@ InsightEngine = class InsightEngine {
 			$('.table-data tbody').append(row);
 		});
 
-		// Total projects per month
+		// Avenue wise project count
 		let datasets = [];
 		Object.keys(this.dashboard_data.projects_per_month).forEach((item, i) => {
-			if(i < 5) {
+			if(i < 11) {
 				datasets.push({
 					label: item,
-					backgroundColor: colors.rgba[i],
-					borderColor: colors.hex[i],
+					backgroundColor: colors[i],
+					borderColor: colors[i],
 					borderWidth: 1.5,
 					fill: false,
 					data: this.dashboard_data.projects_per_month[item]
@@ -187,7 +155,7 @@ InsightEngine = class InsightEngine {
 		new Chart($(".chart-graphics"), {
 			type: 'line',
 			data: {
-				labels:  this.dashboard_data.projects_per_month.keys(),
+				labels: this.dashboard_data.reporting_months,
 				datasets: datasets
 			},
 			options: {
