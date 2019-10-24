@@ -165,6 +165,7 @@ InsightEngine = class InsightEngine {
 					yAxes: [{
 						gridLines: { display: false },
 						ticks: {
+							stepSize: 1,
 							callback(value, index, values) {
 								return value;
 							}
