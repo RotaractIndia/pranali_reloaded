@@ -56,11 +56,11 @@ def get_data():
 		},
 		
 		"Messages": {
-					"color": "#9b59b6",
-					"icon": "icon-comments",
-					"label": _("Messages"),
-					"link": "messages",
-					"type": "page"
+			"color": "#9b59b6",
+			"icon": "icon-comments",
+			"label": _("Messages"),
+			"link": "messages",
+			"type": "page"
 		},
 		
 		"Receipt": {
