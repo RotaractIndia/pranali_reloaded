@@ -13,7 +13,7 @@ from frappe import _
 @frappe.whitelist()
 def set_desktop_icons():
 	desktop = {
-		"Administration": [
+		"Modules": [
 			{
 				"category": "Administration",
 				"label": _('Club'),
@@ -94,4 +94,8 @@ def set_desktop_icons():
 			}
 		]
 	}
+	icons = frappe.get_hooks("icons")
+	print(icons)
+	if icons:
+		 desktop.get("Modules").append(icons)
 	return desktop
