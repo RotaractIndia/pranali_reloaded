@@ -5,15 +5,9 @@ import datetime
 
 @frappe.whitelist()
 def get_dashboards(club):
-	user_club = frappe.db.get_all("User Permission",
-	filters={"user": frappe.session.user, "allow": "Club"},
-	fields=["for_value"])
-
-	if user_club:
-		club = user_club[0].for_value
-	else:
-		frappe.throw("No Club Assigned!")
-
+	if not club:
+		return None 
+		
 	values = frappe.get_all("Project",
 		filters={"club": club, "docstatus": 1},
 		fields=["sum(incomes) as income, sum(expenditure) as expense, sum(total) as footfall"])

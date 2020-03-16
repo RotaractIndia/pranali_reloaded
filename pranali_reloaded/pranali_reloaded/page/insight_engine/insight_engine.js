@@ -12,8 +12,8 @@ frappe.pages['insight-engine'].on_page_load = function(wrapper) {
 }
 
 InsightEngine = class InsightEngine {
-	constructor(wrapper) {
-		this.setup(wrapper);
+	constructor(parent) {
+		this.setup(parent);
 		const assets = [
 			'assets/js/chart.js',
 			'assets/pranali_reloaded/css/insight_engine.css'
@@ -24,28 +24,30 @@ InsightEngine = class InsightEngine {
 		});
 	}
 
-	setup(wrapper) {
+	setup(parent) {
 		let me = this;
-		this.elements = {
-			parent: $(wrapper).find(".layout-main"),
-			refresh_btn: wrapper.page.set_primary_action(__("Refresh All"), () => { me.make() }, "fa fa-refresh"),
-		};
-
-		this.elements.no_data = $('<div class="alert alert-warning">' + __("No Data") + '</div>')
-			.toggle(false)
-			.appendTo(this.elements.parent);
-
-		wrapper.page.add_field({
+		let club_control = parent.page.add_field({
 			fieldname: "club",
 			label: __("Club"),
 			fieldtype: "Link",
 			options: "Club",
 			reqd: 1,
 			change: (field) => {
-				me.elements.selected_club = field.currentTarget.value;
 				me.make();
 			}
 		});
+
+
+		this.elements = {
+			parent: $(parent).find(".layout-main"),
+			club: club_control,
+			refresh_btn: parent.page.set_primary_action(__("Refresh All"), () => { me.make() }, "fa fa-refresh"),
+		};
+
+		this.elements.no_data = $('<div class="alert alert-warning">' + __("No Data") + '</div>')
+			.toggle(false)
+			.appendTo(this.elements.parent);
+
 	}
 
 	async make() {
@@ -56,12 +58,10 @@ InsightEngine = class InsightEngine {
 
 	async getData() {
 		let me = this;
-		console.log(this)
 		await frappe.call({
 			method: "pranali_reloaded.pranali_reloaded.page.insight_engine.insight_engine.get_dashboards",
 			args: {
-				// "club": me.elements.selected_club || ""
-				"club": " "
+				"club": me.elements.club.value,
 			},
 			callback: (r) => {
 				if (!r.exc && r.message) {
@@ -71,21 +71,6 @@ InsightEngine = class InsightEngine {
 				}
 			}
 		});
-	}
-
-	getDateRangeAsArray(startDate, stopDate) {
-		let dateArray = [];
-
-		// Default the dashboard input dates to a week
-		startDate = moment(startDate || moment().subtract(7, 'days'));
-		stopDate = moment(stopDate || moment().subtract(1, 'day'));
-
-		while (startDate <= stopDate) {
-			dateArray.push(moment(startDate).format('MMM D'))
-			startDate = moment(startDate).add(1, 'day');
-		}
-
-		return dateArray;
 	}
 
 	renderPage() {
