@@ -12,8 +12,8 @@ frappe.pages['insight-engine'].on_page_load = function(wrapper) {
 }
 
 InsightEngine = class InsightEngine {
-	constructor(wrapper) {
-		this.setup(wrapper);
+	constructor(parent) {
+		this.setup(parent);
 		const assets = [
 			'assets/js/chart.js',
 			'assets/pranali_reloaded/css/insight_engine.css'
@@ -24,28 +24,30 @@ InsightEngine = class InsightEngine {
 		});
 	}
 
-	setup(wrapper) {
+	setup(parent) {
 		let me = this;
-		this.elements = {
-			parent: $(wrapper).find(".layout-main"),
-			refresh_btn: wrapper.page.set_primary_action(__("Refresh All"), () => { me.make() }, "fa fa-refresh"),
-		};
-
-		this.elements.no_data = $('<div class="alert alert-warning">' + __("No Data") + '</div>')
-			.toggle(false)
-			.appendTo(this.elements.parent);
-
-		wrapper.page.add_field({
+		let club_control = parent.page.add_field({
 			fieldname: "club",
 			label: __("Club"),
 			fieldtype: "Link",
 			options: "Club",
 			reqd: 1,
 			change: (field) => {
-				me.elements.selected_club = field.currentTarget.value;
 				me.make();
 			}
 		});
+
+
+		this.elements = {
+			parent: $(parent).find(".layout-main"),
+			club: club_control,
+			refresh_btn: parent.page.set_primary_action(__("Refresh All"), () => { me.make() }, "fa fa-refresh"),
+		};
+
+		this.elements.no_data = $('<div class="alert alert-warning">' + __("No Data") + '</div>')
+			.toggle(false)
+			.appendTo(this.elements.parent);
+
 	}
 
 	async make() {
@@ -56,15 +58,14 @@ InsightEngine = class InsightEngine {
 
 	async getData() {
 		let me = this;
-		console.log(this)
 		await frappe.call({
 			method: "pranali_reloaded.pranali_reloaded.page.insight_engine.insight_engine.get_dashboards",
 			args: {
-				// "club": me.elements.selected_club || ""
-				"club": " "
+				"club": me.elements.club.value,
 			},
 			callback: (r) => {
 				if (!r.exc && r.message) {
+					me.elements.no_data.toggle(false);
 					me.dashboard_data = r.message;
 				} else {
 					me.elements.no_data.toggle(true);
@@ -73,24 +74,15 @@ InsightEngine = class InsightEngine {
 		});
 	}
 
-	getDateRangeAsArray(startDate, stopDate) {
-		let dateArray = [];
-
-		// Default the dashboard input dates to a week
-		startDate = moment(startDate || moment().subtract(7, 'days'));
-		stopDate = moment(stopDate || moment().subtract(1, 'day'));
-
-		while (startDate <= stopDate) {
-			dateArray.push(moment(startDate).format('MMM D'))
-			startDate = moment(startDate).add(1, 'day');
-		}
-
-		return dateArray;
-	}
-
 	renderPage() {
-		let html = frappe.render_template("insight_engine", this.dashboard_data)
-		this.elements.parent.html(html);
+		let html = frappe.render_template("insight_engine", this.dashboard_data);
+		let wrapper = this.elements.parent.find(".wrapper");
+
+		if (wrapper.length) {
+			wrapper.html(html);
+		} else {
+			this.elements.parent.append(html);
+		}
 	}
 
 	renderCharts() {
@@ -122,10 +114,11 @@ InsightEngine = class InsightEngine {
 
 		// Most Profitable Projects
 		this.dashboard_data.top_projects.map((data, i) => {
+			var project_link = "/desk#Form/Project/" + data.name;
 			let row = `
 				<tr>
 					<td> ${ (i+1) } </td>
-					<td> ${ data.project_name } </td>
+					<td> <a href= ${ project_link } target= "_blank" > ${ data.project_name } </a></td>
 					<td> ${ data.avenue_1 } </td>
 					<td> ${ data.avenue_2 } </td>
 					<td> ₹  ${ data.net_profit } </td>
@@ -179,6 +172,53 @@ InsightEngine = class InsightEngine {
 					}
 				}
 			}
-		});		
+		});	
+		
+		// Avenue wise time spent on projects
+		let time_datasets = [];
+		Object.keys(this.dashboard_data.projects_time_per_month).forEach((item, i) => {
+			if(i < 11) {
+				time_datasets.push({
+					label: item,
+					backgroundColor: colors[i],
+					borderColor: colors[i],
+					borderWidth: 1.5,
+					fill: false,
+					data: this.dashboard_data.projects_time_per_month[item]
+				})
+			}
+		});
+
+		new Chart($(".chart-time-graphics"), {
+			type: 'line',
+			data: {
+				labels: this.dashboard_data.reporting_months,
+				datasets: time_datasets
+			},
+			options: {
+				legend: { position: 'bottom' },
+				layout: { padding: 30 },
+				scales: {
+					xAxes: [{
+						gridLines: { display: false }
+					}],
+					yAxes: [{
+						gridLines: { display: false },
+						ticks: {
+							stepSize: 250,
+							callback(value, index, values) {
+								return value;
+							}
+						}
+					}]
+				},
+				tooltips: {
+					tooltips: {
+						intersect : false,
+						mode:'nearest'
+					}
+				}
+			}
+		});
 	}
 }
