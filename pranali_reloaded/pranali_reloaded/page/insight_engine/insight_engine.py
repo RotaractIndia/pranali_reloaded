@@ -2,20 +2,25 @@ from datetime import timedelta
 
 import frappe
 import datetime
-from frappe.utils import flt
+from frappe.utils import flt, cint
 
 @frappe.whitelist()
 def get_dashboards(club=None):
 	if not club:
 		return None 
 		
-	values = frappe.get_all("Project",
+	project_stats = frappe.get_all("Project",
 		filters={"club": club, "docstatus": 1},
-		fields=["sum(incomes) as income, sum(expenditure) as expense, sum(total) as footfall"])
+		fields=["""count(name) as project_count, sum(incomes) as income, sum(expenditure) as expense, 
+			sum(total) as footfall, sum(TIMEDIFF(end_time, start_time)) as total_time"""])
 
+	meeting_stats = frappe.get_all("Meeting",
+		filters={"club": club, "docstatus": 1},
+		fields=["count(name) as meeting_count, sum(TIMEDIFF(end_time, start_time)) as total_time"])
+	
 	top_projects = frappe.get_all("Project",
 		filters={"club": club, "docstatus": 1},
-		fields=["project_name", "avenue_1", "avenue_2", "(incomes - expenditure) as net_profit"],
+		fields=["name","project_name", "avenue_1", "avenue_2", "(incomes - expenditure) as net_profit"],
 		order_by="net_profit desc",
 		limit=5)
 
@@ -96,25 +101,20 @@ def get_dashboards(club=None):
 		'HRD' : hrd_count
 	}
 
-	if values:
-		return {
-			"total_income": values[0].income,
-			"total_expenses": values[0].expense,
-			"net_profit": flt(values[0].income) - flt(values[0].expense),
-			"total_footfall": values[0].footfall,
-			"top_projects": top_projects,
-			"reporting_status": reporting_status,
-			"projects_per_month": projects_per_month,
-			"reporting_months": reporting_months
-		}
-	else:
-		return {
-			"total_income": 0,
-			"total_expenses": 0,
-			"net_profit": 0,
-			"total_footfall": 0,
-		}
-
+	return {
+		"total_income": project_stats[0].income,
+		"total_expenses": project_stats[0].expense,
+		"net_profit": flt(project_stats[0].income) - flt(project_stats[0].expense),
+		"total_footfall": cint(project_stats[0].footfall),
+		"total_projects": project_stats[0].project_count,
+		"total_project_time": cint(project_stats[0].total_time) // 3600,
+		"total_meetings":  cint(meeting_stats[0].meeting_count),
+		"total_meeting_time": cint(meeting_stats[0].total_time) // 3600,
+		"top_projects": top_projects,
+		"reporting_status": reporting_status,
+		"projects_per_month": projects_per_month,
+		"reporting_months": reporting_months
+	}
 
 def get_club_projects(club, month):
 	projects = frappe.get_all("Project",

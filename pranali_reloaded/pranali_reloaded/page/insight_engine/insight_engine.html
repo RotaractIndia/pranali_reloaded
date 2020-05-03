@@ -1,28 +1,54 @@
 <div class="wrapper">
     <div class="revenue-section">
         <div class="row">
-            <div class="col-md-3 col-xs-12 total-monthly-revenue">
+            <div class="col-md-3 col-xs-12">
                 <div class="container">
                     <span class="amount">₹ {{ format_currency(total_income) }}</span>
                     <span class="name">TOTAL FUNDS RAISED</span>
                 </div>
             </div>
-            <div class="col-md-3 col-xs-12 total-weekly-revenue">
+            <div class="col-md-3 col-xs-12">
                 <div class="container">
                     <span class="amount">₹ {{ format_currency(total_expenses) }}</span>
                     <span class="name">TOTAL EXPENSES</span>
                 </div>
             </div>
-            <div class="col-md-3 col-xs-12 yesterday-revenue">
+            <div class="col-md-3 col-xs-12">
                 <div class="container">
                     <span class="amount">₹ {{ format_currency(net_profit) }}</span>
                     <span class="name">NET PROFIT</span>
                 </div>
             </div>
-            <div class="col-md-3 col-xs-12 average-monthly-revenue">
+            <div class="col-md-3 col-xs-12">
                 <div class="container">
                     <span class="amount">{{ total_footfall }}</span>
                     <span class="name">TOTAL FOOTFALL</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-xs-12">
+                <div class="container">
+                    <span class="amount">{{ total_projects }}</span>
+                    <span class="name">TOTAL PROJECTS REPORTED</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-12">
+                <div class="container">
+                    <span class="amount">{{ total_project_time }} Hours</span>
+                    <span class="name">TIME SPENT ON PROJECTS</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-12">
+                <div class="container">
+                    <span class="amount">{{ total_meetings }}</span>
+                    <span class="name">TOTAL MEETINGS REPORTED</span>
+                </div>
+            </div>
+            <div class="col-md-3 col-xs-12">
+                <div class="container">
+                    <span class="amount">{{ total_meeting_time }} Hours</span>
+                    <span class="name">TIME SPENT ON MEETINGS</span>
                 </div>
             </div>
         </div>

@@ -114,10 +114,11 @@ InsightEngine = class InsightEngine {
 
 		// Most Profitable Projects
 		this.dashboard_data.top_projects.map((data, i) => {
+			var project_link = "/desk#Form/Project/" + data.name;
 			let row = `
 				<tr>
 					<td> ${ (i+1) } </td>
-					<td> ${ data.project_name } </td>
+					<td> <a href= ${ project_link } target= "_blank" > ${ data.project_name } </a></td>
 					<td> ${ data.avenue_1 } </td>
 					<td> ${ data.avenue_2 } </td>
 					<td> ₹  ${ data.net_profit } </td>
