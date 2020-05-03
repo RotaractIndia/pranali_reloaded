@@ -172,6 +172,53 @@ InsightEngine = class InsightEngine {
 					}
 				}
 			}
-		});		
+		});	
+		
+		// Avenue wise time spent on projects
+		let time_datasets = [];
+		Object.keys(this.dashboard_data.projects_time_per_month).forEach((item, i) => {
+			if(i < 11) {
+				time_datasets.push({
+					label: item,
+					backgroundColor: colors[i],
+					borderColor: colors[i],
+					borderWidth: 1.5,
+					fill: false,
+					data: this.dashboard_data.projects_time_per_month[item]
+				})
+			}
+		});
+
+		new Chart($(".chart-time-graphics"), {
+			type: 'line',
+			data: {
+				labels: this.dashboard_data.reporting_months,
+				datasets: time_datasets
+			},
+			options: {
+				legend: { position: 'bottom' },
+				layout: { padding: 30 },
+				scales: {
+					xAxes: [{
+						gridLines: { display: false }
+					}],
+					yAxes: [{
+						gridLines: { display: false },
+						ticks: {
+							stepSize: 250,
+							callback(value, index, values) {
+								return value;
+							}
+						}
+					}]
+				},
+				tooltips: {
+					tooltips: {
+						intersect : false,
+						mode:'nearest'
+					}
+				}
+			}
+		});
 	}
 }
