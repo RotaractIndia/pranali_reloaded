@@ -2,9 +2,10 @@ from datetime import timedelta
 
 import frappe
 import datetime
+from frappe.utils import flt
 
 @frappe.whitelist()
-def get_dashboards(club):
+def get_dashboards(club=None):
 	if not club:
 		return None 
 		
@@ -99,7 +100,7 @@ def get_dashboards(club):
 		return {
 			"total_income": values[0].income,
 			"total_expenses": values[0].expense,
-			"net_profit": values[0].income - values[0].expense,
+			"net_profit": flt(values[0].income) - flt(values[0].expense),
 			"total_footfall": values[0].footfall,
 			"top_projects": top_projects,
 			"reporting_status": reporting_status,

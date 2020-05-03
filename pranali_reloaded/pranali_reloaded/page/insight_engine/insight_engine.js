@@ -65,6 +65,7 @@ InsightEngine = class InsightEngine {
 			},
 			callback: (r) => {
 				if (!r.exc && r.message) {
+					me.elements.no_data.toggle(false);
 					me.dashboard_data = r.message;
 				} else {
 					me.elements.no_data.toggle(true);
@@ -74,8 +75,14 @@ InsightEngine = class InsightEngine {
 	}
 
 	renderPage() {
-		let html = frappe.render_template("insight_engine", this.dashboard_data)
-		this.elements.parent.html(html);
+		let html = frappe.render_template("insight_engine", this.dashboard_data);
+		let wrapper = this.elements.parent.find(".wrapper");
+
+		if (wrapper.length) {
+			wrapper.html(html);
+		} else {
+			this.elements.parent.append(html);
+		}
 	}
 
 	renderCharts() {
