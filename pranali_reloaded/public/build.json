@@ -1,5 +1,9 @@
 {
 	"js/chart.js": [
 		"node_modules/chart.js/dist/Chart.min.js"
-	]
+
+	],
+	"js/pranali_desk.js": [
+        "public/js/desk.js"
+    ]
 }

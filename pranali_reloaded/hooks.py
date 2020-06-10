@@ -11,7 +11,10 @@ doctype_js = {
 	"User": "public/js/user.js"
 }
 
-app_include_js = ["/assets/pranali_reloaded/js/desk_common.js"]
+app_include_js = [
+	"/assets/pranali_reloaded/js/desk_common.js",
+	"/assets/js/pranali_desk.js"
+]
 
 app_logo_url = "/assets/pranali_reloaded/img/rotary-wheel.png"
 

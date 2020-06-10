@@ -13,9 +13,8 @@ from frappe import _
 @frappe.whitelist()
 def set_desktop_icons():
 	desktop = {
-		"Modules": [
+		"Club Administration": [
 			{
-				"category": "Administration",
 				"label": _('Club'),
 				"icon": "octicon octicon-home",
 				"type": 'doctype',
@@ -23,7 +22,6 @@ def set_desktop_icons():
 				"link": '#List/Club/List'
 			},
 			{
-				"category": "Administration",
 				"label": _('Member'),
 				"icon": "octicon octicon-organization",
 				"type": 'doctype',
@@ -31,15 +29,15 @@ def set_desktop_icons():
 				"link": '#List/Member/List'
 			},
 			{
-				"category": "Administration",
 				"label": _('Receipt'),
 				"icon": "octicon octicon-gist-secret",
 				"type": 'doctype',
 				"name": 'Receipt',
 				"link": '#List/Receipt/List'
-			},
+			}
+		],
+		"Reporting": [
 			{
-				"category": "Administration",
 				"label": _('Project'),
 				"icon": "octicon octicon-rocket",
 				"type": 'doctype',
@@ -47,7 +45,6 @@ def set_desktop_icons():
 				"link": '#List/Project/List'
 			},
 			{
-				"category": "Administration",
 				"label": _('Meeting'),
 				"icon": "octicon octicon-briefcase",
 				"type": 'doctype',
@@ -55,15 +52,15 @@ def set_desktop_icons():
 				"link": '#List/Meeting/List'
 			},
 			{
-				"category": "Administration",
 				"label": _('Ambassadorial Report'),
 				"icon": "octicon octicon-globe",
 				"type": 'doctype',
 				"name": 'Ambassadorial Report',
 				"link": '#List/Ambassadorial Report/List'
-			},
+			}
+		],
+		"Tools": [
 			{
-				"category": "Administration",
 				"label": _('District E-Directory'),
 				"icon": "octicon octicon-file-submodule",
 				"type": 'query-report',
@@ -71,31 +68,24 @@ def set_desktop_icons():
 				"link": '#query-report/Directory'
 			},
 			{
-				"category": "Administration",
-				"label": _('Pay Dues Online'),
-				"icon": "octicon octicon-credit-card",
-				"link": '/pay',
-			},
-			{
-				"category": "Administration",
-				"label": _('Pranali User Registration'),
-				"icon": "octicon octicon-organization",
-				"type": 'doctype',
-				"name": 'Registrations',
-				"link": '#List/Registrations/List'
-			},
-			{
-				"category": "Administration",
 				"label": _('Insight Engine'),
 				"icon": "octicon octicon-light-bulb",
 				"type": 'page',
 				"name": 'Insight Engine',
 				"link": '#insight-engine'
+			},
+			{
+				"label": _('Pranali User Registration'),
+				"icon": "octicon octicon-organization",
+				"type": 'doctype',
+				"name": 'Registrations',
+				"link": '#List/Registrations/List'
 			}
 		]
 	}
-	icons = frappe.get_hooks("icons")
-	print(icons)
-	if icons:
-		 desktop.get("Modules").append(icons)
+	hook_icons = frappe.get_hooks("icons")
+	for icon in hook_icons:
+		 desktop.get(icon.get('module')).append(icon)
+	
+	print(desktop)
 	return desktop

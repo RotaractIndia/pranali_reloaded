@@ -1,4 +1,5 @@
 {
+ "actions": [],
  "allow_import": 1,
  "autoname": "PROJ.######",
  "creation": "2015-03-19 13:05:26.524336",
@@ -169,7 +170,7 @@
    "fieldname": "project_level",
    "fieldtype": "Select",
    "label": "Project Level",
-   "options": "Club\nInter Club\nZone\nDistrict\nInter District",
+   "options": "Club\nZone\nDistrict\nGlobal",
    "reqd": 1
   },
   {
@@ -362,7 +363,8 @@
   }
  ],
  "is_submittable": 1,
- "modified": "2019-08-20 16:01:03.748699",
+ "links": [],
+ "modified": "2020-06-10 13:53:31.113861",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Project",
