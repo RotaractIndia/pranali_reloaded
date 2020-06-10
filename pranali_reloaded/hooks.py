@@ -17,6 +17,7 @@ app_include_js = [
 ]
 
 app_logo_url = "/assets/pranali_reloaded/img/rotary-wheel.png"
+brand_html = "Pranali"
 
 website_context = {
 	"favicon": "/assets/pranali_reloaded/img/rotary-wheel.png",

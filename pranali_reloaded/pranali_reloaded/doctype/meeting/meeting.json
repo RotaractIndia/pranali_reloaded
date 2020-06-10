@@ -1,7 +1,9 @@
 {
+ "actions": [],
  "autoname": "MEET.######",
  "creation": "2015-04-17 18:46:12.357408",
  "doctype": "DocType",
+ "engine": "InnoDB",
  "field_order": [
   "date",
   "start_time",
@@ -50,7 +52,7 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Type of meeting",
-   "options": "GBM\nBOD Meet\nJoint Meet\nOCV\nAny Other"
+   "options": "GBM\nBOD Meet\nJoint Meet\nPIS Interaction\nOCV\nAny Other"
   },
   {
    "fieldname": "column_break_3",
@@ -182,7 +184,8 @@
   }
  ],
  "is_submittable": 1,
- "modified": "2019-08-20 16:08:29.644355",
+ "links": [],
+ "modified": "2020-06-10 22:56:42.226367",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Meeting",
@@ -204,7 +207,7 @@
   },
   {
    "read": 1,
-   "role": "DCM",
+   "role": "District Council Member",
    "set_user_permissions": 1
   },
   {
@@ -216,7 +219,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "presec",
+   "role": "Club President / Secretary",
    "set_user_permissions": 1,
    "submit": 1,
    "write": 1
