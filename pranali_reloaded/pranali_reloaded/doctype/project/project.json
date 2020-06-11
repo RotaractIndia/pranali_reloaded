@@ -1,4 +1,5 @@
 {
+ "actions": [],
  "allow_import": 1,
  "autoname": "PROJ.######",
  "creation": "2015-03-19 13:05:26.524336",
@@ -39,7 +40,7 @@
   "expenditure",
   "chairperson",
   "chairpersons",
-  "attendence",
+  "attendance_section",
   "home_club",
   "dcm",
   "rotarians",
@@ -169,7 +170,7 @@
    "fieldname": "project_level",
    "fieldtype": "Select",
    "label": "Project Level",
-   "options": "Club\nInter Club\nZone\nDistrict\nInter District",
+   "options": "Club\nZone\nDistrict\nGlobal",
    "reqd": 1
   },
   {
@@ -242,11 +243,6 @@
    "label": "Chairpersons",
    "options": "Project Chairperson",
    "reqd": 1
-  },
-  {
-   "fieldname": "attendence",
-   "fieldtype": "Section Break",
-   "label": "Attendence"
   },
   {
    "fieldname": "home_club",
@@ -359,10 +355,16 @@
    "options": "Project",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "attendance_section",
+   "fieldtype": "Section Break",
+   "label": "Attendance"
   }
  ],
  "is_submittable": 1,
- "modified": "2019-08-20 16:01:03.748699",
+ "links": [],
+ "modified": "2020-06-10 14:05:58.838703",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Project",
@@ -389,14 +391,14 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "presec",
+   "role": "Club President / Secretary",
    "submit": 1,
    "write": 1
   },
   {
    "read": 1,
    "report": 1,
-   "role": "DCM"
+   "role": "District Council Member"
   }
  ],
  "sort_field": "modified",
