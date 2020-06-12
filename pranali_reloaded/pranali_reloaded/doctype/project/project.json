@@ -45,11 +45,11 @@
   "dcm",
   "rotarians",
   "ambassadorial",
-  "other_club",
   "column_break_32",
   "alumini",
   "pis",
   "guest",
+  "other_club",
   "total",
   "section_break_6",
   "joint_project",
@@ -253,7 +253,7 @@
   {
    "fieldname": "dcm",
    "fieldtype": "Int",
-   "label": "DCM"
+   "label": "District Council Members"
   },
   {
    "fieldname": "rotarians",
@@ -279,7 +279,7 @@
   {
    "fieldname": "alumini",
    "fieldtype": "Int",
-   "label": "Alumini"
+   "label": "Alumni"
   },
   {
    "fieldname": "pis",
@@ -364,7 +364,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-06-10 14:05:58.838703",
+ "modified": "2020-06-12 12:22:08.982919",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Project",
@@ -391,7 +391,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Club President / Secretary",
+   "role": "Club Member - Full Access",
    "submit": 1,
    "write": 1
   },

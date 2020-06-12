@@ -16,11 +16,12 @@
   "minutes",
   "section_break_2",
   "home_club",
+  "district_council_members",
   "rotarians",
   "guest",
   "column_break_10",
-  "other_club",
   "alumini",
+  "other_club",
   "pis",
   "total",
   "section_break_4",
@@ -181,11 +182,16 @@
    "options": "Meeting",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "district_council_members",
+   "fieldtype": "Int",
+   "label": "District Council Members"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-06-10 22:56:42.226367",
+ "modified": "2020-06-12 12:20:50.129745",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Meeting",
@@ -219,7 +225,7 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Club President / Secretary",
+   "role": "Club Member - Full Access",
    "set_user_permissions": 1,
    "submit": 1,
    "write": 1

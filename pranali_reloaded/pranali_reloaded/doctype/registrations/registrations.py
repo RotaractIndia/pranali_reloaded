@@ -18,7 +18,7 @@ class Registrations(Document):
 		user.save(ignore_permissions=True)
 		user.update({
 			"roles": [
-				{"role": "presec"}
+				{"role": "Club Member - Full Access"}
 			]
 		})
 		user.save(ignore_permissions=True)
@@ -34,4 +34,16 @@ class Registrations(Document):
 		if self.user:
 			user=frappe.get_doc("User", self.user)
 			user.enabled=self.enabled
+			if self.limited_access:
+				user.update({
+					"roles": [
+						{"role": "Club Member - Limited Access"}
+					]
+				})
+			else:
+				user.update({
+					"roles": [
+						{"role": "Club Member - Full Access"}
+					]
+				})
 			user.save(ignore_permissions=True)

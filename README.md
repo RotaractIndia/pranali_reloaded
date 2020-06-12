@@ -2,7 +2,7 @@
 
 A reporting system for Rotaract District Organisations
 
-![Screenshot of the Pranali Reloaded Dashboard](https://i.imgur.com/b6m81gc.png)
+![Screenshot of the Pranali Reloaded Dashboard](.github/pranali_desk.png)
 
 #### Set-up
 
@@ -14,7 +14,7 @@ Step #2: Once you've set up your bench, go to the folder using the Terminal and 
 Step #3: Press Enter
 
 Step #4: Type
-```bench --site site1.local install-app pranali_reloaded```
+```bench install-app pranali_reloaded```
 
 Step #5: Press Enter
 
