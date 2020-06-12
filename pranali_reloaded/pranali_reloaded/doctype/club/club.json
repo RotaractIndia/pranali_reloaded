@@ -1,4 +1,5 @@
 {
+ "actions": [],
  "allow_copy": 1,
  "allow_import": 1,
  "allow_rename": 1,
@@ -6,6 +7,7 @@
  "creation": "2015-03-19 12:45:41.509852",
  "doctype": "DocType",
  "document_type": "Setup",
+ "engine": "InnoDB",
  "field_order": [
   "statistics",
   "total_amount_credited_in_wallet",
@@ -158,7 +160,8 @@
    "label": "Twitter Handle"
   }
  ],
- "modified": "2019-08-20 16:07:29.110600",
+ "links": [],
+ "modified": "2020-06-13 01:01:29.650731",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Club",
@@ -185,15 +188,17 @@
    "write": 1
   },
   {
+   "email": 1,
+   "print": 1,
    "read": 1,
    "report": 1,
-   "role": "presec",
+   "role": "Club Member - Full Access",
    "write": 1
   },
   {
    "read": 1,
    "report": 1,
-   "role": "DCM"
+   "role": "District Council Member"
   },
   {
    "email": 1,
@@ -202,6 +207,15 @@
    "read": 1,
    "report": 1,
    "role": "Guest",
+   "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Club Member - Limited Access",
    "share": 1
   }
  ],

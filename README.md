@@ -8,7 +8,7 @@ A reporting system for Rotaract District Organisations
 
 Step #1: Refer to the README.md from [this link](https://github.com/frappe/bench) and install the Frappe bench.
 
-Step #2: Once you've set up your bench, go to the folder using the Terminal and type
+Step #2: Once you've set up your bench, go to the folder using the Terminal and type 
 ```bench get-app https://github.com/RotaractIndia/pranali_reloaded```
 
 Step #3: Press Enter

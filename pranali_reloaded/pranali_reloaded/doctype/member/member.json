@@ -135,7 +135,7 @@
  ],
  "image_field": "image",
  "links": [],
- "modified": "2020-01-15 15:04:54.992145",
+ "modified": "2020-06-13 01:02:04.230566",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Member",
@@ -163,20 +163,29 @@
    "write": 1
   },
   {
+   "read": 1,
+   "report": 1,
+   "role": "District Council Member"
+  },
+  {
    "create": 1,
    "email": 1,
    "export": 1,
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "presec",
-   "share": 1,
+   "role": "Club Member - Full Access",
    "write": 1
   },
   {
+   "email": 1,
+   "export": 1,
+   "print": 1,
    "read": 1,
    "report": 1,
-   "role": "DCM"
+   "role": "Club Member - Limited Access",
+   "share": 1,
+   "write": 1
   }
  ],
  "search_fields": "member_name",
