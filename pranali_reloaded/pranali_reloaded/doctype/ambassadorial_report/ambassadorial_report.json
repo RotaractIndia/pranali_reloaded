@@ -1,7 +1,9 @@
 {
+ "actions": [],
  "autoname": "AM.######",
  "creation": "2015-06-02 11:06:33.017061",
  "doctype": "DocType",
+ "engine": "InnoDB",
  "field_order": [
   "project_of",
   "name_of_the_club",
@@ -119,7 +121,8 @@
   }
  ],
  "is_submittable": 1,
- "modified": "2019-08-20 16:09:15.317522",
+ "links": [],
+ "modified": "2020-06-13 01:02:30.065535",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Ambassadorial Report",
@@ -147,14 +150,23 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "presec",
-   "share": 1,
+   "role": "Club Member - Full Access",
    "submit": 1,
    "write": 1
   },
   {
    "read": 1,
-   "role": "DCM"
+   "role": "District Council Member"
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Club Member - Limited Access",
+   "write": 1
   }
  ],
  "sort_field": "modified",

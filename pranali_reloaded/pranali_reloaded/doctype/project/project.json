@@ -364,7 +364,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-06-12 12:22:08.982919",
+ "modified": "2020-06-13 01:02:17.850395",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Project",
@@ -383,6 +383,11 @@
    "write": 1
   },
   {
+   "read": 1,
+   "report": 1,
+   "role": "District Council Member"
+  },
+  {
    "cancel": 1,
    "create": 1,
    "delete": 1,
@@ -396,9 +401,14 @@
    "write": 1
   },
   {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
    "read": 1,
    "report": 1,
-   "role": "District Council Member"
+   "role": "Club Member - Limited Access",
+   "write": 1
   }
  ],
  "sort_field": "modified",

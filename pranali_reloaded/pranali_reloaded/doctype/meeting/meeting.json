@@ -191,7 +191,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-06-12 12:20:50.129745",
+ "modified": "2020-06-13 00:57:49.310522",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Meeting",
@@ -228,6 +228,17 @@
    "role": "Club Member - Full Access",
    "set_user_permissions": 1,
    "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Club Member - Limited Access",
+   "share": 1,
    "write": 1
   }
  ],
