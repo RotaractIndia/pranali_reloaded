@@ -28,9 +28,14 @@
   "column_break_13",
   "website",
   "blog",
+  "instagram_handle",
   "column_break_8",
   "facebook_page_address",
-  "twitter_handle"
+  "twitter_handle",
+  "section_break_24",
+  "buddy_council_member",
+  "column_break_26",
+  "buddy_council_name"
  ],
  "fields": [
   {
@@ -158,10 +163,35 @@
    "fieldname": "twitter_handle",
    "fieldtype": "Data",
    "label": "Twitter Handle"
+  },
+  {
+   "fieldname": "instagram_handle",
+   "fieldtype": "Data",
+   "label": "Instagram Handle"
+  },
+  {
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "buddy_council_member",
+   "fieldtype": "Link",
+   "label": "Buddy Council Member",
+   "options": "User"
+  },
+  {
+   "fieldname": "column_break_26",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "buddy_council_member.full_name",
+   "fieldname": "buddy_council_name",
+   "fieldtype": "Data",
+   "label": "Buddy Council Name"
   }
  ],
  "links": [],
- "modified": "2020-06-13 01:01:29.650731",
+ "modified": "2020-06-28 21:30:01.057277",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Club",

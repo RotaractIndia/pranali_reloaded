@@ -86,6 +86,5 @@ def set_desktop_icons():
 	hook_icons = frappe.get_hooks("icons")
 	for icon in hook_icons:
 		 desktop.get(icon.get('module')).append(icon)
-	
-	print(desktop)
+
 	return desktop

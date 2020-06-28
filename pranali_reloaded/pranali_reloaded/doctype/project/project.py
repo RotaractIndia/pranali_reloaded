@@ -12,17 +12,16 @@ class Project(Document):
 		self.validate_account()
 		self.validate_date()
 		self.set_status()
-		self.validate_ambassadorial()
 		self.calculate_totals()
 		self.set_zone()
 		self.document_status='draft'
-	
+
 	def on_submit(self):
 		frappe.db.set_value('Project', self.name, 'document_status', 'submitted')
-		
+
 	def on_cancel(self):
 		frappe.db.set_value('Project', self.name, 'document_status', 'cancelled')
-		
+
 	def set_status(self):
 		self.time_stamp = now()
 		self.reporting_month = getdate(self.end_time).strftime("%B")
@@ -43,11 +42,7 @@ class Project(Document):
 			self.quarter = "Three"
 		elif self.reporting_month in ["April", "May", "June"]:
 			self.quarter = "Four"
-	
-	def validate_ambassadorial(self):
-		if not self.ambassadorial:
-			self.other_club=0
-	
+
 	def calculate_totals(self):
 		self.total = cint(self.home_club) + cint(self.other_club) + cint(self.dcm) \
 			+ cint(self.alumini) + cint(self.rotarians) + cint(self.pis) + cint(self.guest)
@@ -58,7 +53,7 @@ class Project(Document):
 	def validate_date(self):
 		if self.end_time > now():
 			frappe.throw("Did you fix the Flux Capacitor ? \n Project End Time is Greater than today.")
-			
+
 		if self.start_time > self.end_time:
 			frappe.throw("Start Time cannot be greater than End Time.")
 

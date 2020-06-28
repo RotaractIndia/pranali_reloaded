@@ -14,7 +14,7 @@
   "section_break_4",
   "time_stamp",
   "column_break_8",
-  "total_attendence",
+  "total_attendance",
   "section_break_8",
   "club",
   "column_break_12",
@@ -74,12 +74,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "total_attendence",
-   "fieldtype": "Int",
-   "in_list_view": 1,
-   "label": "Total Attendence"
-  },
-  {
    "fieldname": "section_break_8",
    "fieldtype": "Section Break"
   },
@@ -118,11 +112,17 @@
    "options": "Ambassadorial Report",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "total_attendance",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Attendance"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-06-13 01:02:30.065535",
+ "modified": "2020-06-28 21:31:24.124249",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Ambassadorial Report",

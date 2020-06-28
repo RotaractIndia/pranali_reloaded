@@ -92,9 +92,9 @@
   },
   {
    "fieldname": "designation",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Designation",
-   "options": "Member\nPresident\nIPP\nVice - President\nSecretary\nJoint - Secretary\nDirector - Finance\nJoint Director - Finance\nChairman - Avenues\nSergeant-At-Arms\nDirector - Club Service\nJoint Director - Club Service\nDirector - Community Service\nJoint Director - Community Service\nDirector - International Service\nJoint Director - International Service\nDirector - Professional Development\nJoint Director - Professional Development\nDirector - Sports\nJoint Director - Sports\nDirector - ED\nJoint Director - ED\nDirector - Partners-In-Service\nJoint Director - Partners-In-Service\nDirector - Web Communications\nJoint Director - Web Communications\nDirector - PR\nJoint Director - PR\nDirector - HRD\nEditor\nJoint Editor\nClub Advisor"
+   "options": "Designation"
   },
   {
    "fieldname": "column_break_14",
@@ -135,7 +135,7 @@
  ],
  "image_field": "image",
  "links": [],
- "modified": "2020-06-13 01:02:04.230566",
+ "modified": "2020-06-28 21:19:53.785529",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Member",

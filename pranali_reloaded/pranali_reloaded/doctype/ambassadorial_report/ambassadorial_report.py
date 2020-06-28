@@ -19,7 +19,7 @@ class AmbassadorialReport(Document):
 	def on_submit(self):
 		self.time_stamp = now()
 		frappe.db.set_value('Ambassadorial Report', self.name, 'document_status', 'submitted')
-	
+
 	def on_cancel(self):
 		frappe.db.set_value('Ambassadorial Report', self.name, 'document_status', 'cancelled')
 
@@ -32,9 +32,9 @@ class AmbassadorialReport(Document):
 			if not d.member_id in members:
 				members.append(d.member_id)
 			else:
-				frappe.throw("Attendence for {0} appears multiple times.".format(d.member_name))
-	
+				frappe.throw("Attendance for {0} appears multiple times.".format(d.member_name))
+
 	def count_total(self):
-		self.total_attendence = 0
+		self.total_attendance = 0
 		for d in self.members:
-			self.total_attendence +=1
+			self.total_attendance +=1

@@ -44,12 +44,11 @@
   "home_club",
   "dcm",
   "rotarians",
-  "ambassadorial",
+  "guest",
   "column_break_32",
   "alumini",
-  "pis",
-  "guest",
   "other_club",
+  "pis",
   "total",
   "section_break_6",
   "joint_project",
@@ -123,11 +122,11 @@
   },
   {
    "fieldname": "avenue_1",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Avenue 1",
-   "options": "\nClub Service\nCommunity Service\nInternational Service\nProfessional Development\nSports\nED\nPR\nEditorial\nWeb Communications\nPIS\nHRD",
+   "options": "Avenue",
    "reqd": 1
   },
   {
@@ -136,11 +135,11 @@
   },
   {
    "fieldname": "avenue_2",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Avenue 2",
-   "options": "\nClub Service\nCommunity Service\nInternational Service\nProfessional Development\nSports\nED\nPR\nEditorial\nWeb Communications\nPIS\nHRD"
+   "options": "Avenue"
   },
   {
    "fieldname": "section_break_10",
@@ -261,13 +260,6 @@
    "label": "Rotarians"
   },
   {
-   "default": "0",
-   "fieldname": "ambassadorial",
-   "fieldtype": "Check",
-   "label": "Ambassadorial"
-  },
-  {
-   "depends_on": "ambassadorial",
    "fieldname": "other_club",
    "fieldtype": "Int",
    "label": "Other Club"
@@ -284,7 +276,7 @@
   {
    "fieldname": "pis",
    "fieldtype": "Int",
-   "label": "PIS"
+   "label": "Other PIS"
   },
   {
    "fieldname": "guest",
@@ -364,7 +356,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-06-13 01:02:17.850395",
+ "modified": "2020-06-28 21:39:42.226201",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Project",
