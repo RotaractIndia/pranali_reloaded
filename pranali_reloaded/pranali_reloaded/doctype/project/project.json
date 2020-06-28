@@ -44,12 +44,11 @@
   "home_club",
   "dcm",
   "rotarians",
-  "ambassadorial",
+  "other_club",
   "column_break_32",
   "alumini",
   "pis",
   "guest",
-  "other_club",
   "total",
   "section_break_6",
   "joint_project",
@@ -261,13 +260,6 @@
    "label": "Rotarians"
   },
   {
-   "default": "0",
-   "fieldname": "ambassadorial",
-   "fieldtype": "Check",
-   "label": "Ambassadorial"
-  },
-  {
-   "depends_on": "ambassadorial",
    "fieldname": "other_club",
    "fieldtype": "Int",
    "label": "Other Club"
@@ -364,7 +356,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-06-13 01:02:17.850395",
+ "modified": "2020-06-28 21:23:16.678989",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Project",
