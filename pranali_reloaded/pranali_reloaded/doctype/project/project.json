@@ -44,11 +44,11 @@
   "home_club",
   "dcm",
   "rotarians",
-  "other_club",
+  "guest",
   "column_break_32",
   "alumini",
+  "other_club",
   "pis",
-  "guest",
   "total",
   "section_break_6",
   "joint_project",
@@ -276,7 +276,7 @@
   {
    "fieldname": "pis",
    "fieldtype": "Int",
-   "label": "PIS"
+   "label": "Other PIS"
   },
   {
    "fieldname": "guest",
@@ -356,7 +356,7 @@
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-06-28 21:23:16.678989",
+ "modified": "2020-06-28 21:26:31.569890",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Project",
