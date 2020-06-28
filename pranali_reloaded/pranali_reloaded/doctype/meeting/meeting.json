@@ -14,7 +14,7 @@
   "reporting_month",
   "section_break_5",
   "minutes",
-  "section_break_2",
+  "attendance_section",
   "home_club",
   "district_council_members",
   "rotarians",
@@ -89,11 +89,6 @@
    "fieldtype": "Text Editor",
    "label": "Minutes",
    "reqd": 1
-  },
-  {
-   "fieldname": "section_break_2",
-   "fieldtype": "Section Break",
-   "label": "Attendence"
   },
   {
    "fieldname": "home_club",
@@ -187,11 +182,16 @@
    "fieldname": "district_council_members",
    "fieldtype": "Int",
    "label": "District Council Members"
+  },
+  {
+   "fieldname": "attendance_section",
+   "fieldtype": "Section Break",
+   "label": "Attendance"
   }
  ],
  "is_submittable": 1,
  "links": [],
- "modified": "2020-06-13 00:57:49.310522",
+ "modified": "2020-06-28 21:37:09.182626",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Meeting",
