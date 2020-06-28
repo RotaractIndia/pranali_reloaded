@@ -3,11 +3,11 @@ frappe.listview_settings['Project'] = {
 
     get_indicator: function(doc) {
         if (doc.project_status == "Late") {
-            return [__("Late"), "orange", "status,=,Late"];
+            return [__("Late"), "orange", "project_status,=,Late"];
         } else if (doc.project_status == "On Time") {
-            return [__("On Time"), "green", "status,=,On Time"];
+            return [__("On Time"), "green", "project_status,=,On Time"];
         } else if (doc.project_status == "Early") {
-            return [__("Early"), "blue", "status,=,Early"];
+            return [__("Early"), "blue", "project_status,=,Early"];
         }
     }
 };
