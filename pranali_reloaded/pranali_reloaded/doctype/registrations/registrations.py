@@ -19,7 +19,8 @@ class Registrations(Document):
 		user.update({
 			"roles": [
 				{"role": "Club Member - Full Access"}
-			]
+			],
+			"bio": self.club
 		})
 		user.save(ignore_permissions=True)
 		self.user = user.name
