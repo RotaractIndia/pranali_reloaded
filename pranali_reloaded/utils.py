@@ -20,3 +20,12 @@ def login_as(user):
 		return True
 
 	return False
+
+def set_energy_points(user, points, reference_doctype, reference_name):
+	log = frappe.new_doc("Energy Point Log")
+	log.update({
+		"user": user,
+		"points": points,
+		"reference_doctype": reference_doctype,
+		"reference_name": reference_name
+	})
