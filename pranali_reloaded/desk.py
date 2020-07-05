@@ -75,8 +75,22 @@ def set_desktop_icons():
 				"link": '#insight-engine'
 			},
 			{
+				"label": _('Leaderboard'),
+				"icon": "octicon octicon-star",
+				"type": 'page',
+				"name": 'Leaderboard',
+				"link": '#social/users'
+			},
+			{
+				"label": _('Social Wall'),
+				"icon": "octicon octicon-thumbsup",
+				"type": 'page',
+				"name": 'Social',
+				"link": '#social/home'
+			},
+			{
 				"label": _('Pranali User Registration'),
-				"icon": "octicon octicon-organization",
+				"icon": "octicon octicon-checklist",
 				"type": 'doctype',
 				"name": 'Registrations',
 				"link": '#List/Registrations/List'

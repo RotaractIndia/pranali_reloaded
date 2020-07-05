@@ -4,6 +4,9 @@
 
 	],
 	"js/pranali_desk.js": [
-        "public/js/desk.js"
-    ]
+		"public/js/desk.js"
+	],
+	"js/social.min.js": [
+		"public/js/social/social_home.js"
+	]
 }
