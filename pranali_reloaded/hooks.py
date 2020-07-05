@@ -16,6 +16,11 @@ app_include_js = [
 	"/assets/js/pranali_desk.js"
 ]
 
+app_include_css = [
+	"/assets/pranali_reloaded/css/pranali_reloaded.css",
+	"/assets/pranali_reloaded/css/desk.css"
+]
+
 app_logo_url = "/assets/pranali_reloaded/img/rotary-wheel.png"
 brand_html = "Pranali"
 
@@ -38,7 +43,6 @@ doc_events = {
 	}
 }
 
-app_include_css = "/assets/pranali_reloaded/css/pranali_reloaded.css"
 
 # Includes in <head>
 # ------------------
