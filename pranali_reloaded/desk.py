@@ -30,7 +30,7 @@ def set_desktop_icons():
 			},
 			{
 				"label": _('Receipt'),
-				"icon": "octicon octicon-gist-secret",
+				"icon": "octicon octicon-clippy",
 				"type": 'doctype',
 				"name": 'Receipt',
 				"link": '#List/Receipt/List'
@@ -39,7 +39,7 @@ def set_desktop_icons():
 		"Reporting": [
 			{
 				"label": _('Project'),
-				"icon": "octicon octicon-rocket",
+				"icon": "octicon octicon-checklist",
 				"type": 'doctype',
 				"name": 'Project',
 				"link": '#List/Project/List'
@@ -90,7 +90,7 @@ def set_desktop_icons():
 			},
 			{
 				"label": _('Pranali User Registration'),
-				"icon": "octicon octicon-checklist",
+				"icon": "octicon octicon-diff-added",
 				"type": 'doctype',
 				"name": 'Registrations',
 				"link": '#List/Registrations/List'

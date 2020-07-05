@@ -119,7 +119,7 @@ export default {
 			edit_profile_dialog.show();
 		},
 		view_energy_point_list(user) {
-			frappe.set_route('List', 'Energy Point Log', {user:user.name});
+			frappe.set_route('user-profile', user.name);
 		}
 	}
 };
