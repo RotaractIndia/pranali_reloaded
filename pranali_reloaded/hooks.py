@@ -39,7 +39,8 @@ override_whitelisted_methods = {
 
 doc_events = {
  	"User": {
- 		"validate": "pranali_reloaded.hook_events.user.set_user_permissions_for_dcm"
+ 		"validate": "pranali_reloaded.hook_events.user.set_user_permissions_for_dcm",
+		 "after_insert": "pranali_reloaded.hook_events.user.set_user_permissions_for_dcm"
 	}
 }
 
