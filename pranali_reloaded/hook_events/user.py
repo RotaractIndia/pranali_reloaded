@@ -1,7 +1,7 @@
 import frappe
 
 def set_user_permissions_for_dcm(doc, method):
-    if not self.is_new():
+    if not doc.is_new():
         for r in doc.roles:
             if r.role =="District Council Member":
                 if not frappe.get_all("User Permission",filters={"user":doc.name}):
