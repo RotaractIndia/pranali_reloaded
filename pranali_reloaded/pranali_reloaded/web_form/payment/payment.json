@@ -9,6 +9,7 @@
  "amount": 500.0,
  "amount_based_on_field": 1,
  "amount_field": "amount",
+ "breadcrumbs": "[{\"label\": _(\"Desk\"), \"route\":\"desk\"}]",
  "button_label": "Pay",
  "client_script": "$('.btn-form-submit').hide();",
  "creation": "2016-11-16 15:25:36.321389",
@@ -21,7 +22,7 @@
  "is_standard": 1,
  "login_required": 1,
  "max_attachment_size": 0,
- "modified": "2019-08-21 14:19:32.403009",
+ "modified": "2020-07-11 13:38:49.287139",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "payment",
@@ -40,7 +41,7 @@
  "title": "Online Payment for Rotaract District",
  "web_form_fields": [
   {
-   "allow_read_on_all_link_options": 0,
+   "allow_read_on_all_link_options": 1,
    "fieldname": "club",
    "fieldtype": "Link",
    "hidden": 0,
@@ -65,5 +66,6 @@
    "reqd": 1,
    "show_in_filter": 0
   }
- ]
+ ],
+ "web_page_link_text": "Online Payment for Rotaract District"
 }
