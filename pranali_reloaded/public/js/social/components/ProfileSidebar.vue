@@ -93,7 +93,7 @@ export default {
 				primary_action: values => {
 					edit_profile_dialog.disable_primary_action();
 					frappe
-						.xcall('frappe.core.doctype.user.user.update_profile_info', {
+						.xcall('frappe.desk.page.user_profile.user_profile.update_profile_info', {
 							profile_info: values
 						})
 						.then(user => {
