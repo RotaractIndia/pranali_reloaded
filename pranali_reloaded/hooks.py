@@ -48,6 +48,9 @@ doc_events = {
 	}
 }
 
+doctype_js = {
+	"Event": "public/js/event.js"
+}
 
 # Includes in <head>
 # ------------------

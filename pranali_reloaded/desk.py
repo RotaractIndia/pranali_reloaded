@@ -75,6 +75,13 @@ def set_desktop_icons():
 				"link": '#insight-engine'
 			},
 			{
+				"label": _('Event Calendar'),
+				"icon": "octicon octicon-calendar",
+				"type": 'doctype',
+				"name": 'Event Calendar',
+				"link": '#List/Event/Calendar/Default'
+			},
+			{
 				"label": _('Leaderboard'),
 				"icon": "octicon octicon-star",
 				"type": 'page',
