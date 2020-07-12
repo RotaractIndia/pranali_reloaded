@@ -21,6 +21,10 @@ app_include_css = [
 	"/assets/pranali_reloaded/css/desk.css"
 ]
 
+web_include_css = [
+	"/assets/pranali_reloaded/css/login.css"
+]
+
 app_logo_url = "/assets/pranali_reloaded/img/rotary-wheel.png"
 brand_html = "Pranali"
 
