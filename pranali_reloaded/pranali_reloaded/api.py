@@ -26,3 +26,10 @@ def get_posts(filters=None, limit_start=0):
 	for post in posts:
 		post['seen'] = post.name in viewed_posts
 	return posts
+
+@frappe.whitelist()
+def get_birthdays(start_date):
+	birthdays = frappe.get_all("Member", fields=['member_name', 'dob'],
+		filters={"dob": [">=", start_date]}, order_by="dob ASC", limit=5)
+	print(birthdays)
+	return birthdays

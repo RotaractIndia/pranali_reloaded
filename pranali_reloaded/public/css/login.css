@@ -16,7 +16,6 @@
 
 .login-content.page-card .form-signin .form-control {
 	padding: 10px 15px;
-	border-radius: 20px;
 	margin-bottom: 10px;
 	font-size: 14px;
 }
@@ -27,7 +26,6 @@
 
 .login-content.page-card .btn {
 	padding: 10px;
-	border-radius: 25px;
 	margin-top: 10px;
   background-color: #d91b5c;
 	font-size: 16px;
@@ -49,7 +47,6 @@
 	width: 100%;
 	padding: 10px;
 	border: 1px solid #d91b5c;
-	border-radius: 25px;
 	margin: 10px;
 	display: inline-block;
 	color: #d91b5c;
