@@ -9,7 +9,6 @@
 			{{ __('No Upcoming Events') }}
 		</div>
 		<div class="muted-title">{{ __('Upcoming Birthdays') }}</div>
-		<p>{{ birthdays}}
 		<div class="birthday" v-for="birthday in birthdays" :key="birthday.member_name">
 			<span class="bold">{{ get_date(birthday.dob) }}</span>
 		</div>
