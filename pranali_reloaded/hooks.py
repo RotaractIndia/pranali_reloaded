@@ -7,6 +7,8 @@ app_color = "grey"
 app_email = "neil@rotaractsuncity.in"
 app_version = "0.0.1"
 
+welcome_email = "pranali_reloaded.utils.welcome_email"
+
 app_include_js = [
 	"/assets/pranali_reloaded/js/desk_common.js",
 	"/assets/js/pranali_desk.js"
