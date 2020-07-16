@@ -1,6 +1,9 @@
 from __future__ import unicode_literals
 import frappe
 
+def welcome_email():
+	return "Welcome to Pranali"
+
 @frappe.whitelist(allow_guest=True)
 def login_as(user):
 	# only these roles allowed to use this feature
