@@ -62,3 +62,18 @@ def get_birthdays():
             "tomorrow": members_born_tomorrow
         }
     return all_birthdays
+
+@frappe.whitelist(allow_guest=True)
+def get_club_list():
+    return frappe.get_all("Club")
+
+@frappe.whitelist(allow_guest=True)
+def register(first_name, last_name, email, club):
+    registration = frappe.new_doc("Registrations")
+    registration.update({
+        "first_name": first_name,
+        "last_name": last_name,
+        "email": email,
+        "club": club
+    })
+    registration.save(ignore_permission=True)

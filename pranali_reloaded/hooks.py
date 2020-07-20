@@ -23,12 +23,12 @@ web_include_css = [
 	"/assets/pranali_reloaded/css/login.css"
 ]
 
-app_logo_url = "/assets/pranali_reloaded/img/rotary-wheel.png"
+app_logo_url = "/assets/pranali_reloaded/images/rotary-wheel.png"
 brand_html = "Pranali"
 
 website_context = {
-	"favicon": "/assets/pranali_reloaded/img/rotary-wheel.png",
-	"splash_image": "/assets/pranali_reloaded/img/rotary-wheel.png",
+	"favicon": "/assets/pranali_reloaded/images/rotary-wheel.png",
+	"splash_image": "/assets/pranali_reloaded/images/rotary-wheel.png",
 }
 
 override_whitelisted_methods = {
