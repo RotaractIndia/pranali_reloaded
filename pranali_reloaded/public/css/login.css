@@ -1,0 +1,75 @@
+.login-content.page-card {
+	max-width: 360px;
+	padding: 15px;
+	border: 0;
+	border-radius: 0;
+	margin: 30px auto 0;
+	background-color: #fff;
+	box-shadow: none;
+}
+
+.login-content.page-card .page-card-head {
+	border-bottom: 0;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.login-content.page-card .form-signin .form-control {
+	padding: 10px 15px;
+	margin-bottom: 10px;
+	font-size: 14px;
+}
+
+.login-content.page-card .toggle-password {
+  top: 12px;
+}
+
+.login-content.page-card .btn {
+	padding: 10px;
+	margin-top: 10px;
+  background-color: #d91b5c;
+	font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.login-content.page-card .btn:hover {
+  background-color: #d91b5c;
+}
+
+.page_content .form-footer {
+  max-width: 350px;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.page_content .form-footer .social-logins a {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #d91b5c;
+	margin: 10px;
+	display: inline-block;
+	color: #d91b5c;
+  font-size: 16px;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.page_content .indicator.blue::before,
+.page_content .indicator-right.blue::after {
+  background-color: #fff;
+}
+
+.page_content .form-footer h6 {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.page_content .form-footer .social-logins .fa {
+  color: #d91b5c;
+}
+
+.page_content .form-footer a:hover {
+  background-color: initial;
+}
