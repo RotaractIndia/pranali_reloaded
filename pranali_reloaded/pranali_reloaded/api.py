@@ -77,4 +77,3 @@ def register(first_name, last_name, email, club):
         "club": club
     })
     registration.save(ignore_permission=True)
-    return registration
