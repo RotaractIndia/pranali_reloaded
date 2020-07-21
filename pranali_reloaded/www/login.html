@@ -7,100 +7,141 @@
 {% endblock %}
 
 {% block page_content %}
-<!-- {{ for_test }} -->
-<div style='min-height: 360px'>
+
+<!-- <div class="container"> -->
 	<noscript>
 		<div class="text-center my-5">
 			<h4>{{ _("Javascript is disabled on your browser") }}</h4>
-			<p class="text-muted">{{ _("You need to enable JavaScript for your app to work.") }}<br>{{ _("To enable it follow the instructions in the following link: {0}").format("<a href='https://enable-javascript.com/'>enable-javascript.com</a></p>") }}
+			<p class="text-muted">
+				{{ _("You need to enable JavaScript for your app to work.") }}<br>{{ _("To enable it follow the instructions in the following link: {0}").format("<a href='https://enable-javascript.com/'>enable-javascript.com</a></p>") }}
 		</div>
 	</noscript>
-<section class='for-login'>
-	<div class="login-content page-card" style="margin-top: 30px;">
-		<form class="form-signin form-login" role="form">
-			<div class="page-card-head">
-				<span class="indicator blue" data-text="{{ _('Login') }}"></span>
-			</div>
-
-			<input type="text" id="login_email"
-				class="form-control"
-				placeholder="{% if login_name_placeholder %}{{ login_name_placeholder  }}{% else %}{{ _('Email Address') }}{% endif %}"
-				required autofocus>
-
-			<div class="password-field" style="position: relative;">
-				<input type="password" id="login_password"
-						class="form-control" placeholder="{{ _('Password') }}" required>
-
-				<span toggle="#login_password" class="fa fa-fw fa-eye toggle-password text-muted"></span>
-			</div>
-
-			<button class="btn btn-sm btn-primary btn-block btn-login" type="submit">
-				{{ _("Login") }}</button>
-
-			{% if ldap_settings and ldap_settings.enabled %}
-			<button class="btn btn-sm btn-default btn-block btn-login btn-ldap-login">
-				{{ _("Login with LDAP") }}</button>
-			{% endif %}
-		</form>
+	<img class="wave" src="assets/pranali_reloaded/images/cranberry-wave.png">
+	<img class="wave2" src="assets/pranali_reloaded/images/cranberry-wave.png">
+	<div class="container-new">
+	<div class="img">
+		<img src="assets/pranali_reloaded/images/pranali_boy.png">
 	</div>
-	<div class='form-footer'>
-		<p class="text-center forgot-password-message">
-			<a href="#forgot">{{ _("Forgot Password?") }}</a></p>
+	<div class="login-content">
+		<section class='for-login'>
+			<div class="login-content page-card">
+				<form class="form-signin form-login" role="form">
+					<img src="assets/pranali_reloaded/images/pranali.png">
+					<div class="page-card-head">
+						<span class="indicator blue" data-text="{{ _('Login') }}"></span>
+					</div>
+					<div class="input-div one">
+						<!-- <div class="i">
+							<i class="fa fa-user"></i>
+						</div> -->
+						<div class="div">
+							<input type="text" id="login_email" class="form-control"
+								placeholder="{% if login_name_placeholder %}{{ login_name_placeholder  }}{% else %}{{ _('Email Address') }}{% endif %}"
+								required autofocus>
+						</div>
+					</div>
 
-			<div class='social-logins'>
-			{%- if social_login -%}
-				<h6>{{ _("Or login with") }}</h6>
+					<div class="input-div pass">
+						<!-- <div class="i">
+							<i class="fa fa-lock"></i>
+						</div> -->
+						<div>
+							<input type="password" id="login_password" class="form-control"
+								placeholder="{{ _('Password') }}" required>
+							<span toggle="#login_password" class="fa fa-eye toggle-password text-muted"></span>
+						</div>
+					</div>
+					<button class="btn btn-sm btn-primary btn-block btn-login" type="submit">
+						{{ _("Login") }}</button>
+				</form>
+			</div>
+			<div class='form-footer'>
+				<div class="registrations">
+				<p class="text-center forgot-password-message">
+					<a href="#forgot">{{ _("Forgot Password?") }}</a></p>
+				<p class="text-center sign-up-message">
+					<a href="/registrations" style="margin-top: -2px;">{{ _("Register") }}</a>
+					</p>
+					</div>
+				</div>
 
-				<p class="text-center" style="margin-top: 15px">
-				{% for provider in provider_logins %}
-					<a href="{{ provider.auth_url }}"
-						class="btn btn-default btn-sm btn-social btn-{{ provider.name }}">
+				<div class='social-logins' style="margin-top: 5px;">
+					{%- if social_login -%}
+					<!-- <h5>{{ _("Or login with") }}</h5> -->
+					<p class="text-center" style="margin-top: 5px">
+						{% for provider in provider_logins %}
+						<a href="{{ provider.auth_url }}"
+							class="btn btn-default btn-sm btn-social btn-{{ provider.name }}" style="margin-bottom:1.2rem">
 							{{ provider.icon }} {{ provider.provider_name }}</a>
-				{% endfor %}
-				</p>
-			{%- endif -%}
+						{% endfor %}
+					</p>
+					{%- endif -%}
+				</div>
+		
+		</section>
+		<section class='for-signup' style="display: none;">
+			<div class="login-content page-card" style="margin-top: 20px;">
+				<form class="form-signin form-signup hide" role="form">
+					<img src="assets/pranali_reloaded/images/pranali.png">
+					<div class="page-card-head">
+						<span class="indicator blue" data-text="{{ _('Sign Up') }}"></span>
+					</div>
+
+					<div class="input-div one">
+						<!-- <div class="i">
+							<i class="fa fa-user"></i>
+						</div> -->
+						<div class="div">
+							<input type="text" id="signup_fullname" class="form-control"
+								placeholder="{{ _('Full Name') }}" required autofocus>
+						</div>
+					</div>
+					<div class="input-div one">
+						<!-- <div class="i">
+							<i class="fa fa-envelope"></i>
+						</div> -->
+						<div class="div">
+							<input type="email" id="signup_email" class="form-control"
+								placeholder="{{ _('Email Address') }}" required>
+						</div>
+					</div>
+					<button class="btn btn-sm btn-primary btn-block btn-signup"
+						type="submit">{{ _("Sign up") }}</button>
+				</form>
 			</div>
+			<div class='form-footer'>
+				<a href="#login" class="blue">{{ _("Have an account? Login") }}</a>
+			</div>
+		</section>
+		<section class='for-forgot' style="display: none;">
+			<div class="login-content page-card">
+				<form class="form-signin form-forgot hide" role="form">
+					<img src="assets/pranali_reloaded/images/pranali.png">
+					<div class="page-card-head">
+						<span class="indicator blue" data-text="{{ _('Forgot Password') }}"></span></div>
+					<div class="input-div one">
+						<!-- <div class="i">
+							<i class="fa fa-envelope"></i>
+						</div> -->
+						<div class="div">
+							<input type="email" id="forgot_email" class="form-control"
+								placeholder="{{ _('Email Address') }}" required autofocus>
+						</div>
+					</div>
 
-	{%- if not disable_signup -%}
-		<p class="text-center sign-up-message">
-			<a href="#signup" style="margin-top: -2px;">{{ _("Don't have an account? Sign up") }}</a>
-		</p>
-	{%- endif -%}
+					<button class="btn btn-sm btn-primary btn-block btn-forgot"
+						type="submit">{{ _("Reset Password") }}</button>
+				</form>
+			</div>
+			<div class='form-footer'>
+				<a href="#login">{{ _("Back to Login") }}</a>
+			</div>
+		</section>
 	</div>
-</section>
-<section class='for-signup'>
-	<div class="login-content page-card" style="margin-top: 20px;">
-	<form class="form-signin form-signup hide" role="form">
-		<div class="page-card-head">
-			<span class="indicator blue" data-text="{{ _('Sign Up') }}"></span>
-		</div>
-		<input type="text" id="signup_fullname"
-			class="form-control" placeholder="{{ _('Full Name') }}" required autofocus>
-		<input type="email" id="signup_email"
-			class="form-control" placeholder="{{ _('Email Address') }}" required>
-		<button class="btn btn-sm btn-primary btn-block btn-signup" type="submit">{{ _("Sign up") }}</button>
-	</form>
-	</div>
-	<div class='form-footer'>
-		<a href="#login" class="blue">{{ _("Have an account? Login") }}</a>
-	</div>
-</section>
-
-<section class='for-forgot'>
-	<div class="login-content page-card" style="margin-top: 20px;">
-	<form class="form-signin form-forgot hide" role="form">
-		<div class="page-card-head">
-			<span class="indicator blue" data-text="{{ _('Forgot Password') }}"></span></div>
-		<input type="email" id="forgot_email"
-			class="form-control" placeholder="{{ _('Email Address') }}" required autofocus>
-		<button class="btn btn-sm btn-primary btn-block btn-forgot" type="submit">{{ _("Reset Password") }}</button>
-	</form>
-	</div>
-	<div class='form-footer'>
-		<a href="#login">{{ _("Back to Login") }}</a>
-	</div>
-</section>
 </div>
+<!-- </div> -->
+
+
 {% endblock %}
 
 {% block script %}
