@@ -49,12 +49,13 @@ def get_birthdays():
         "Member",  fields=['member_name', 'dob', 'club'])
     for member in member_birthdays:
         birthdate = getdate(member.dob)
-        if birthdate.month == month and birthdate.day == yesterday:
-            members_born_yesterday.append(member)
-        if birthdate.month == month and birthdate.day == today:
-            members_born_today.append(member)
-        if birthdate.month == month and birthdate.day == tomorrow:
-            members_born_tomorrow.append(member)
+        if birthdate:
+            if birthdate.month == month and birthdate.day == yesterday:
+                members_born_yesterday.append(member)
+            if birthdate.month == month and birthdate.day == today:
+                members_born_today.append(member)
+            if birthdate.month == month and birthdate.day == tomorrow:
+                members_born_tomorrow.append(member)
 
         all_birthdays = {
             "yesterday": members_born_yesterday,
