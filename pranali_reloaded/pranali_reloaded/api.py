@@ -48,8 +48,8 @@ def get_birthdays():
     member_birthdays = frappe.get_all(
         "Member",  fields=['member_name', 'dob', 'club'])
     for member in member_birthdays:
-        birthdate = getdate(member.dob)
-        if birthdate:
+        if member.dob:
+            birthdate = getdate(member.dob)
             if birthdate.month == month and birthdate.day == yesterday:
                 members_born_yesterday.append(member)
             if birthdate.month == month and birthdate.day == today:
