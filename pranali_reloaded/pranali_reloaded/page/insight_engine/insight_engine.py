@@ -7,7 +7,6 @@ from collections import defaultdict
 
 @frappe.whitelist()
 def get_dashboards(club=None):
-	club = "Rotaract Club of S.K. Somaiya College"
 	if not club:
 		return None
 
