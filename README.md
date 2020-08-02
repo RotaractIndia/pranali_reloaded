@@ -1,6 +1,6 @@
 ## Pranali Reloaded
 
-A reporting system for Rotaract District Organisations
+A ERP system for Rotaract District Organisations build using the [Frappé Framework](https://frappeframework.com/)!
 
 ![Screenshot of the Pranali Reloaded Dashboard](.github/pranali_desk.png)
 
