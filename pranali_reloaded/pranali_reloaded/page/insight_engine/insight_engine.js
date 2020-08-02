@@ -87,10 +87,10 @@ InsightEngine = class InsightEngine {
 
 	renderCharts() {
 		const opacity = 0.6;
-		const colors = ['#eeef37','#ff6a05','#0c8d00','#21bda9', '#7bf2bf', 
+		const colors = ['#f98d00','#484cff','#8dd241','#0c8d00','#ff6a05','#21bda9', '#7bf2bf',
 			'#f0c789', '#704041', '#adf2f1', '#ef9798', '#f4b02f', '#009fff', '#197a64']
 
-		// Reporting Status
+		// Reporting Status Pie Chart
 		new Chart($(".category-product-info .donut-chart .graphics"), {
 			type: 'doughnut',
 			data: {
@@ -98,13 +98,13 @@ InsightEngine = class InsightEngine {
 				datasets: [{
 					data: this.dashboard_data.reporting_status.map(elem => elem.count),
 					backgroundColor: colors,
-					borderColor: colors,
-					borderWidth: 1.5
+					borderColor: colors
 				}]
 			},
 			options: {
-				layout: { padding: 30 },
-				legend: { position: 'left' },
+				cutoutPercentage: 70,
+				layout: { padding: 20 },
+				legend: { position: 'right'},
 				tooltips: {
 					intersect : false,
 					mode:'nearest'
@@ -172,8 +172,8 @@ InsightEngine = class InsightEngine {
 					}
 				}
 			}
-		});	
-		
+		});
+
 		// Avenue wise time spent on projects
 		let time_datasets = [];
 		Object.keys(this.dashboard_data.projects_time_per_month).forEach((item, i) => {
