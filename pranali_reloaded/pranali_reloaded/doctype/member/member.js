@@ -3,6 +3,6 @@
 
 frappe.ui.form.on('Member', {
     refresh: function(frm) {
-        
+        frm.set_df_property("member_name", "read_only", frm.doc.__islocal ? 0 : 1);
     }
 });
