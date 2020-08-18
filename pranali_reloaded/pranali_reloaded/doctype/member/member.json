@@ -1,5 +1,4 @@
 {
- "actions": [],
  "allow_import": 1,
  "autoname": "RTR.#####",
  "creation": "2015-03-17 17:58:07.920205",
@@ -34,8 +33,7 @@
    "in_standard_filter": 1,
    "label": "Member Name",
    "reqd": 1,
-   "search_index": 1,
-   "set_only_once": 1
+   "search_index": 1
   },
   {
    "fieldname": "dob",
@@ -134,8 +132,7 @@
   }
  ],
  "image_field": "image",
- "links": [],
- "modified": "2020-06-28 21:19:53.785529",
+ "modified": "2020-08-18 23:00:48.062045",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Member",
