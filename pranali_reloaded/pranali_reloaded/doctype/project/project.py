@@ -29,7 +29,7 @@ class Project(Document):
 		deadline = cstr(getdate(d).strftime("%Y")) + "-" + cstr(getdate(d).strftime("%m")) + "-10"
 		if getdate(self.time_stamp) > getdate(deadline):
 			self.project_status = "Late"
-		elif getdate(self.time_stamp) < getdate(add_days(getdate(self.end_time), 10)):
+		elif getdate(self.time_stamp) <= getdate(add_days(getdate(self.end_time), 10)):
 			self.project_status = "Early"
 		else:
 			self.project_status = "On Time"
