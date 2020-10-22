@@ -130,7 +130,7 @@ InsightEngine = class InsightEngine {
 		// Avenue wise project count
 		let datasets = [];
 		Object.keys(this.dashboard_data.projects_per_month).forEach((item, i) => {
-			if(i < 11) {
+			if(i < Object.keys(this.dashboard_data.projects_per_month).length) {
 				datasets.push({
 					label: item,
 					backgroundColor: colors[i],
@@ -177,7 +177,7 @@ InsightEngine = class InsightEngine {
 		// Avenue wise time spent on projects
 		let time_datasets = [];
 		Object.keys(this.dashboard_data.projects_time_per_month).forEach((item, i) => {
-			if(i < 11) {
+			if(i < Object.keys(this.dashboard_data.projects_per_month).length) {
 				time_datasets.push({
 					label: item,
 					backgroundColor: colors[i],
