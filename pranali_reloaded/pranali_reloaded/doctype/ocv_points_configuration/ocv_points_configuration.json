@@ -1,0 +1,130 @@
+{
+ "creation": "2020-12-08 01:29:37.229870",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "gavel",
+  "charter",
+  "collar",
+  "saa",
+  "minutes",
+  "attendance",
+  "cut_off_date",
+  "column_break_7",
+  "banner",
+  "rooster",
+  "website",
+  "membership",
+  "bye_laws",
+  "finance",
+  "additional_points"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "gavel",
+   "fieldtype": "Int",
+   "label": "Is the Gavel and Gong Present ?"
+  },
+  {
+   "default": "0",
+   "fieldname": "charter",
+   "fieldtype": "Int",
+   "label": "Is the club Charter present ?"
+  },
+  {
+   "default": "0",
+   "fieldname": "collar",
+   "fieldtype": "Int",
+   "label": "Is the Collar Present ?"
+  },
+  {
+   "default": "0",
+   "fieldname": "saa",
+   "fieldtype": "Int",
+   "label": "Is the SAA Badge & Arm Band Present ?"
+  },
+  {
+   "default": "0",
+   "fieldname": "minutes",
+   "fieldtype": "Int",
+   "label": "Is the updated minutes book available ? "
+  },
+  {
+   "default": "0",
+   "fieldname": "attendance",
+   "fieldtype": "Int",
+   "label": "Is the updated attendance muster available ?"
+  },
+  {
+   "default": "0",
+   "fieldname": "banner",
+   "fieldtype": "Int",
+   "label": "Is the club banner present ?"
+  },
+  {
+   "default": "0",
+   "fieldname": "rooster",
+   "fieldtype": "Int",
+   "label": "Is the Club Rooster available ?"
+  },
+  {
+   "default": "0",
+   "fieldname": "website",
+   "fieldtype": "Int",
+   "label": "Is the Club Website & Social Media updated regularly ?"
+  },
+  {
+   "default": "0",
+   "fieldname": "membership",
+   "fieldtype": "Int",
+   "label": "Is the club membership file present ?"
+  },
+  {
+   "default": "0",
+   "fieldname": "bye_laws",
+   "fieldtype": "Int",
+   "label": "Is the updated Club Bye laws present ?"
+  },
+  {
+   "default": "0",
+   "fieldname": "finance",
+   "fieldtype": "Int",
+   "label": "Are the club Financial Records available and acknowledged by the Rotary ?"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "cut_off_date",
+   "fieldtype": "Date",
+   "label": "Cut Off Date"
+  },
+  {
+   "fieldname": "additional_points",
+   "fieldtype": "Int",
+   "label": "Additional Points for doing OCV before Cut Off date"
+  }
+ ],
+ "issingle": 1,
+ "modified": "2020-12-08 01:33:37.831903",
+ "modified_by": "Administrator",
+ "module": "Pranali Reloaded",
+ "name": "OCV Points Configuration",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
