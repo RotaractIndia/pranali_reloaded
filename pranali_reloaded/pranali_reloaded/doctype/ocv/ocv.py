@@ -3,8 +3,20 @@
 # For license information, please see license.txt
 
 from __future__ import unicode_literals
-# import frappe
+import frappe
 from frappe.model.document import Document
 
 class OCV(Document):
-	pass
+	def validate(self):
+		rules = ['gavel', 'charter', 'collar', 'saa', 'minutes', 'attendance', 
+			'banner', 'rooster', 'website', 'membership', 'bye_laws', 'finance']
+		
+		rule_points = frappe.get_single("OCV Points Configuration")
+		self.points = 0
+
+		if self.ocv_date < rule_points.cut_off_date:
+			self.points += rule_points.additional_points
+		
+		for rule in rules:
+			if self.get(rule):
+				self.points += rule_points.get(rule)
