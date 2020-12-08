@@ -19,32 +19,34 @@
   "membership",
   "bye_laws",
   "finance",
-  "additional_points"
+  "additional_points",
+  "section_break_16",
+  "max_points"
  ],
  "fields": [
   {
    "default": "0",
    "fieldname": "gavel",
    "fieldtype": "Int",
-   "label": "Is the Gavel and Gong Present ?"
+   "label": "Is the gavel & gong present ?"
   },
   {
    "default": "0",
    "fieldname": "charter",
    "fieldtype": "Int",
-   "label": "Is the club Charter present ?"
+   "label": "Is the club charter present ?"
   },
   {
    "default": "0",
    "fieldname": "collar",
    "fieldtype": "Int",
-   "label": "Is the Collar Present ?"
+   "label": "Is the collar present ?"
   },
   {
    "default": "0",
    "fieldname": "saa",
    "fieldtype": "Int",
-   "label": "Is the SAA Badge & Arm Band Present ?"
+   "label": "Is the SAA badge & arm band present ?"
   },
   {
    "default": "0",
@@ -68,13 +70,13 @@
    "default": "0",
    "fieldname": "rooster",
    "fieldtype": "Int",
-   "label": "Is the Club Rooster available ?"
+   "label": "Is the club roster available ?"
   },
   {
    "default": "0",
    "fieldname": "website",
    "fieldtype": "Int",
-   "label": "Is the Club Website & Social Media updated regularly ?"
+   "label": "Is the club website & social media updated regularly ?"
   },
   {
    "default": "0",
@@ -86,13 +88,13 @@
    "default": "0",
    "fieldname": "bye_laws",
    "fieldtype": "Int",
-   "label": "Is the updated Club Bye laws present ?"
+   "label": "Is the updated club bye laws present ?"
   },
   {
    "default": "0",
    "fieldname": "finance",
    "fieldtype": "Int",
-   "label": "Are the club Financial Records available and acknowledged by the Rotary ?"
+   "label": "Are the club financial records available and acknowledged by parent Rotary ?"
   },
   {
    "fieldname": "column_break_7",
@@ -106,11 +108,21 @@
   {
    "fieldname": "additional_points",
    "fieldtype": "Int",
-   "label": "Additional Points for doing OCV before Cut Off date"
+   "label": "Additional points for doing OCV before cut Off date"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "max_points",
+   "fieldtype": "Int",
+   "label": "Max Points",
+   "read_only": 1
   }
  ],
  "issingle": 1,
- "modified": "2020-12-08 01:33:37.831903",
+ "modified": "2020-12-08 14:19:52.779901",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "OCV Points Configuration",

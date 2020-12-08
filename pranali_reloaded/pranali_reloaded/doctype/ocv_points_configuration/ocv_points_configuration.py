@@ -7,4 +7,11 @@ from __future__ import unicode_literals
 from frappe.model.document import Document
 
 class OCVPointsConfiguration(Document):
-	pass
+	def validate(self):
+		rules = ['gavel', 'charter', 'collar', 'saa', 'minutes', 'attendance', 
+			'banner', 'rooster', 'website', 'membership', 'bye_laws', 'finance', 'additional_points']
+		
+		self.max_points = 0
+
+		for rule in rules:
+			self.max_points += self.get(rule)
