@@ -34,6 +34,13 @@ def set_desktop_icons():
 				"type": 'doctype',
 				"name": 'Receipt',
 				"link": '#List/Receipt/List'
+			},
+			{
+				"label": _('OCV'),
+				"icon": "octicon octicon-book",
+				"type": 'doctype',
+				"name": 'OCV',
+				"link": '#List/OCV/List'
 			}
 		],
 		"Reporting": [

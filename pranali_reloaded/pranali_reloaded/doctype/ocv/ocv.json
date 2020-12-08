@@ -7,11 +7,10 @@
  "engine": "InnoDB",
  "field_order": [
   "club",
-  "points",
   "column_break_3",
   "ocv_date",
   "amended_from",
-  "section_break_5",
+  "section_break_10",
   "gavel",
   "charter",
   "collar",
@@ -24,7 +23,12 @@
   "website",
   "membership",
   "bye_laws",
-  "finance"
+  "finance",
+  "section_break_5",
+  "points",
+  "percentage_points_earned",
+  "column_break_8",
+  "max_points"
  ],
  "fields": [
   {
@@ -49,78 +53,78 @@
    "default": "0",
    "fieldname": "gavel",
    "fieldtype": "Check",
-   "label": "Is the Gavel and Gong Present ?"
+   "label": "Is the gavel and gong present?"
   },
   {
    "default": "0",
    "fieldname": "charter",
    "fieldtype": "Check",
-   "label": "Is the club Charter present ?"
+   "label": "Is the club charter present?"
   },
   {
    "default": "0",
    "fieldname": "collar",
    "fieldtype": "Check",
-   "label": "Is the Collar Present ?"
+   "label": "Is the collar present?"
   },
   {
    "default": "0",
    "fieldname": "saa",
    "fieldtype": "Check",
-   "label": "Is the SAA Badge & Arm Band Present ?"
+   "label": "Is the SAA badge & arm band present?"
   },
   {
    "default": "0",
    "fieldname": "minutes",
    "fieldtype": "Check",
-   "label": "Is the updated minutes book available ? "
+   "label": "Is the updated minutes book available?"
   },
   {
    "default": "0",
    "fieldname": "attendance",
    "fieldtype": "Check",
-   "label": "Is the updated attendance muster available ?"
+   "label": "Is the updated attendance muster available?"
   },
   {
    "default": "0",
    "fieldname": "banner",
    "fieldtype": "Check",
-   "label": "Is the club banner present ?"
+   "label": "Is the club banner present?"
   },
   {
    "default": "0",
    "fieldname": "rooster",
    "fieldtype": "Check",
-   "label": "Is the Club Rooster available ?"
+   "label": "Is the club roster available?"
   },
   {
    "default": "0",
    "fieldname": "website",
    "fieldtype": "Check",
-   "label": "Is the Club Website & Social Media updated regularly ?"
+   "label": "Is the club website & social media updated regularly?"
   },
   {
    "default": "0",
    "fieldname": "membership",
    "fieldtype": "Check",
-   "label": "Is the club membership file present ?"
+   "label": "Is the club membership file present?"
   },
   {
    "default": "0",
    "fieldname": "bye_laws",
    "fieldtype": "Check",
-   "label": "Is the updated Club Bye laws present ?"
+   "label": "Is the updated club bye laws present?"
   },
   {
    "default": "0",
    "fieldname": "finance",
    "fieldtype": "Check",
-   "label": "Are the club Financial Records available and acknowledged by the Rotary ?"
+   "label": "Are the club financial records available and acknowledged by the Rotary?"
   },
   {
    "fieldname": "points",
    "fieldtype": "Int",
-   "label": "Points",
+   "label": "Total Points Earned",
    "read_only": 1
   },
   {
@@ -140,10 +144,30 @@
    "fieldtype": "Date",
    "label": "OCV Date",
    "reqd": 1
+  },
+  {
+   "fieldname": "percentage_points_earned",
+   "fieldtype": "Percent",
+   "label": "Percentage Points Earned",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "max_points",
+   "fieldtype": "Int",
+   "label": "Max Points",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
   }
  ],
  "is_submittable": 1,
- "modified": "2020-12-08 01:37:57.577921",
+ "modified": "2020-12-08 15:19:23.330706",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "OCV",
@@ -161,6 +185,15 @@
    "share": 1,
    "submit": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Club Member - Full Access",
+   "share": 1
   }
  ],
  "sort_field": "modified",
