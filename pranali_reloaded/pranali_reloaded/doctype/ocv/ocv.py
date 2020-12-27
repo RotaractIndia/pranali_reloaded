@@ -8,6 +8,15 @@ from frappe.model.document import Document
 
 class OCV(Document):
 	def validate(self):
+		self.validate_club()
+		self.set_points()
+
+	def validate_club(self):
+		self.existing_ocv = frappe.get_all("OCV", filters={"club": self.club, 'docstatus':1})
+		if self.existing_ocv:
+			frappe.throw("OCV Record is already created for Club {0}. <a href='/desk#Form/OCV/{1}'>Please cancel {1} to proceed.</a>".format(self.club, self.existing_ocv[0].get('name')))
+
+	def set_points(self):
 		rules = ['gavel', 'charter', 'collar', 'saa', 'minutes', 'attendance', 
 			'banner', 'rooster', 'website', 'membership', 'bye_laws', 'finance']
 		
