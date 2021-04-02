@@ -82,6 +82,13 @@ def set_desktop_icons():
 				"link": '#insight-engine'
 			},
 			{
+				"label": _('Dashboard'),
+				"name": 'Dashboard',
+				"icon": "octicon octicon-graph",
+				"type": "link",
+				"link": "#dashboard",
+			},
+			{
 				"label": _('Event Calendar'),
 				"icon": "octicon octicon-calendar",
 				"type": 'doctype',
