@@ -1,12 +1,12 @@
 {
- "actions": [],
  "autoname": "field:avenue",
  "creation": "2020-06-28 21:38:51.355130",
  "doctype": "DocType",
  "document_type": "Setup",
  "engine": "InnoDB",
  "field_order": [
-  "avenue"
+  "avenue",
+  "nominations_per_quarter"
  ],
  "fields": [
   {
@@ -14,10 +14,14 @@
    "fieldtype": "Data",
    "label": "Avenue",
    "unique": 1
+  },
+  {
+   "fieldname": "nominations_per_quarter",
+   "fieldtype": "Int",
+   "label": "Nominations per quarter"
   }
  ],
- "links": [],
- "modified": "2020-06-28 21:38:51.355130",
+ "modified": "2021-04-02 19:47:33.272825",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Avenue",
