@@ -31,10 +31,6 @@ override_whitelisted_methods = {
  	"frappe.desk.moduleview.get_desktop_settings": "pranali_reloaded.desk.set_desktop_icons"
 }
 
-# Document Events
-# ---------------
-# Hook on document methods and events
-
 doc_events = {
  	"User": {
  		"validate": "pranali_reloaded.hook_events.user.set_user_permissions_for_dcm",
@@ -45,6 +41,12 @@ doc_events = {
 doctype_js = {
 	"User": "public/js/user.js",
 	"Event": "public/js/event.js"
+}
+
+scheduler_events = {
+ 	"daily": [
+ 		"pranali_reloaded.scheduler.check_membership"
+ 	]
 }
 
 # Includes in <head>
