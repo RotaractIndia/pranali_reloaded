@@ -1,7 +1,11 @@
 #page-desktop {
-    background-image: url("/assets/pranali_reloaded/images/desk.jpg");
+    background-image: url("/assets/pranali_reloaded/images/desk.jpeg");
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.module-category {
+    color: #fff;
 }

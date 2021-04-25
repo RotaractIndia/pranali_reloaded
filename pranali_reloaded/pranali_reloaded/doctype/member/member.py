@@ -12,23 +12,11 @@ class Member(Document):
 		self.validate_pranali_access()
 		self.member_name = self.member_name.title()
 
-	def before_insert(self):
-		self.validate_dues()
-
-	def after_insert(self):
-		frappe.get_doc("Club", self.club).save()
-
 	def set_zone(self):
 		self.zone = frappe.db.get_value("Club", self.club, "zone")
-
-	def validate_dues(self):
-		district_dues = flt(frappe.db.get_single_value("Pranali Settings", "membership_dues"))
-		balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
-		if balance_amount < district_dues:
-			frappe.throw("Insufficient funds! You cannot add a new Member")
 	
 	def validate_pranali_access(self):
-		if not self.email:
+		if self.user and not self.email:
 			self.disable_user()
 		elif self.user and self.user != self.email:
 			self.rename_user()
@@ -95,9 +83,9 @@ class Member(Document):
 		user.save(ignore_permissions=True)
 		self.user = None
 
-	def on_trash(self):
-		club = frappe.get_doc("Club", self.club)
-		district_dues = flt(frappe.db.get_single_value("Pranali Settings", "membership_dues"))
-		frappe.db.set_value('Club', self.club, 'amount_spent_from_wallet', club.amount_spent_from_wallet - district_dues)
-		frappe.db.set_value('Club', self.club, 'balance_amount', club.balance_amount + district_dues)
-		frappe.db.set_value('Club', self.club, 'members_registered', club.members_registered - 1)
+@frappe.whitelist()
+def pay_dues(member_id):
+	membership = frappe.new_doc("Membership")
+	membership.member = member_id
+	membership.save()
+	membership.submit()
