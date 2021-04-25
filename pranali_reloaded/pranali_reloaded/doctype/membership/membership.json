@@ -1,0 +1,146 @@
+{
+ "allow_import": 1,
+ "autoname": "format:RM-{YYYY}-{#####}",
+ "creation": "2021-04-25 20:17:06.364186",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "engine": "InnoDB",
+ "field_order": [
+  "member",
+  "member_name",
+  "membership_amount",
+  "club",
+  "column_break_4",
+  "rotaract_year",
+  "valid_from",
+  "valid_till",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Member",
+   "options": "Member",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "member.member_name",
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Member Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "rotaract_year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Rotaract Year",
+   "options": "Rotaract Year",
+   "read_only": 1
+  },
+  {
+   "fieldname": "valid_from",
+   "fieldtype": "Date",
+   "label": "Valid From",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "rotaract_year.end_date",
+   "fieldname": "valid_till",
+   "fieldtype": "Date",
+   "label": "Valid Till",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "member.club",
+   "fieldname": "club",
+   "fieldtype": "Link",
+   "label": "Club",
+   "options": "Club"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Membership",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "membership_amount",
+   "fieldtype": "Currency",
+   "label": "Membership Amount",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "modified": "2021-04-25 21:22:57.746192",
+ "modified_by": "Administrator",
+ "module": "Pranali Reloaded",
+ "name": "Membership",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "import": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "District Council Member"
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Club Member - Full Access",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Club Member - Limited Access",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

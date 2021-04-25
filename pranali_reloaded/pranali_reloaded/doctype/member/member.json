@@ -6,19 +6,21 @@
  "document_type": "Setup",
  "engine": "InnoDB",
  "field_order": [
+  "member_details_section",
   "member_name",
-  "dob",
-  "column_break_4",
   "gender",
-  "status",
+  "contact_number",
+  "email",
+  "column_break_4",
+  "dob",
+  "address",
   "image",
   "section_break_5",
-  "contact_number",
-  "column_break_7",
-  "email",
-  "section_break_12",
+  "status",
   "designation",
-  "column_break_14",
+  "column_break_7",
+  "membership_valid_till",
+  "dues_paid",
   "in_directory",
   "section_break_15",
   "enable_pranali_access",
@@ -51,9 +53,9 @@
   },
   {
    "fieldname": "gender",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Gender",
-   "options": "Male\nFemale\nOther"
+   "options": "Gender"
   },
   {
    "fieldname": "status",
@@ -69,7 +71,8 @@
   },
   {
    "fieldname": "section_break_5",
-   "fieldtype": "Section Break"
+   "fieldtype": "Section Break",
+   "label": "Membership Details"
   },
   {
    "fieldname": "contact_number",
@@ -90,18 +93,10 @@
    "label": "E-mail"
   },
   {
-   "fieldname": "section_break_12",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "designation",
    "fieldtype": "Link",
    "label": "Designation",
    "options": "Designation"
-  },
-  {
-   "fieldname": "column_break_14",
-   "fieldtype": "Column Break"
   },
   {
    "default": "0",
@@ -163,11 +158,34 @@
    "fieldname": "enable_pranali_access",
    "fieldtype": "Check",
    "label": "Enable Pranali Access"
+  },
+  {
+   "fieldname": "member_details_section",
+   "fieldtype": "Section Break",
+   "label": "Member Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "dues_paid",
+   "fieldtype": "Check",
+   "label": "Dues Paid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "membership_valid_till",
+   "fieldtype": "Date",
+   "label": "Membership Valid Till",
+   "read_only": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
   }
  ],
  "image_field": "image",
  "index_web_pages_for_search": 1,
- "modified": "2021-04-25 14:58:54.973200",
+ "modified": "2021-04-25 17:38:22.754285",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Member",
