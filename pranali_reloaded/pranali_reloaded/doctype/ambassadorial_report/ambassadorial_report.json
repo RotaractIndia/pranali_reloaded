@@ -1,5 +1,4 @@
 {
- "actions": [],
  "autoname": "AM.######",
  "creation": "2015-06-02 11:06:33.017061",
  "doctype": "DocType",
@@ -26,9 +25,10 @@
   {
    "fieldname": "project_of",
    "fieldtype": "Link",
+   "ignore_user_permissions": 1,
    "in_standard_filter": 1,
    "label": "Project of ",
-   "options": "Club List",
+   "options": "Club",
    "reqd": 1
   },
   {
@@ -120,9 +120,9 @@
    "label": "Club/District Details"
   }
  ],
+ "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2020-07-07 21:09:41.604096",
+ "modified": "2021-04-25 21:41:03.877102",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Ambassadorial Report",

@@ -16,11 +16,6 @@ class Club(Document):
 		self.balance_amount = wallet_details.get("balance_amount")
 		self.members_registered = wallet_details.get("total_members")
 
-		if not frappe.db.exists("Club List", self.club_name):
-			club_list = frappe.new_doc("Club List")
-			club_list.club_name = self.club_name
-			club_list.save()
-
 def get_timeline_data(doctype, name):
 	project_data = dict(frappe.db.sql('''select unix_timestamp(date(end_time)), count(*)
 		from `tabProject` where club=%s
