@@ -9,6 +9,7 @@
   "club",
   "column_break_2",
   "quarter",
+  "rotaract_year",
   "section_break_4",
   "projects",
   "amended_from"
@@ -51,11 +52,19 @@
    "options": "AARA Nomination",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "rotaract_year",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Rotaract Year",
+   "options": "Rotaract Year",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "modified": "2021-04-24 18:37:32.483863",
+ "modified": "2021-04-26 00:13:49.781737",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "AARA Nomination",

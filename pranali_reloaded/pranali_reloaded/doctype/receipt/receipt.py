@@ -5,15 +5,16 @@
 from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
-from frappe.utils import now
+from frappe.utils import today
 
 class Receipt(Document):
 	def validate(self):
+		self.date = today()
+		self.rotaract_year = frappe.db.get_single_value("Pranali Settings", "current_rotaract_year")
 		if not self.club:
 			self.title = self.receivers_name
 			
 	def on_submit(self):
-		self.date = now()
 		if self.club and self.credit_amount:
 			frappe.get_doc("Club", self.club).save()
 

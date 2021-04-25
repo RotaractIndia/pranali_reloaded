@@ -16,6 +16,7 @@
   "total_attendance",
   "section_break_8",
   "club",
+  "rotaract_year",
   "column_break_12",
   "zone",
   "document_status",
@@ -118,11 +119,19 @@
    "fieldname": "club_district_details",
    "fieldtype": "Data",
    "label": "Club/District Details"
+  },
+  {
+   "fieldname": "rotaract_year",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Rotaract Year",
+   "options": "Rotaract Year",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "modified": "2021-04-25 21:41:03.877102",
+ "modified": "2021-04-26 00:20:25.272727",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Ambassadorial Report",

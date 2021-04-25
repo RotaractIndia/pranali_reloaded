@@ -1,5 +1,4 @@
 {
- "actions": [],
  "autoname": "MEET.######",
  "creation": "2015-04-17 18:46:12.357408",
  "doctype": "DocType",
@@ -26,6 +25,7 @@
   "total",
   "section_break_4",
   "club",
+  "rotaract_year",
   "column_break_4",
   "zone",
   "section_break_6",
@@ -187,11 +187,19 @@
    "fieldname": "attendance_section",
    "fieldtype": "Section Break",
    "label": "Attendance"
+  },
+  {
+   "fieldname": "rotaract_year",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Rotaract Year",
+   "options": "Rotaract Year",
+   "read_only": 1
   }
  ],
+ "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2020-06-28 21:37:09.182626",
+ "modified": "2021-04-26 00:19:03.924323",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Meeting",
