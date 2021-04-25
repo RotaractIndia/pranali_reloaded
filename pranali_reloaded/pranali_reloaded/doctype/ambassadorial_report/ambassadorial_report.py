@@ -15,6 +15,7 @@ class AmbassadorialReport(Document):
 		self.count_total()
 		if self.project_of=="Others" and not self.name_of_the_club:
 			frappe.throw("Please enter name of the Club")
+		self.rotaract_year = frappe.db.get_single_value("Pranali Settings", "current_rotaract_year")
 
 	def on_submit(self):
 		self.time_stamp = now()

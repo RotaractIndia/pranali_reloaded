@@ -28,7 +28,8 @@
   "points",
   "percentage_points_earned",
   "column_break_8",
-  "max_points"
+  "max_points",
+  "rotaract_year"
  ],
  "fields": [
   {
@@ -163,16 +164,27 @@
   {
    "fieldname": "section_break_10",
    "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "rotaract_year",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Rotaract Year",
+   "options": "Rotaract Year",
+   "read_only": 1
   }
  ],
+ "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "modified": "2020-12-27 19:38:12.388223",
+ "modified": "2021-04-26 00:06:45.985016",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "OCV",
  "owner": "Administrator",
  "permissions": [
   {
+   "amend": 1,
+   "cancel": 1,
    "create": 1,
    "delete": 1,
    "email": 1,

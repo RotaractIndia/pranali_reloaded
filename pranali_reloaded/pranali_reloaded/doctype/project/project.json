@@ -1,5 +1,4 @@
 {
- "actions": [],
  "allow_import": 1,
  "autoname": "PROJ.######",
  "creation": "2015-03-19 13:05:26.524336",
@@ -55,6 +54,7 @@
   "jt_project_clubs",
   "section_break_35",
   "club",
+  "rotaract_year",
   "column_break_4",
   "zone",
   "document_status",
@@ -350,11 +350,19 @@
    "fieldname": "attendance_section",
    "fieldtype": "Section Break",
    "label": "Attendance"
+  },
+  {
+   "fieldname": "rotaract_year",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Rotaract Year",
+   "options": "Rotaract Year",
+   "read_only": 1
   }
  ],
+ "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2020-06-28 22:09:25.067324",
+ "modified": "2021-04-26 00:17:55.822393",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Project",

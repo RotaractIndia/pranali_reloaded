@@ -13,6 +13,7 @@ class AARANomination(Document):
 		ongoing = 0
 		flagship = 0 
 		nomination_avenue = []
+		self.rotaract_year = frappe.db.get_single_value("Pranali Settings", "current_rotaract_year")
 		limits = get_avenue_limit()
 		
 		if self.quarter == "One":
@@ -62,7 +63,8 @@ class AARANomination(Document):
 							avenue_list.update({nomination.avenue: 2})
 
 	def before_submit(self):
-		existing_nomination = frappe.get_all("AARA Nomination", filters={"Club": self.club, "Quarter": self.quarter, "docstatus": 1})
+		rotaract_year = frappe.db.get_single_value("Pranali Settings", "current_rotaract_year")
+		existing_nomination = frappe.get_all("AARA Nomination", filters={"Club": self.club, "Quarter": self.quarter, "docstatus": 1, "rotaract_year": rotaract_year})
 		if existing_nomination:
 			frappe.throw("You have already submitted a Nomination for Quarter {0}. Please cancel {1} to proceed".format(self.quarter, existing_nomination[0].name))
 

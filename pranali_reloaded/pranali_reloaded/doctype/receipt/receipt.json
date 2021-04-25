@@ -1,5 +1,4 @@
 {
- "actions": [],
  "allow_import": 1,
  "creation": "2016-07-17 12:55:40.926427",
  "doctype": "DocType",
@@ -13,6 +12,7 @@
   "amount",
   "column_break_3",
   "date",
+  "rotaract_year",
   "credit_amount",
   "section_break_3",
   "description",
@@ -83,11 +83,19 @@
    "options": "Receipt",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "rotaract_year",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Rotaract Year",
+   "options": "Rotaract Year",
+   "read_only": 1
   }
  ],
+ "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "links": [],
- "modified": "2020-06-13 01:01:16.320141",
+ "modified": "2021-04-25 23:24:04.013894",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Receipt",
