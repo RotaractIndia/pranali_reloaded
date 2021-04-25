@@ -20,6 +20,11 @@
   "designation",
   "column_break_14",
   "in_directory",
+  "section_break_15",
+  "enable_pranali_access",
+  "limited_access",
+  "column_break_18",
+  "user",
   "section_break_10",
   "club",
   "column_break_16",
@@ -129,10 +134,40 @@
    "label": "Zone",
    "options": "Zone",
    "read_only": 1
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break",
+   "label": "Pranali User Access"
+  },
+  {
+   "default": "1",
+   "depends_on": "enable_pranali_access",
+   "fieldname": "limited_access",
+   "fieldtype": "Check",
+   "label": "Limited Access"
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "User",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_pranali_access",
+   "fieldtype": "Check",
+   "label": "Enable Pranali Access"
   }
  ],
  "image_field": "image",
- "modified": "2020-08-18 23:00:48.062045",
+ "index_web_pages_for_search": 1,
+ "modified": "2021-04-25 14:58:54.973200",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Member",
@@ -185,7 +220,6 @@
    "write": 1
   }
  ],
- "search_fields": "member_name",
  "sort_field": "modified",
  "sort_order": "DESC",
  "timeline_field": "club",
