@@ -108,13 +108,6 @@ def set_desktop_icons():
 				"type": 'page',
 				"name": 'Social',
 				"link": '#social/home'
-			},
-			{
-				"label": _('Pranali User Registration'),
-				"icon": "octicon octicon-diff-added",
-				"type": 'doctype',
-				"name": 'Registrations',
-				"link": '#List/Registrations/List'
 			}
 		]
 	}
