@@ -8,6 +8,7 @@ app_email = "neil@rotaractsuncity.in"
 app_version = "0.0.1"
 
 welcome_email = "pranali_reloaded.utils.welcome_email"
+boot_session = "pranali_reloaded.boot.set_rotaract_year"
 
 app_include_js = [
 	"/assets/pranali_reloaded/js/desk_common.js",
