@@ -1,1 +1,2 @@
 pranali_reloaded.patches.move_registrations_to_member
+pranali_reloaded.patches.create_membership
