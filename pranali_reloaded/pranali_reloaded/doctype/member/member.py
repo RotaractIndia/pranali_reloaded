@@ -16,7 +16,7 @@ class Member(Document):
 		self.zone = frappe.db.get_value("Club", self.club, "zone")
 	
 	def validate_pranali_access(self):
-		if not self.email:
+		if self.user and not self.email:
 			self.disable_user()
 		elif self.user and self.user != self.email:
 			self.rename_user()
