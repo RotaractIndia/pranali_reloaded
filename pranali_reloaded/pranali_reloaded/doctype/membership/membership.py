@@ -31,6 +31,7 @@ class Membership(Document):
 		member.dues_paid = dues_paid
 		if dues_paid:
 			member.membership_valid_till = self.valid_till
+			member.status = "Active Rotaractor"
 			frappe.msgprint("Membership is renewed till {0}.".format(self.valid_till))
 		else:
 			member.membership_valid_till = None
