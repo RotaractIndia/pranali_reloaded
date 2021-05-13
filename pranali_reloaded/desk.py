@@ -41,6 +41,14 @@ def set_desktop_icons():
 				"type": 'doctype',
 				"name": 'OCV',
 				"link": '#List/OCV/List'
+			},
+			{
+				"category": "Administration",
+				"label": _('AARA Nomination'),
+				"icon": "octicon octicon-gift",
+				"type": 'doctype',
+				"name": 'AARA Nomination',
+				"link": '#List/AARA Nomination/List'
 			}
 		],
 		"Reporting": [
@@ -108,7 +116,7 @@ def set_desktop_icons():
 				"type": 'page',
 				"name": 'Social',
 				"link": '#social/home'
-			}
+			}	
 		]
 	}
 	hook_icons = frappe.get_hooks("icons")
