@@ -9,11 +9,11 @@ from frappe.model.document import Document
 class AARANomination(Document):
 	def validate(self):
 		avenue_list = {}
-		joint = 0
 		nomination_avenue = []
 		self.rotaract_year = frappe.db.get_single_value("Pranali Settings", "current_rotaract_year")
 		limits = get_avenue_limit()
 		yearly_limits = get_yearly_limit()
+		joint_limit = frappe.db.get_single_value("Pranali Settings", "joint_project_limit")
 
 		if self.quarter == "Yearly":
 			self.projects = []
@@ -38,10 +38,9 @@ class AARANomination(Document):
 					.format(nomination.project, nomination.project_name, self.quarter, reporting_month))
 						
 			if nomination.nominate_for == "Joint":
-				if joint==2:
+				avenue_list.update({"Joint": avenue_list.get("Joint", 0) +1})
+				if avenue_list.get("Joint")>joint_limit:
 						frappe.throw("You cannot nominate more than 2 Joint Projects in a quarter")
-				else:
-					joint = joint + 1
 			else:
 				nomination.avenue = frappe.db.get_value("Project", nomination.project, frappe.scrub(nomination.nominate_for))
 				if frappe.db.get_value("Project", nomination.project, "joint_project"):

@@ -6,7 +6,16 @@
  "field_order": [
   "membership_dues",
   "column_break_2",
-  "current_rotaract_year"
+  "current_rotaract_year",
+  "aara_deadlines_section",
+  "quarter_one",
+  "quarter_two",
+  "yearly_nominations",
+  "column_break_7",
+  "quarter_three",
+  "quarter_four",
+  "aara_nomination_limits_section",
+  "joint_project_limit"
  ],
  "fields": [
   {
@@ -25,11 +34,56 @@
    "fieldtype": "Link",
    "label": "Current Rotaract Year",
    "options": "Rotaract Year"
+  },
+  {
+   "fieldname": "aara_deadlines_section",
+   "fieldtype": "Section Break",
+   "label": "AARA Deadlines"
+  },
+  {
+   "fieldname": "quarter_one",
+   "fieldtype": "Date",
+   "label": "Quarter One"
+  },
+  {
+   "fieldname": "quarter_two",
+   "fieldtype": "Date",
+   "label": "Quarter Two"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "quarter_three",
+   "fieldtype": "Date",
+   "label": "Quarter Three"
+  },
+  {
+   "fieldname": "quarter_four",
+   "fieldtype": "Date",
+   "label": "Quarter Four "
+  },
+  {
+   "fieldname": "aara_nomination_limits_section",
+   "fieldtype": "Section Break",
+   "label": "AARA Nomination Limits"
+  },
+  {
+   "description": "per quarter",
+   "fieldname": "joint_project_limit",
+   "fieldtype": "Int",
+   "label": "Joint Project Limit"
+  },
+  {
+   "fieldname": "yearly_nominations",
+   "fieldtype": "Date",
+   "label": "Yearly Nominations"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
- "modified": "2021-04-25 20:19:13.073055",
+ "modified": "2021-05-26 19:40:06.978808",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Pranali Settings",
