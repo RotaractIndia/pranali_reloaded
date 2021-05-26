@@ -7,13 +7,8 @@ frappe.ui.form.on('AARA Nomination Project', {
         if (local.nominate_for == "Joint") {
             local.avenue = "Joint Project";
             frm.refresh_fields("projects");
-        } else if (local.nominate_for == "Ongoing") {
-            local.avenue = "Ongoing";
-            frm.refresh_fields("projects");
-        } else if (local.nominate_for == "Flagship") {
-            local.avenue = "Flagship";
-            frm.refresh_fields("projects");
-        } else {
+        } 
+        else {
             frappe.call({
                 method: "pranali_reloaded.pranali_reloaded.doctype.aara_nomination.aara_nomination.get_nomination_avenue",
                 args: {
@@ -40,9 +35,5 @@ frappe.ui.form.on('AARA Nomination', {
                 }
             }
         });
-    },
-    refresh: function(frm) {
-        cur_frm.add_fetch('project',  'project_name',  'project_name'); 
     }
-
 });

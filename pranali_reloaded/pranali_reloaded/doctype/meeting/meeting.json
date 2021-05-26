@@ -18,11 +18,13 @@
   "district_council_members",
   "rotarians",
   "guest",
+  "percentage_attendance",
   "column_break_10",
   "alumini",
   "other_club",
   "pis",
   "total",
+  "total_registered_members",
   "section_break_4",
   "club",
   "rotaract_year",
@@ -195,11 +197,24 @@
    "label": "Rotaract Year",
    "options": "Rotaract Year",
    "read_only": 1
+  },
+  {
+   "fieldname": "percentage_attendance",
+   "fieldtype": "Percent",
+   "label": "Percentage Attendance",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "club.members_registered",
+   "fieldname": "total_registered_members",
+   "fieldtype": "Data",
+   "label": "Total Registered Members",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "modified": "2021-04-26 00:19:03.924323",
+ "modified": "2021-05-26 18:04:37.043155",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Meeting",

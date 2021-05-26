@@ -62,13 +62,17 @@
  ],
  "fields": [
   {
+   "bold": 1,
    "fieldname": "project_name",
    "fieldtype": "Data",
+   "in_filter": 1,
    "in_global_search": 1,
    "in_list_view": 1,
+   "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Project Name",
-   "reqd": 1
+   "reqd": 1,
+   "search_index": 1
   },
   {
    "fieldname": "column_break_2",
@@ -178,6 +182,7 @@
   {
    "fieldname": "aim",
    "fieldtype": "Text Editor",
+   "in_preview": 1,
    "label": "Aim / Concept",
    "reqd": 1
   },
@@ -313,6 +318,7 @@
   {
    "fieldname": "club",
    "fieldtype": "Link",
+   "in_preview": 1,
    "in_standard_filter": 1,
    "label": "Club",
    "options": "Club",
@@ -362,7 +368,7 @@
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "modified": "2021-04-26 00:17:55.822393",
+ "modified": "2021-05-26 12:14:50.089302",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Project",
@@ -409,6 +415,8 @@
    "write": 1
   }
  ],
+ "show_name_in_global_search": 1,
+ "show_preview_popup": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "timeline_field": "club",
