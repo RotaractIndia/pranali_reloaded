@@ -12,6 +12,7 @@
   "rotaract_year",
   "section_break_4",
   "projects",
+  "yearly_nomination",
   "amended_from"
  ],
  "fields": [
@@ -31,18 +32,19 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Quarter",
-   "options": "\nOne\nTwo\nThree\nFour\nYearly"
+   "options": "\nOne\nTwo\nThree\nFour\nYearly",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_4",
    "fieldtype": "Section Break"
   },
   {
+   "depends_on": "eval: doc.quarter!='Yearly'",
    "fieldname": "projects",
    "fieldtype": "Table",
    "label": "Projects",
-   "options": "AARA Nomination Project",
-   "reqd": 1
+   "options": "AARA Nomination Project"
   },
   {
    "fieldname": "amended_from",
@@ -60,11 +62,18 @@
    "label": "Rotaract Year",
    "options": "Rotaract Year",
    "read_only": 1
+  },
+  {
+   "depends_on": "eval: doc.quarter=='Yearly'",
+   "fieldname": "yearly_nomination",
+   "fieldtype": "Table",
+   "label": "Yearly Nomination",
+   "options": "Yearly Nomination"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "modified": "2021-04-26 00:13:49.781737",
+ "modified": "2021-05-26 12:04:12.586406",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "AARA Nomination",

@@ -1,38 +1,33 @@
 {
- "autoname": "field:avenue",
- "creation": "2020-06-28 21:38:51.355130",
+ "autoname": "field:category_name",
+ "creation": "2021-05-23 14:49:03.271917",
  "doctype": "DocType",
  "document_type": "Setup",
  "engine": "InnoDB",
  "field_order": [
-  "avenue",
-  "nominations_per_quarter",
-  "main_avenue"
+  "category_name",
+  "nominations_per_year"
  ],
  "fields": [
   {
-   "fieldname": "avenue",
-   "fieldtype": "Data",
-   "label": "Avenue",
-   "unique": 1
-  },
-  {
-   "fieldname": "nominations_per_quarter",
+   "fieldname": "nominations_per_year",
    "fieldtype": "Int",
-   "label": "Nominations per quarter"
+   "label": "Nominations per year"
   },
   {
-   "default": "0",
-   "fieldname": "main_avenue",
-   "fieldtype": "Check",
-   "label": "Main Avenue"
+   "fieldname": "category_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Category Name",
+   "reqd": 1,
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
- "modified": "2021-05-23 13:41:13.170415",
+ "modified": "2021-05-23 14:50:00.157284",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
- "name": "Avenue",
+ "name": "Nomination Category",
  "owner": "Administrator",
  "permissions": [
   {
