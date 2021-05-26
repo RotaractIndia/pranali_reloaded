@@ -10,9 +10,9 @@
       "url": "https://github.com/RotaractIndia/pranali_reloaded/issues"
     },
     "dependencies": {
-      "chart.js": "^2.9.3"
+      "chart.js": "^2.9.4"
     },
     "devDependencies": {
-      "chart.js": "^2.9.3"
+      "chart.js": "^2.9.4"
     }
   }
