@@ -38,6 +38,7 @@ class AARANomination(Document):
 					.format(nomination.project, nomination.project_name, self.quarter, reporting_month))
 						
 			if nomination.nominate_for == "Joint":
+				self.validate_joint_project(nomination.project)
 				avenue_list.update({"Joint": avenue_list.get("Joint", 0) +1})
 				if avenue_list.get("Joint")>joint_limit:
 						frappe.throw("You cannot nominate more than 2 Joint Projects in a quarter")
@@ -65,6 +66,10 @@ class AARANomination(Document):
 	def validate_reporting_status(self, nomination):
 		if frappe.db.get_value("Project", nomination.project, "project_status")== "Late":
 				frappe.throw("You cannot nominate project {0} - {1} as it was reported late".format(nomination.project, nomination.project_name))
+
+	def validate_joint_project(self, project):
+		if not frappe.db.get_value("Project", project, "joint_project"):
+				frappe.throw("You cannot nominate project {0} under 'Joint' as it was not reported as a Joint Project".format(project))
 
 def get_avenue_limit():
 	limits = {}
