@@ -42,12 +42,12 @@
   },
   {
    "fieldname": "quarter_one",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Quarter One"
   },
   {
    "fieldname": "quarter_two",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Quarter Two"
   },
   {
@@ -56,12 +56,12 @@
   },
   {
    "fieldname": "quarter_three",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Quarter Three"
   },
   {
    "fieldname": "quarter_four",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Quarter Four "
   },
   {
@@ -77,13 +77,13 @@
   },
   {
    "fieldname": "yearly_nominations",
-   "fieldtype": "Date",
+   "fieldtype": "Datetime",
    "label": "Yearly Nominations"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
- "modified": "2021-05-26 19:40:06.978808",
+ "modified": "2021-05-30 22:40:16.803705",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Pranali Settings",

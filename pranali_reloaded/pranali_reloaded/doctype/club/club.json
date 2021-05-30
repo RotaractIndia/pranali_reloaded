@@ -1,5 +1,4 @@
 {
- "actions": [],
  "allow_copy": 1,
  "allow_import": 1,
  "allow_rename": 1,
@@ -25,6 +24,7 @@
   "column_break_3",
   "zone",
   "charter_date",
+  "board_of_directors",
   "column_break_13",
   "website",
   "blog",
@@ -188,10 +188,16 @@
    "fieldname": "buddy_council_name",
    "fieldtype": "Data",
    "label": "Buddy Council Name"
+  },
+  {
+   "fieldname": "board_of_directors",
+   "fieldtype": "Int",
+   "label": "Board Of Directors",
+   "read_only": 1
   }
  ],
- "links": [],
- "modified": "2020-06-28 21:30:01.057277",
+ "index_web_pages_for_search": 1,
+ "modified": "2021-05-30 20:26:13.761843",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Club",

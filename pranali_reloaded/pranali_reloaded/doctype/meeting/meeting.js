@@ -15,9 +15,14 @@ frappe.ui.form.on('Meeting', {
 		} else if (progress_percentage > 40) {
 			progress_class = "progress-bar-warning"
 		}
+		
+		let message = progress_percentage + '% Home Club members attended.' ;
+		let title = progress_percentage + '% Home Club members attended.';
 
-		let message = progress_percentage + '% club members attended.' ;
-		let title = progress_percentage + '% club members attended.';
+		if (frm.doc.type_of_meeting == "BOD Meet") {
+			message = progress_percentage + '% Board of Directors attended.' ;
+			title = progress_percentage + '% Board of Directors attended.';
+		}
 
 		bars.push({
 			'title': title,

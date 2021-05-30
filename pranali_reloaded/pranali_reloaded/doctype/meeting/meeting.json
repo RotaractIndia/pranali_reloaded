@@ -25,6 +25,7 @@
   "pis",
   "total",
   "total_registered_members",
+  "total_registered_board_of_directors",
   "section_break_4",
   "club",
   "rotaract_year",
@@ -205,16 +206,25 @@
    "read_only": 1
   },
   {
+   "depends_on": "eval:doc.type_of_meeting != \"BOD Meet\"",
    "fetch_from": "club.members_registered",
    "fieldname": "total_registered_members",
    "fieldtype": "Data",
    "label": "Total Registered Members",
    "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.type_of_meeting == \"BOD Meet\"",
+   "fetch_from": "club.board_of_directors",
+   "fieldname": "total_registered_board_of_directors",
+   "fieldtype": "Int",
+   "label": "Total Registered Board of Directors",
+   "read_only": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "modified": "2021-05-26 18:04:37.043155",
+ "modified": "2021-05-30 20:52:48.776218",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Meeting",
