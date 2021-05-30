@@ -5,6 +5,7 @@
 from __future__ import unicode_literals
 import frappe
 from frappe.model.document import Document
+from frappe.utils import now
 
 class AARANomination(Document):
 	def validate(self):
@@ -58,6 +59,7 @@ class AARANomination(Document):
 				frappe.throw("You cannot nominate more that {0} Projects under Nomination Category {1}".format(yearly_limits.get(nomination.nomination_category), nomination.nomination_category))
 	
 	def before_submit(self):
+		self.validate_deadline()
 		rotaract_year = frappe.db.get_single_value("Pranali Settings", "current_rotaract_year")
 		existing_nomination = frappe.get_all("AARA Nomination", filters={"Club": self.club, "Quarter": self.quarter, "docstatus": 1, "rotaract_year": rotaract_year})
 		if existing_nomination:
@@ -70,6 +72,29 @@ class AARANomination(Document):
 	def validate_joint_project(self, project):
 		if not frappe.db.get_value("Project", project, "joint_project"):
 				frappe.throw("You cannot nominate project {0} under 'Joint' as it was not reported as a Joint Project".format(project))
+
+	def validate_deadline(self):
+		time_stamp = now()
+		if self.quarter=="One":
+			deadline = frappe.db.get_single_value("Pranali Settings", "quarter_one")
+			if deadline and time_stamp > deadline:
+				frappe.throw("Deadline for Quarter One Nominations was {0}. Nominations are now closed for Quater One.".format(deadline))
+		elif self.quarter=="Two":
+			deadline = frappe.db.get_single_value("Pranali Settings", "quarter_two")
+			if deadline and time_stamp > deadline:
+				frappe.throw("Deadline for Quarter Two Nominations was {0}. Nominations are now closed for Quater Two.".format(deadline))
+		elif self.quarter=="Three":
+			deadline = frappe.db.get_single_value("Pranali Settings", "quarter_three")
+			if deadline and time_stamp > deadline:
+				frappe.throw("Deadline for Quarter Three Nominations was {0}. Nominations are now closed for Quater Three.".format(deadline))
+		elif self.quarter=="Four":
+			deadline = frappe.db.get_single_value("Pranali Settings", "quarter_four")
+			if deadline and time_stamp > deadline:
+				frappe.throw("Deadline for Quarter Four Nominations was {0}. Nominations are now closed for Quater Four.".format(deadline))
+		elif self.quarter=="Yearly":
+			deadline = frappe.db.get_single_value("Pranali Settings", "yearly_nominations")
+			if deadline and time_stamp > deadline:
+				frappe.throw("Deadline for Yearly Nominations was {0}. Yearly Nominations are now closed.".format(deadline))
 
 def get_avenue_limit():
 	limits = {}
