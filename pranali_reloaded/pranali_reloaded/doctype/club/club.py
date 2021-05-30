@@ -15,6 +15,16 @@ class Club(Document):
 		self.amount_spent_from_wallet = wallet_details.get("amount_spent")
 		self.balance_amount = wallet_details.get("balance_amount")
 		self.members_registered = wallet_details.get("total_members")
+		self.set_board_of_directors()
+		
+	def set_board_of_directors(self):
+		bod = frappe.get_all("Member", filters={
+			"designation": ["is", "set"],
+			"designation": ["!=", "General Body Member"],
+			"dues_paid": True,
+			"club": self.name
+		})
+		self.board_of_directors = len(bod)
 
 def get_timeline_data(doctype, name):
 	project_data = dict(frappe.db.sql('''select unix_timestamp(date(end_time)), count(*)
