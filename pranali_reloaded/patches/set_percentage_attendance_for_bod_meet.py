@@ -1,6 +1,8 @@
 import frappe 
 
 def execute():
+    frappe.reload_doc("Pranali Reloaded", "doctype", "Pranali Settings")
+    
     for club in frappe.get_all("Club"):
         frappe.get_doc("Club", club.name).save()
 
