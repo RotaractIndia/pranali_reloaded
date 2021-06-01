@@ -2,15 +2,19 @@
 # For license information, please see license.txt
 
 from __future__ import unicode_literals
-import frappe
+import frappe, os
 from frappe.model.document import Document
-from frappe.utils import flt
+from frappe.utils import get_url
+from pyqrcode import create as qrcreate
 
 class Member(Document):
 	def validate(self):
 		self.set_zone()
 		self.validate_pranali_access()
 		self.member_name = self.member_name.title()
+		if not self.qr_code:
+			self.verification_hash = frappe.generate_hash(length=20).upper()
+			self.qr_code = qrcode_as_png(self.name, self.verification_hash)
 
 	def set_zone(self):
 		self.zone = frappe.db.get_value("Club", self.club, "zone")
@@ -82,6 +86,43 @@ class Member(Document):
 		user.enabled=self.enable_pranali_access
 		user.save(ignore_permissions=True)
 		self.user = None
+
+def qrcode_as_png(member, verification_hash):
+	site_name = frappe.db.get_single_value("Pranali Settings", "site_name")
+	qr_data = site_name + '/verify?id=' + verification_hash
+	print(qr_data)
+	folder = create_barcode_folder()
+	png_file_name = '{}.png'.format(verification_hash)
+	_file = frappe.get_doc({
+		"doctype": "File",
+		"file_name": png_file_name,
+		"attached_to_doctype": 'Member',
+		"attached_to_name": member,
+		"folder": folder,
+		"content": png_file_name})
+	_file.save()
+	frappe.db.commit()
+	file_url = get_url(_file.file_url)
+	file_path = os.path.join(frappe.get_site_path('public', 'files'), _file.file_name)
+	url = qrcreate(qr_data)
+	with open(file_path, 'wb') as png_file:
+		url.png(png_file, scale=3, module_color=[0, 0, 0, 180])
+	return file_url
+
+def create_barcode_folder():
+	'''Get Barcodes folder.'''
+	folder_name = 'Barcodes'
+	folder = frappe.db.exists('File', {'file_name': folder_name})
+	if folder:
+		return folder
+	folder = frappe.get_doc({
+			'doctype': 'File',
+			'file_name': folder_name,
+			'is_folder':1,
+			'folder': 'Home'
+		})
+	folder.insert(ignore_permissions=True)
+	return folder.name
 
 @frappe.whitelist()
 def pay_dues(member_id):

@@ -1,0 +1,21 @@
+<h2>Membership Verification</h2>
+
+{%- if member -%}
+{%- if member.dues_paid -%}
+    <div style="color:green;"><b>Your Membership is Active!</b></div>
+{%- else -%}
+    <div style="color:red;"><b>Your Membership has Expired! Please request your club to pay your District Dues to renew your membership.</div></p>
+{%- endif -%}
+<table>
+<tr><td> Full Name: </td><td>{{ member.get('member_name')}} </td></tr>
+<tr><td> Membership status: </td><td>{{ member.get('status')}}</td></tr>
+<tr><td> Membership valid till:  </td><td>{{frappe.format_date(member.get('membership_valid_till'))}}</td></tr>
+<tr><td> Designation: </td><td>{{ member.get('designation')}}</td></tr>
+<tr><td> Club: </td><td>{{ member.get('club')}}</td></tr>
+<tr><td> Zone: </td><td>{{ member.get('zone')}}</td></tr>
+</table>
+{%- else -%}
+<p>   
+    Invalid ID!
+</p>
+{%- endif -%}
