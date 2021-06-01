@@ -8,20 +8,25 @@
  "field_order": [
   "member_details_section",
   "member_name",
+  "dob",
+  "column_break_5",
+  "status",
+  "designation",
+  "section_break_5",
   "gender",
   "contact_number",
   "email",
   "column_break_4",
-  "dob",
   "address",
-  "image",
-  "section_break_5",
-  "status",
-  "designation",
+  "membership_details_section",
   "column_break_7",
   "membership_valid_till",
   "dues_paid",
   "in_directory",
+  "column_break_19",
+  "verification_hash",
+  "qr_code",
+  "image",
   "section_break_15",
   "enable_pranali_access",
   "limited_access",
@@ -64,15 +69,8 @@
    "options": "Active Rotaractor\nGuest\nAlumni\nLeft Club\nTerminated"
   },
   {
-   "fieldname": "image",
-   "fieldtype": "Attach Image",
-   "hidden": 1,
-   "label": "Image"
-  },
-  {
    "fieldname": "section_break_5",
-   "fieldtype": "Section Break",
-   "label": "Membership Details"
+   "fieldtype": "Section Break"
   },
   {
    "fieldname": "contact_number",
@@ -181,11 +179,42 @@
    "fieldname": "address",
    "fieldtype": "Small Text",
    "label": "Address"
+  },
+  {
+   "fieldname": "membership_details_section",
+   "fieldtype": "Section Break",
+   "label": "Membership Details"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "qr_code",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "QR Code"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Image",
+   "label": "Image",
+   "options": "qr_code"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "verification_hash",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Verification Hash",
+   "read_only": 1
   }
  ],
- "image_field": "image",
  "index_web_pages_for_search": 1,
- "modified": "2021-04-25 17:38:22.754285",
+ "modified": "2021-06-01 00:27:03.253930",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Member",

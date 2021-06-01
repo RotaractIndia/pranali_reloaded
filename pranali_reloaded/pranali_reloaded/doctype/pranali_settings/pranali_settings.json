@@ -4,9 +4,10 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
+  "current_rotaract_year",
   "membership_dues",
   "column_break_2",
-  "current_rotaract_year",
+  "site_name",
   "aara_deadlines_section",
   "quarter_one",
   "quarter_two",
@@ -79,11 +80,16 @@
    "fieldname": "yearly_nominations",
    "fieldtype": "Datetime",
    "label": "Yearly Nominations"
+  },
+  {
+   "fieldname": "site_name",
+   "fieldtype": "Data",
+   "label": "Site Name"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
- "modified": "2021-05-30 22:40:16.803705",
+ "modified": "2021-06-01 00:42:23.257840",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Pranali Settings",
