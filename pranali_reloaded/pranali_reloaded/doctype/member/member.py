@@ -90,7 +90,6 @@ class Member(Document):
 def qrcode_as_png(member, verification_hash):
 	site_name = frappe.db.get_single_value("Pranali Settings", "site_name")
 	qr_data = site_name + '/verify?id=' + verification_hash
-	print(qr_data)
 	folder = create_barcode_folder()
 	png_file_name = '{}.png'.format(verification_hash)
 	_file = frappe.get_doc({

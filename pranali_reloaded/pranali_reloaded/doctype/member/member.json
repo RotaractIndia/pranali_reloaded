@@ -214,7 +214,7 @@
   }
  ],
  "index_web_pages_for_search": 1,
- "modified": "2021-06-01 00:27:03.253930",
+ "modified": "2021-06-26 15:46:39.034470",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Member",
@@ -267,6 +267,7 @@
    "write": 1
   }
  ],
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
  "timeline_field": "club",
