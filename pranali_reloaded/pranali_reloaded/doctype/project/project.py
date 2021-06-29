@@ -27,10 +27,12 @@ class Project(Document):
 		self.time_stamp = now()
 		self.reporting_month = getdate(self.end_time).strftime("%B")
 		d = add_months(getdate(self.end_time), 1)
-		deadline = cstr(getdate(d).strftime("%Y")) + "-" + cstr(getdate(d).strftime("%m")) + "-10"
+		early = frappe.db.get_single_value("Pranali Settings", "early_reporting_days")
+		reporting_deadline = frappe.db.get_single_value("Pranali Settings", "reporting_deadline")
+		deadline = cstr(getdate(d).strftime("%Y")) + "-" + cstr(getdate(d).strftime("%m")) + "-" + cstr(reporting_deadline)
 		if getdate(self.time_stamp) > getdate(deadline):
 			self.project_status = "Late"
-		elif getdate(self.time_stamp) <= getdate(add_days(getdate(self.end_time), 10)):
+		elif early > 0 and getdate(self.time_stamp) <= getdate(add_days(getdate(self.end_time), early)):
 			self.project_status = "Early"
 		else:
 			self.project_status = "On Time"

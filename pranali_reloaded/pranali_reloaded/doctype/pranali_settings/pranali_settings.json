@@ -8,11 +8,15 @@
   "membership_dues",
   "column_break_2",
   "site_name",
+  "reporting_deadlines_section",
+  "early_reporting_days",
+  "column_break_7",
+  "reporting_deadline",
   "aara_deadlines_section",
   "quarter_one",
   "quarter_two",
   "yearly_nominations",
-  "column_break_7",
+  "column_break_13",
   "quarter_three",
   "quarter_four",
   "aara_nomination_limits_section",
@@ -85,11 +89,30 @@
    "fieldname": "site_name",
    "fieldtype": "Data",
    "label": "Site Name"
+  },
+  {
+   "fieldname": "reporting_deadlines_section",
+   "fieldtype": "Section Break",
+   "label": "Reporting Deadlines"
+  },
+  {
+   "fieldname": "early_reporting_days",
+   "fieldtype": "Int",
+   "label": "Early Reporting Days"
+  },
+  {
+   "fieldname": "reporting_deadline",
+   "fieldtype": "Int",
+   "label": "Reporting Deadline"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
   }
  ],
  "index_web_pages_for_search": 1,
  "issingle": 1,
- "modified": "2021-06-01 00:42:23.257840",
+ "modified": "2021-06-29 11:38:39.930479",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Pranali Settings",
