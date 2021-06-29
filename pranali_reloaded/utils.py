@@ -2,7 +2,11 @@ from __future__ import unicode_literals
 import frappe
 
 def welcome_email():
-	return "Welcome to Pranali"
+	subject = frappe.db.get_single_value("Pranali Settings", "welcome_email_subject")
+	if subject:
+		return subject
+	else:
+		return "Welcome to Pranali"
 
 @frappe.whitelist(allow_guest=True)
 def login_as(user):
