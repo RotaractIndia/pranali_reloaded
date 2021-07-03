@@ -21,6 +21,7 @@
   "sponsoring_rotary",
   "club_type",
   "club_email",
+  "disable_reporting_access",
   "column_break_3",
   "zone",
   "charter_date",
@@ -194,10 +195,17 @@
    "fieldtype": "Int",
    "label": "Board Of Directors",
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "disable_reporting_access",
+   "fieldtype": "Check",
+   "label": "Disable Reporting Access",
+   "permlevel": 5
   }
  ],
  "index_web_pages_for_search": 1,
- "modified": "2021-05-30 20:26:13.761843",
+ "modified": "2021-07-03 19:23:42.108799",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Club",
@@ -253,6 +261,17 @@
    "report": 1,
    "role": "Club Member - Limited Access",
    "share": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "permlevel": 5,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
   }
  ],
  "show_name_in_global_search": 1,

@@ -9,7 +9,6 @@ from frappe.model.document import Document
 
 class Project(Document):
 	def validate(self):
-		self.validate_account()
 		self.validate_date()
 		self.set_status()
 		self.calculate_totals()
@@ -18,6 +17,8 @@ class Project(Document):
 		self.rotaract_year = frappe.db.get_single_value("Pranali Settings", "current_rotaract_year")
 
 	def on_submit(self):
+		self.validate_account()
+		self.validate_reporting_access()
 		frappe.db.set_value('Project', self.name, 'document_status', 'submitted')
 
 	def on_cancel(self):
@@ -64,3 +65,7 @@ class Project(Document):
 		balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
 		if balance_amount < 0:
 			frappe.throw("Your account has been locked due to Negative funds in your wallet. Please pay INR {0} to Unlock !".format(abs(balance_amount)))
+
+	def validate_reporting_access(self):
+		if frappe.db.get_value("Club", self.club, "disable_reporting_access"):
+			frappe.throw("Reporting Access has been disabled for your club. Please contact the District Secretary.")
