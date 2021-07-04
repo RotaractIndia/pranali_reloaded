@@ -9,7 +9,9 @@ def calculate_wallet_amount(club):
 	wallet_details.update(total_amount = total_amount)
 	total_members= flt(frappe.db.sql("select count(name) from tabMember where club=%s and dues_paid=1", club)[0][0])
 	wallet_details.update(total_members = total_members)
-	amount_spent = flt(frappe.db.sql("select sum(membership_amount) from tabMembership where docstatus=1 and club=%s", club)[0][0])
+	membership_dues = flt(frappe.db.sql("select sum(membership_amount) from tabMembership where docstatus=1 and club=%s", club)[0][0])
+	district_payments = flt(frappe.db.sql("select sum(grand_total) from `tabDistrict Payments` where docstatus=1 and club=%s", club)[0][0])
+	amount_spent = membership_dues + district_payments
 	wallet_details.update(amount_spent = amount_spent)
 	wallet_details.update(balance_amount = total_amount - amount_spent)
 	return wallet_details

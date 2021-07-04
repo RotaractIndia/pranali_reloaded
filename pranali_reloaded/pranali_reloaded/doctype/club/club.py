@@ -6,6 +6,7 @@ from __future__ import unicode_literals
 import frappe
 from frappe.utils import add_years
 from frappe.model.document import Document
+from frappe.model.mapper import get_mapped_doc
 from pranali_reloaded.pranali_reloaded.utils import calculate_wallet_amount
 
 class Club(Document):
@@ -48,5 +49,17 @@ def merge_dicts(dict1, dict2):
 	for key, value in dict3.items():
 		if key in dict1 and key in dict2:
 			dict3[key] = value + dict1[key]
-
 	return dict3
+
+@frappe.whitelist()
+def pay_district(source_name, target_doc=None):
+	doc = get_mapped_doc("Club", source_name, {
+		"Club": {
+			"doctype": "District Payments",
+			"field_map":{
+				"name" : "club"
+			}
+		},
+	}, target_doc)
+
+	return doc

@@ -29,13 +29,6 @@ def set_desktop_icons():
 				"link": '#List/Member/List'
 			},
 			{
-				"label": _('Receipt'),
-				"icon": "octicon octicon-clippy",
-				"type": 'doctype',
-				"name": 'Receipt',
-				"link": '#List/Receipt/List'
-			},
-			{
 				"label": _('OCV'),
 				"icon": "octicon octicon-book",
 				"type": 'doctype',
@@ -43,12 +36,18 @@ def set_desktop_icons():
 				"link": '#List/OCV/List'
 			},
 			{
-				"category": "Administration",
-				"label": _('AARA Nomination'),
-				"icon": "octicon octicon-gift",
+				"label": _('District Payments'),
+				"icon": "octicon octicon-mail",
 				"type": 'doctype',
-				"name": 'AARA Nomination',
-				"link": '#List/AARA Nomination/List'
+				"name": 'District Payments',
+				"link": '#List/District Payments/List'
+			},
+			{
+				"label": _('Receipt'),
+				"icon": "octicon octicon-clippy",
+				"type": 'doctype',
+				"name": 'Receipt',
+				"link": '#List/Receipt/List'
 			}
 		],
 		"Reporting": [
@@ -72,6 +71,14 @@ def set_desktop_icons():
 				"type": 'doctype',
 				"name": 'Ambassadorial Report',
 				"link": '#List/Ambassadorial Report/List'
+			},
+			{
+				"category": "Administration",
+				"label": _('AARA Nomination'),
+				"icon": "octicon octicon-gift",
+				"type": 'doctype',
+				"name": 'AARA Nomination',
+				"link": '#List/AARA Nomination/List'
 			}
 		],
 		"Tools": [
