@@ -1,0 +1,187 @@
+{
+ "_liked_by": "[\"Administrator\"]",
+ "autoname": "PIS.######",
+ "creation": "2021-07-04 16:28:03.738806",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "pis_category",
+  "club_name",
+  "column_break_2",
+  "project_name",
+  "section_break_6",
+  "members",
+  "section_break_4",
+  "time_stamp",
+  "column_break_8",
+  "total_attendance",
+  "section_break_8",
+  "club",
+  "rotaract_year",
+  "column_break_12",
+  "zone",
+  "document_status",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "pis_category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "PIS Category",
+   "options": "Rotary\nInteract"
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "project_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Project Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "members",
+   "fieldtype": "Table",
+   "label": "Members",
+   "options": "ambassadorial member",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval: doc.docstatus==1",
+   "fieldname": "section_break_4",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "time_stamp",
+   "fieldtype": "Data",
+   "label": "Time Stamp"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_attendance",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Total Attendance"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "club",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Club",
+   "options": "Club",
+   "reqd": 1
+  },
+  {
+   "fieldname": "rotaract_year",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Rotaract Year",
+   "options": "Rotaract Year",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "zone",
+   "fieldtype": "Data",
+   "in_standard_filter": 1,
+   "label": "Zone",
+   "read_only": 1
+  },
+  {
+   "fieldname": "document_status",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Document Status",
+   "options": "Document Status",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "PIS Interaction",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "club_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Club Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "modified": "2021-07-04 16:39:41.982549",
+ "modified_by": "Administrator",
+ "module": "Pranali Reloaded",
+ "name": "PIS Interaction",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Administrator",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Club Member - Full Access",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "District Council Member"
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Club Member - Limited Access",
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "timeline_field": "club",
+ "title_field": "project_name"
+}

@@ -23,7 +23,7 @@ def set_desktop_icons():
 			},
 			{
 				"label": _('Member'),
-				"icon": "octicon octicon-organization",
+				"icon": "octicon octicon-person",
 				"type": 'doctype',
 				"name": 'Member',
 				"link": '#List/Member/List'
@@ -71,6 +71,13 @@ def set_desktop_icons():
 				"type": 'doctype',
 				"name": 'Ambassadorial Report',
 				"link": '#List/Ambassadorial Report/List'
+			},
+			{
+				"label": _('PIS Interaction'),
+				"icon": "octicon octicon-organization",
+				"type": 'doctype',
+				"name": 'PIS Interaction',
+				"link": '#List/PIS Interaction/List'
 			},
 			{
 				"category": "Administration",
