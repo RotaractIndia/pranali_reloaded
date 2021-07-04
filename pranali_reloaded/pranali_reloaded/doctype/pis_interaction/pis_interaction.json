@@ -9,6 +9,8 @@
   "club_name",
   "column_break_2",
   "project_name",
+  "section_break_5",
+  "summary",
   "section_break_6",
   "members",
   "section_break_4",
@@ -129,11 +131,20 @@
    "in_list_view": 1,
    "in_standard_filter": 1,
    "label": "Club Name"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "summary",
+   "fieldtype": "Text Editor",
+   "label": "Summary"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "modified": "2021-07-04 16:39:41.982549",
+ "modified": "2021-07-04 16:54:58.866789",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "PIS Interaction",
