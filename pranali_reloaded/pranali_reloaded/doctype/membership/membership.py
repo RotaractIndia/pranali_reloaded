@@ -15,13 +15,13 @@ class Membership(Document):
 		self.membership_amount = flt(frappe.db.get_single_value("Pranali Settings", "membership_dues"))
 		
 	def before_submit(self):
-		self.validate_dues()
+		self.validate_funds()
 
 	def on_submit(self):
 		self.update_member(True)
 		self.update_club()
 		
-	def validate_dues(self):
+	def validate_funds(self):
 		balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
 		if balance_amount < self.membership_amount:
 			frappe.throw("Insufficient funds! You cannot add a new Member")
