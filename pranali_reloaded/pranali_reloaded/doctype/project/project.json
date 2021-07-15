@@ -242,7 +242,7 @@
   },
   {
    "fieldname": "chairpersons",
-   "fieldtype": "Table",
+   "fieldtype": "Table MultiSelect",
    "label": "Chairpersons",
    "options": "Project Chairperson",
    "reqd": 1
@@ -368,7 +368,7 @@
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "modified": "2021-05-26 12:14:50.089302",
+ "modified": "2021-07-08 17:43:30.286372",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Project",

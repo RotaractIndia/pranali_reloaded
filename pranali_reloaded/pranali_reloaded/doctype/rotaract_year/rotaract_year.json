@@ -7,7 +7,10 @@
  "field_order": [
   "year",
   "start_date",
-  "end_date"
+  "column_break_3",
+  "end_date",
+  "section_break_5",
+  "district_council"
  ],
  "fields": [
   {
@@ -31,10 +34,23 @@
    "in_list_view": 1,
    "label": "End Date",
    "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "district_council",
+   "fieldtype": "Table",
+   "label": "District Council",
+   "options": "District Council"
   }
  ],
- "index_web_pages_for_search": 1,
- "modified": "2021-04-25 13:11:27.658052",
+ "modified": "2021-07-16 00:06:58.866820",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Rotaract Year",
