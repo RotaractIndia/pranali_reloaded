@@ -116,7 +116,8 @@
   {
    "fieldname": "club_email",
    "fieldtype": "Data",
-   "label": "Contact Email Address"
+   "label": "Contact Email Address",
+   "options": "Email"
   },
   {
    "fieldname": "column_break_3",
@@ -204,8 +205,7 @@
    "permlevel": 5
   }
  ],
- "index_web_pages_for_search": 1,
- "modified": "2021-07-03 19:23:42.108799",
+ "modified": "2021-07-15 23:32:38.933101",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Club",

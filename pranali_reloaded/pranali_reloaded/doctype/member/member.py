@@ -1,7 +1,7 @@
 # Copyright (c) 2015, Rtr.Neil Trini Lasrado and contributors
 # For license information, please see license.txt
 
-from __future__ import unicode_literals
+from __future__ import print_function, unicode_literals
 import frappe, os
 from frappe.model.document import Document
 from frappe.utils import get_url
@@ -30,6 +30,7 @@ class Member(Document):
 				self.make_user()
 			else:
 				self.user = self.email
+				self.update_user()
 		elif self.user and self.email:
 			self.update_user()
 		
@@ -51,11 +52,7 @@ class Member(Document):
 		user.save(ignore_permissions=True)
 		self.user = user.name
 		self.limited_access=True
-		permission = frappe.new_doc("User Permission")
-		permission.user = user.name
-		permission.allow = "Club"
-		permission.for_value = self.club
-		permission.save(ignore_permissions=True)
+		self.restrict_user_to_club()
 
 	def update_user(self):
 		user=frappe.get_doc("User", self.user)
@@ -75,6 +72,10 @@ class Member(Document):
 				]
 			})
 		user.save(ignore_permissions=True)
+		if self.enable_pranali_access:
+			self.restrict_user_to_club()
+		else:
+			self.remove_club_restriction()
 
 	def rename_user(self):
 		frappe.rename_doc("User", self.user, self.email)
@@ -85,7 +86,27 @@ class Member(Document):
 		user=frappe.get_doc("User", self.user)
 		user.enabled=self.enable_pranali_access
 		user.save(ignore_permissions=True)
-		self.user = None
+		self.remove_club_restriction()
+
+	def restrict_user_to_club(self):
+		user_permissions = frappe.get_all("User Permission", filters={
+			"user": self.user, 
+			"allow": "Club"
+		})
+		if not user_permissions:
+			permission = frappe.new_doc("User Permission")
+			permission.user = self.user
+			permission.allow = "Club"
+			permission.for_value = self.club
+			permission.save(ignore_permissions=True)
+	
+	def remove_club_restriction(self):
+		user_permissions = frappe.get_all("User Permission", filters={
+			"user": self.user, 
+			"allow": "Club"
+		})
+		if user_permissions:
+			frappe.delete_doc("User Permission", user_permissions[0].name)
 
 def qrcode_as_png(member, verification_hash):
 	site_name = frappe.db.get_single_value("Pranali Settings", "site_name")

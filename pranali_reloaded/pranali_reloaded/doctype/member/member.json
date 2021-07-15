@@ -88,7 +88,8 @@
    "fieldtype": "Data",
    "in_global_search": 1,
    "in_standard_filter": 1,
-   "label": "E-mail"
+   "label": "E-mail",
+   "options": "Email"
   },
   {
    "fieldname": "designation",
@@ -213,8 +214,7 @@
    "read_only": 1
   }
  ],
- "index_web_pages_for_search": 1,
- "modified": "2021-06-26 15:46:39.034470",
+ "modified": "2021-07-15 23:32:13.449005",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Member",
