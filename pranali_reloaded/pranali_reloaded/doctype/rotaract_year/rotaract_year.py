@@ -45,8 +45,13 @@ class RotaractYear(Document):
 		self.restrict_user()
 
 	def update_user(self, dcm, core=False):
+		existing_member = frappe.get_all("Member", filters={
+			"email": dcm.email,
+			"enable_pranali_access": 1
+		})
 		user=frappe.get_doc("User", dcm.email)
-		user.enabled= dcm.active
+		if not existing_member:
+			user.enabled= dcm.active
 		user.bio = dcm.designation
 		user.update({
 			"roles": [
