@@ -1,12 +1,12 @@
 {
- "actions": [],
  "autoname": "field:designation",
  "creation": "2020-06-28 21:18:40.566598",
  "doctype": "DocType",
  "document_type": "Setup",
  "engine": "InnoDB",
  "field_order": [
-  "designation"
+  "designation",
+  "district_position"
  ],
  "fields": [
   {
@@ -14,10 +14,15 @@
    "fieldtype": "Data",
    "label": "Designation",
    "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "district_position",
+   "fieldtype": "Check",
+   "label": "District Position"
   }
  ],
- "links": [],
- "modified": "2020-06-28 21:18:40.566598",
+ "modified": "2021-07-17 17:28:30.151284",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Designation",

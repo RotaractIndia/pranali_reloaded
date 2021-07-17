@@ -10,6 +10,8 @@
   "column_break_3",
   "end_date",
   "section_break_5",
+  "district_core_team",
+  "section_break_7",
   "district_council"
  ],
  "fields": [
@@ -48,9 +50,20 @@
    "fieldtype": "Table",
    "label": "District Council",
    "options": "District Council"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "description": "District Core Team members will get System Manager access ",
+   "fieldname": "district_core_team",
+   "fieldtype": "Table",
+   "label": "District Core Team",
+   "options": "District Council"
   }
  ],
- "modified": "2021-07-16 00:06:58.866820",
+ "modified": "2021-07-17 17:26:45.325908",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Rotaract Year",
