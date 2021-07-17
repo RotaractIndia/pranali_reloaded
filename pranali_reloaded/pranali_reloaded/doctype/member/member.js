@@ -11,6 +11,16 @@ frappe.ui.form.on('Member', {
         }
     },
 
+    onload: (frm) => {
+		frm.set_query("designation", () => {
+			return {
+				filters: {
+					district_position: ["!=", "1"]
+				}
+			}
+		});
+	},
+
     pay_dues: function(frm) {
         frappe.call({
             method: "pranali_reloaded.pranali_reloaded.doctype.member.member.pay_dues",

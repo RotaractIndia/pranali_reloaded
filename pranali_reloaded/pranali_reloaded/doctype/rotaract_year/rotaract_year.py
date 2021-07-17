@@ -13,8 +13,14 @@ class RotaractYear(Document):
 				self.update_user(dcm)
 			else:
 				self.make_user(dcm)
+
+		for core in self.district_core_team:
+			if frappe.db.exists('User', core.email):
+				self.update_user(core, True)
+			else:
+				self.make_user(core, True)
 		
-	def make_user(self, dcm):
+	def make_user(self, dcm, core=False):
 		user = frappe.new_doc("User")
 		user.update({
 			"first_name": dcm.full_name,
@@ -22,23 +28,37 @@ class RotaractYear(Document):
 			"send_welcome_email": 1
 		})
 		user.save(ignore_permissions=True)
+		user.bio = dcm.designation
 		user.update({
 			"roles": [
 				{"role": "District Council Member"}
-			],
-			"bio": dcm.designation
+			]
+		})
+		if core:
+			user.update({
+			"roles": [
+				{"role": "District Council Member"},
+				{"role": "System Manager"}
+			]
 		})
 		user.save(ignore_permissions=True)
 		self.restrict_user()
 
-	def update_user(self, dcm):
+	def update_user(self, dcm, core=False):
 		user=frappe.get_doc("User", dcm.email)
 		user.enabled= dcm.active
+		user.bio = dcm.designation
 		user.update({
 			"roles": [
 				{"role": "District Council Member"}
-			],
-			"bio": dcm.designation
+			]
+		})
+		if core:
+			user.update({
+			"roles": [
+				{"role": "District Council Member"},
+				{"role": "System Manager"}
+			]
 		})
 		user.save(ignore_permissions=True)
 		if dcm.active:
