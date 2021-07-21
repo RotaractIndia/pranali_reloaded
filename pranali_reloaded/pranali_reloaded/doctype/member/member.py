@@ -48,7 +48,7 @@ class Member(Document):
 			"roles": [
 				{"role": "Club Member - Limited Access"}
 			],
-			"bio": self.club
+			"bio": self.designation + ', ' + self.club
 		})
 		user.save(ignore_permissions=True)
 		self.user = user.name
@@ -60,6 +60,7 @@ class Member(Document):
 		user.enabled=self.enable_pranali_access
 		user.email = self.email
 		user.mobile_no = self.contact_number
+		user.bio = self.designation + ', ' + self.club
 		if self.limited_access:
 			user.update({
 				"roles": [
