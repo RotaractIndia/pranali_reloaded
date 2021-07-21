@@ -1,4 +1,6 @@
 {
+ "allow_import": 1,
+ "allow_rename": 1,
  "autoname": "field:designation",
  "creation": "2020-06-28 21:18:40.566598",
  "doctype": "DocType",
@@ -22,7 +24,7 @@
    "label": "District Position"
   }
  ],
- "modified": "2021-07-17 17:28:30.151284",
+ "modified": "2021-07-21 16:41:49.132051",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Designation",
