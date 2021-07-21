@@ -69,6 +69,7 @@ class RotaractYear(Document):
 		})
 		user.save(ignore_permissions=True)
 		if dcm.active:
+			remove_club_restriction(dcm.email)
 			self.restrict_user(dcm.email)
 		else:
 			self.remove_user_restriction(dcm.email)
@@ -91,4 +92,12 @@ class RotaractYear(Document):
 			"allow": "Document Status"
 		})
 		if user_permissions:
-			frappe.delete_doc("User Permission", user_permissions[0].name)
+			frappe.delete_doc("User Permission", user_permissions[0].name,  ignore_permissions=True)
+
+def remove_club_restriction(user):
+	user_permissions = frappe.get_all("User Permission", filters={
+		"user": user, 
+		"allow": "Club"
+	})
+	if user_permissions:
+		frappe.delete_doc("User Permission", user_permissions[0].name, ignore_permissions=True)
