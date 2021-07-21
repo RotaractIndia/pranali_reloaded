@@ -19,6 +19,8 @@ class RotaractYear(Document):
 				self.update_user(core, True)
 			else:
 				self.make_user(core, True)
+		for admin in self.system_administrators:
+			make_admin(admin.user)
 		
 	def make_user(self, dcm, core=False):
 		user = frappe.new_doc("User")
@@ -60,13 +62,7 @@ class RotaractYear(Document):
 			]
 		})
 		if core:
-			user.update({
-			"bio": dcm.designation + ', District Core Team',
-			"roles": [
-				{"role": "District Council Member"},
-				{"role": "System Manager"}
-			]
-		})
+			user.bio= dcm.designation + ', District Core Team'
 		user.save(ignore_permissions=True)
 		if dcm.active:
 			remove_club_restriction(dcm.email)
@@ -101,3 +97,13 @@ def remove_club_restriction(user):
 	})
 	if user_permissions:
 		frappe.delete_doc("User Permission", user_permissions[0].name, ignore_permissions=True)
+
+def make_admin(email):
+	user = frappe.get_doc("User", email)
+	user.update({
+			"roles": [
+				{"role": "District Council Member"},
+				{"role": "System Manager"}
+			]
+	})
+	user.save(ignore_permissions=True)
