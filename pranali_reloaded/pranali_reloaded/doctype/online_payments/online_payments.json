@@ -46,8 +46,7 @@
    "label": "Convenience Fee"
   }
  ],
- "index_web_pages_for_search": 1,
- "modified": "2021-07-04 17:41:11.523087",
+ "modified": "2021-07-21 14:55:20.159185",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Online Payments",
@@ -62,6 +61,28 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Club Member - Full Access",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Club Member - Limited Access",
    "share": 1,
    "write": 1
   }
