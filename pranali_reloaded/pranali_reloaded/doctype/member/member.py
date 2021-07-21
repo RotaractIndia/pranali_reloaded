@@ -10,8 +10,9 @@ from pyqrcode import create as qrcreate
 class Member(Document):
 	def validate(self):
 		self.set_zone()
-		self.validate_pranali_access()
 		self.member_name = self.member_name.title()
+		self.email = self.email.lower()
+		self.validate_pranali_access()
 		if not self.qr_code:
 			self.verification_hash = frappe.generate_hash(length=20).upper()
 			self.qr_code = qrcode_as_png(self.name, self.verification_hash)
@@ -78,7 +79,7 @@ class Member(Document):
 			self.remove_club_restriction()
 
 	def rename_user(self):
-		frappe.rename_doc("User", self.user, self.email)
+		frappe.rename_doc("User", self.user, self.email, ignore_permissions=True)
 		self.user = self.email
 
 	def disable_user(self):
@@ -106,7 +107,7 @@ class Member(Document):
 			"allow": "Club"
 		})
 		if user_permissions:
-			frappe.delete_doc("User Permission", user_permissions[0].name)
+			frappe.delete_doc("User Permission", user_permissions[0].name, ignore_permissions=True)
 
 def qrcode_as_png(member, verification_hash):
 	site_name = frappe.db.get_single_value("Pranali Settings", "site_name")
