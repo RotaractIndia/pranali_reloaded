@@ -43,7 +43,7 @@ class RotaractYear(Document):
 			]
 		})
 		user.save(ignore_permissions=True)
-		self.restrict_user()
+		self.restrict_user(user.name)
 
 	def update_user(self, dcm, core=False):
 		existing_member = frappe.get_all("Member", filters={
