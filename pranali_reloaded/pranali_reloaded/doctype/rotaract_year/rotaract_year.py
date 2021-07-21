@@ -28,14 +28,15 @@ class RotaractYear(Document):
 			"send_welcome_email": 1
 		})
 		user.save(ignore_permissions=True)
-		user.bio = dcm.designation
 		user.update({
+			"bio": dcm.designation + ', District Council Member',
 			"roles": [
 				{"role": "District Council Member"}
 			]
 		})
 		if core:
 			user.update({
+			"bio": dcm.designation + ', District Core Team',
 			"roles": [
 				{"role": "District Council Member"},
 				{"role": "System Manager"}
@@ -52,14 +53,15 @@ class RotaractYear(Document):
 		user=frappe.get_doc("User", dcm.email)
 		if not existing_member:
 			user.enabled= dcm.active
-		user.bio = dcm.designation
 		user.update({
+			"bio": dcm.designation + ', District Council Member',
 			"roles": [
 				{"role": "District Council Member"}
 			]
 		})
 		if core:
 			user.update({
+			"bio": dcm.designation + ', District Core Team',
 			"roles": [
 				{"role": "District Council Member"},
 				{"role": "System Manager"}

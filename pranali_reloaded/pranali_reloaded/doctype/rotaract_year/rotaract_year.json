@@ -1,4 +1,5 @@
 {
+ "allow_import": 1,
  "autoname": "field:year",
  "creation": "2021-04-25 13:11:22.512043",
  "doctype": "DocType",
@@ -63,7 +64,7 @@
    "options": "District Council"
   }
  ],
- "modified": "2021-07-17 17:26:45.325908",
+ "modified": "2021-07-18 13:25:17.318193",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Rotaract Year",
