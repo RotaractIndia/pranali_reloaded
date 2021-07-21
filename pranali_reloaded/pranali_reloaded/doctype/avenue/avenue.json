@@ -1,4 +1,6 @@
 {
+ "allow_import": 1,
+ "allow_rename": 1,
  "autoname": "field:avenue",
  "creation": "2020-06-28 21:38:51.355130",
  "doctype": "DocType",
@@ -28,8 +30,7 @@
    "label": "Main Avenue"
   }
  ],
- "index_web_pages_for_search": 1,
- "modified": "2021-05-23 13:41:13.170415",
+ "modified": "2021-07-22 00:58:37.708400",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Avenue",
