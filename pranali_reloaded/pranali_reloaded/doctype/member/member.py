@@ -11,7 +11,7 @@ class Member(Document):
 	def validate(self):
 		self.set_zone()
 		self.member_name = self.member_name.title()
-		self.email = self.email.lower()
+		if self.email: self.email = self.email.lower() 
 		self.validate_pranali_access()
 		if not self.qr_code:
 			self.verification_hash = frappe.generate_hash(length=20).upper()
