@@ -7,4 +7,14 @@ cur_frm.cscript.guest = function(doc) {
 cur_frm.cscript.home_club = cur_frm.cscript.other_club = cur_frm.cscript.dcm = cur_frm.cscript.alumini =
 	cur_frm.cscript.rotarians = cur_frm.cscript.pis = cur_frm.cscript.guest;
 
-cur_frm.add_fetch("member_id", "member_name", "member_name")
+frappe.ui.form.on('Project', {
+    onload: (frm) => {
+		frm.set_query("member_id", "chairpersons", () => {
+			return {
+				filters: {
+					dues_paid: true
+				}
+			}
+		});
+	}
+});
