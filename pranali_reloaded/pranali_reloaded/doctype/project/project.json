@@ -47,6 +47,7 @@
   "column_break_32",
   "alumini",
   "other_club",
+  "other_district",
   "pis",
   "total",
   "section_break_6",
@@ -242,7 +243,7 @@
   },
   {
    "fieldname": "chairpersons",
-   "fieldtype": "Table MultiSelect",
+   "fieldtype": "Table",
    "label": "Chairpersons",
    "options": "Project Chairperson",
    "reqd": 1
@@ -364,11 +365,15 @@
    "label": "Rotaract Year",
    "options": "Rotaract Year",
    "read_only": 1
+  },
+  {
+   "fieldname": "other_district",
+   "fieldtype": "Int",
+   "label": "Other District"
   }
  ],
- "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "modified": "2021-07-08 17:43:30.286372",
+ "modified": "2021-08-07 03:12:39.535359",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Project",
