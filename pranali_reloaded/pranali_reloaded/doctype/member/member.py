@@ -21,20 +21,31 @@ class Member(Document):
 		self.zone = frappe.db.get_value("Club", self.club, "zone")
 	
 	def validate_pranali_access(self):
-		if self.user and not self.email:
-			self.disable_user()
-		elif self.user and self.user != self.email:
-			self.rename_user()
-		
-		if not self.user and self.email and self.enable_pranali_access:
-			if not frappe.db.exists("User", self.email):
-				self.make_user()
-			else:
-				self.user = self.email
+		if not self.check_dcm_access():
+			if self.user and not self.email:
+				self.disable_user()
+			elif self.user and self.user != self.email:
+				self.rename_user()
+			
+			if not self.user and self.email and self.enable_pranali_access:
+				if not frappe.db.exists("User", self.email):
+					self.make_user()
+				else:
+					self.user = self.email
+					self.update_user()
+			elif self.user and self.email:
 				self.update_user()
-		elif self.user and self.email:
-			self.update_user()
 		
+	def check_dcm_access(self):
+		rotaract_year = frappe.db.get_single_value("Pranali Settings", "current_rotaract_year")
+		dcm_list = frappe.get_doc("Rotaract Year", rotaract_year)
+		for user in dcm_list.district_core_team:
+			if user.email == self.email: 
+				return True
+		for user in dcm_list.district_council:
+			if user.email == self.email: 
+				return True
+
 	def make_user(self):
 		user = frappe.new_doc("User")
 		user.update({
