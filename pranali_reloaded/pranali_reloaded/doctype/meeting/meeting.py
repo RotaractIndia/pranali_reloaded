@@ -38,8 +38,8 @@ class Meeting(Document):
 			frappe.throw("Start Time cannot be greater than End Time.")
 
 	def set_attendance_percentage(self):
-		if self.type_of_meeting == "BOD Meet" and self.total_registered_board_of_directors>0:
+		if self.type_of_meeting == "BOD Meet" and cint(self.total_registered_board_of_directors)>0:
 			self.percentage_attendance = self.home_club / self.total_registered_board_of_directors *100
-		elif self.total_registered_members>0:
+		elif cint(self.total_registered_members)>0:
 			self.percentage_attendance = self.home_club / self.total_registered_members *100
 
