@@ -39,7 +39,7 @@ class Meeting(Document):
 
 	def set_attendance_percentage(self):
 		if self.type_of_meeting == "BOD Meet" and cint(self.total_registered_board_of_directors)>0:
-			self.percentage_attendance = self.home_club / self.total_registered_board_of_directors *100
+			self.percentage_attendance = cint(self.home_club) / cint(self.total_registered_board_of_directors) *100
 		elif cint(self.total_registered_members)>0:
-			self.percentage_attendance = self.home_club / self.total_registered_members *100
+			self.percentage_attendance = cint(self.home_club) / cint(self.total_registered_members) *100
 
