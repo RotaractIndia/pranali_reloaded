@@ -5,6 +5,7 @@ app_description = "a reporting system for Rotaract District Organization"
 app_icon = "octicon .octicon-organization"
 app_color = "grey"
 app_email = "neil@rotaractsuncity.in"
+error_report_email = "neil@rotaract3142.org"
 app_version = "0.0.1"
 
 welcome_email = "pranali_reloaded.utils.welcome_email"
