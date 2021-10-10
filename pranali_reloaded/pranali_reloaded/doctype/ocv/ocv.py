@@ -26,7 +26,7 @@ class OCV(Document):
 		self.max_points = rule_points.max_points
 		self.points = 0
 
-		if self.ocv_date < rule_points.cut_off_date:
+		if rule_points.cut_off_date and self.ocv_date < rule_points.cut_off_date:
 			self.points += rule_points.additional_points
 		
 		for rule in rules:
