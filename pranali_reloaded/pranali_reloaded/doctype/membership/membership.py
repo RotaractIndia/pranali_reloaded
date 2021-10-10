@@ -21,6 +21,18 @@ class Membership(Document):
 		self.update_member(True)
 		self.update_club()
 		
+	def before_insert(self):
+		self.validate_membership_status()
+
+	def validate_membership_status(self):
+		memberships = frappe.get_all("Membership", filters={
+			"member": self.member,
+			"rotaract_year": self.rotaract_year,
+			"docstatus": 1
+		})
+		if memberships:
+			frappe.throw("{0}'s dues have already been paid for Rotaract Year {1}".format(self.member_name, self.rotaract_year))
+
 	def validate_funds(self):
 		balance_amount = frappe.db.get_value("Club", self.club, "balance_amount")
 		if balance_amount < self.membership_amount:
