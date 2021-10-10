@@ -10,6 +10,7 @@ from frappe.model.document import Document
 class Meeting(Document):
 	def validate(self):
 		self.validate_date()
+		self.vallidate_home_club()
 		self.calculate_totals()
 		self.set_zone()
 		self.document_status='draft'
@@ -23,6 +24,10 @@ class Meeting(Document):
 	def on_cancel(self):
 		frappe.db.set_value('Meeting', self.name, 'document_status', 'cancelled')
 
+	def vallidate_home_club(self):
+		if self.total_registered_members <= self.home_club:
+			frappe.throw("Home Club Attendance cannot be more than Total Registered Members.")
+			
 	def calculate_totals(self):
 		self.total = cint(self.home_club) + cint(self.other_club) + cint(self.district_council_members)\
 			+ cint(self.alumini) + cint(self.rotarians) + cint(self.pis) + cint(self.guest)
