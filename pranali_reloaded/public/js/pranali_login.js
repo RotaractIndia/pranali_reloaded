@@ -14,7 +14,7 @@ login.bind_events = function() {
 
 
 	$(".form-login").on("submit", function(event) {
-        console.log('AAja');
+        
 		event.preventDefault();form-login
 		var args = {};
 		args.cmd = "login";
