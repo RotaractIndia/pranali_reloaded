@@ -15,3 +15,6 @@ class OCVPointsConfiguration(Document):
 
 		for rule in rules:
 			self.max_points += self.get(rule)
+
+		for custom_points in self.custom_ocv_points:
+			self.max_points += custom_points.points
