@@ -4,6 +4,7 @@
 
 from __future__ import unicode_literals
 import frappe
+from frappe.utils import cint
 from frappe.model.document import Document
 
 class OCV(Document):
@@ -32,5 +33,9 @@ class OCV(Document):
 		for rule in rules:
 			if self.get(rule):
 				self.points += rule_points.get(rule)
+		
+		for custom_rule in rule_points.custom_ocv_points:
+			if self.get(custom_rule.field_name):
+				self.points += cint(custom_rule.points)
 
 		self.percentage_points_earned = (self.points/self.max_points) * 100
