@@ -37,4 +37,4 @@ To learn more about [Frappe](https://frappeframework.com/), consult their [docum
 
 [GNU General Public License v3](https://github.com/RotaractIndia/pranali_reloaded/blob/develop/LICENSE)
 
-Made with ❤️ for Rotaract District Organisations by [@neillasrado](https://github.com/neilLasrado)
+Made with ❤️ for Rotaract District Organisations by [@neillasrado](https://github.com/neilLasrado) & Contributors
