@@ -6,10 +6,13 @@
  "field_order": [
   "event",
   "event_cost",
+  "convenience_fee",
+  "grand_total",
   "column_break_4",
   "full_name",
   "email_id",
   "mobile_number",
+  "paid",
   "amended_from"
  ],
  "fields": [
@@ -58,10 +61,28 @@
    "options": "Event Ticket",
    "print_hide": 1,
    "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "paid",
+   "fieldtype": "Check",
+   "label": "Paid"
+  },
+  {
+   "fieldname": "convenience_fee",
+   "fieldtype": "Currency",
+   "label": "Convenience Fee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
- "modified": "2021-11-24 14:45:10.583241",
+ "modified": "2021-11-24 15:40:29.835177",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Event Ticket",

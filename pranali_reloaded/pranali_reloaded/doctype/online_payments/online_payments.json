@@ -42,11 +42,11 @@
   },
   {
    "fieldname": "convenience_fee",
-   "fieldtype": "Int",
+   "fieldtype": "Currency",
    "label": "Convenience Fee"
   }
  ],
- "modified": "2021-07-21 14:55:20.159185",
+ "modified": "2021-11-24 15:36:43.202767",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Online Payments",
