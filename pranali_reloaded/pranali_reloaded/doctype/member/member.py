@@ -4,14 +4,15 @@
 from __future__ import print_function, unicode_literals
 import frappe, os
 from frappe.model.document import Document
-from frappe.utils import get_url
+from frappe.utils import get_url, today
 from pyqrcode import create as qrcreate
 
 class Member(Document):
 	def validate(self):
 		self.set_zone()
 		self.member_name = self.member_name.title()
-		if self.email: self.email = self.email.lower() 
+		if self.email: self.email = self.email.lower()
+		self.validate_status()
 		self.validate_pranali_access()
 		if not self.qr_code:
 			self.verification_hash = frappe.generate_hash(length=20).upper()
@@ -20,6 +21,14 @@ class Member(Document):
 	def set_zone(self):
 		self.zone = frappe.db.get_value("Club", self.club, "zone")
 	
+	def validate_status(self):
+		if self.dues_paid and self.status != "Active Rotaractor":
+			self.dues_paid = False
+			self.enable_pranali_access = False
+			self.in_directory = False
+		elif self.membership_valid_till > today():
+			self.dues_paid = True
+
 	def validate_pranali_access(self):
 		if not self.check_dcm_access():
 			if self.user and not self.email:
