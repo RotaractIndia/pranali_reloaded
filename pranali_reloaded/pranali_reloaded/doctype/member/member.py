@@ -22,12 +22,14 @@ class Member(Document):
 		self.zone = frappe.db.get_value("Club", self.club, "zone")
 	
 	def validate_status(self):
-		if self.dues_paid and self.status != "Active Rotaractor":
-			self.dues_paid = False
-			self.enable_pranali_access = False
-			self.in_directory = False
+		if self.status != "Active Rotaractor":
+			if self.dues_paid:
+				self.dues_paid = False
+				self.enable_pranali_access = False
+				self.in_directory = False
 		elif self.membership_valid_till > today():
 			self.dues_paid = True
+		frappe.get_doc("Club", self.club).save()
 
 	def validate_pranali_access(self):
 		if not self.check_dcm_access():
