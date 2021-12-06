@@ -4,7 +4,7 @@
 from __future__ import print_function, unicode_literals
 import frappe, os
 from frappe.model.document import Document
-from frappe.utils import get_url, today
+from frappe.utils import get_url, today, getdate
 from pyqrcode import create as qrcreate
 
 class Member(Document):
@@ -27,7 +27,7 @@ class Member(Document):
 				self.dues_paid = False
 				self.enable_pranali_access = False
 				self.in_directory = False
-		elif self.membership_valid_till > today():
+		elif self.membership_valid_till  and getdate(self.membership_valid_till) > getdate(today()):
 			self.dues_paid = True
 		frappe.get_doc("Club", self.club).save()
 
