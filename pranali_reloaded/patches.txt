@@ -4,3 +4,4 @@ pranali_reloaded.patches.create_membership
 pranali_reloaded.patches.set_rotaract_year
 pranali_reloaded.patches.set_percentage_attendance_in_meetings
 pranali_reloaded.patches.set_percentage_attendance_for_bod_meet
+pranali_reloaded.patches.recalculate_total
