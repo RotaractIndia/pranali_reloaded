@@ -1,6 +1,15 @@
 // Copyright (c) 2020, Rtr.Neil Trini Lasrado and contributors
 // For license information, please see license.txt
 
+cur_frm.cscript.guest = function(doc) {
+	doc.total = cint(doc.home_club) + cint(doc.other_club) + cint(doc.district_council_members) 
+			+ cint(doc.alumini) + cint(doc.rotarians) + cint(doc.pis) + cint(doc.guest) + cint(doc.other_district) 
+	refresh_field('total');
+};
+
+cur_frm.cscript.home_club = cur_frm.cscript.other_club = cur_frm.cscript.district_council_members = cur_frm.cscript.alumini =
+	cur_frm.cscript.rotarians = cur_frm.cscript.pis = cur_frm.cscript.other_district = cur_frm.cscript.guest;
+
 frappe.ui.form.on('Meeting', {
 	refresh: function(frm) {
 		frm.trigger('show_progress_bar');
