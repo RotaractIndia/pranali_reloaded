@@ -18,7 +18,6 @@ class AARANomination(Document):
 
 		if self.quarter == "Yearly":
 			self.projects = []
-			print(self.projects)
 		else:
 			self.yearly_nomination = []
 		
