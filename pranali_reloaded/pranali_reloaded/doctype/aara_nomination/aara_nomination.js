@@ -35,5 +35,13 @@ frappe.ui.form.on('AARA Nomination', {
                 }
             }
         });
+        frm.set_query("project", "yearly_nomination", function() {
+            return {
+                filters: {
+                    "docstatus": 1,
+                    "project_status": ["in", ["On Time", "Early"]]
+                }
+            }
+        });
     }
 });
