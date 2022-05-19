@@ -41,7 +41,7 @@ class AARANomination(Document):
 				self.validate_joint_project(nomination.project)
 				avenue_list.update({"Joint": avenue_list.get("Joint", 0) +1})
 				if avenue_list.get("Joint")>joint_limit:
-						frappe.throw("You cannot nominate more than 2 Joint Projects in a quarter")
+						frappe.throw("You cannot nominate more than {0} Joint Projects in a quarter".format(joint_limit))
 			else:
 				nomination.avenue = frappe.db.get_value("Project", nomination.project, frappe.scrub(nomination.nominate_for))
 				if frappe.db.get_value("Project", nomination.project, "joint_project"):
