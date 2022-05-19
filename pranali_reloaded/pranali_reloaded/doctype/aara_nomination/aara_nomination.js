@@ -43,5 +43,26 @@ frappe.ui.form.on('AARA Nomination', {
                 }
             }
         });
+        frm.set_query("nomination_category", "yearly_nomination", function() {
+            return {
+                filters: {
+                    "member_nomination_category": 0
+                }
+            }
+        });
+        frm.set_query("member", "member_nomination", () => {
+			return {
+				filters: {
+					dues_paid: true
+				}
+			}
+		});
+        frm.set_query("nomination_category", "member_nomination", function() {
+            return {
+                filters: {
+                    "member_nomination_category": 1
+                }
+            }
+        });
     }
 });

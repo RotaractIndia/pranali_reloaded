@@ -1,0 +1,61 @@
+{
+ "creation": "2022-05-20 01:21:57.169793",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "member",
+  "designation",
+  "column_break_2",
+  "nomination_form",
+  "nomination_category"
+ ],
+ "fields": [
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 2,
+   "fieldname": "member",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Member",
+   "options": "Member",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nomination_form",
+   "fieldtype": "Attach",
+   "in_list_view": 1,
+   "label": "Nomination Form",
+   "reqd": 1
+  },
+  {
+   "fieldname": "nomination_category",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Nomination Category",
+   "options": "Nomination Category",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "member.designation",
+   "fieldname": "designation",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Designation"
+  }
+ ],
+ "istable": 1,
+ "modified": "2022-05-20 02:00:57.054237",
+ "modified_by": "Administrator",
+ "module": "Pranali Reloaded",
+ "name": "AARA Nomination Member",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -6,7 +6,9 @@
  "engine": "InnoDB",
  "field_order": [
   "category_name",
-  "nominations_per_year"
+  "nominations_per_year",
+  "column_break_3",
+  "member_nomination_category"
  ],
  "fields": [
   {
@@ -21,10 +23,19 @@
    "label": "Category Name",
    "reqd": 1,
    "unique": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "member_nomination_category",
+   "fieldtype": "Check",
+   "label": "Member Nomination Category"
   }
  ],
- "index_web_pages_for_search": 1,
- "modified": "2021-05-23 14:50:00.157284",
+ "modified": "2022-05-20 01:53:01.859490",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Nomination Category",

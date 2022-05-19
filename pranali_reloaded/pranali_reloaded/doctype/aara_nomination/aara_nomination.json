@@ -13,6 +13,7 @@
   "section_break_4",
   "projects",
   "yearly_nomination",
+  "member_nomination",
   "amended_from"
  ],
  "fields": [
@@ -69,11 +70,17 @@
    "fieldtype": "Table",
    "label": "Yearly Nomination",
    "options": "Yearly Nomination"
+  },
+  {
+   "depends_on": "eval: doc.quarter=='Yearly'",
+   "fieldname": "member_nomination",
+   "fieldtype": "Table",
+   "label": "Member Nomination",
+   "options": "AARA Nomination Member"
   }
  ],
- "index_web_pages_for_search": 1,
  "is_submittable": 1,
- "modified": "2021-05-26 12:04:12.586406",
+ "modified": "2022-05-20 01:25:48.852364",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "AARA Nomination",
