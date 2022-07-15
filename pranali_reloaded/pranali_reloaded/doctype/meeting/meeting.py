@@ -25,7 +25,7 @@ class Meeting(Document):
 		frappe.db.set_value('Meeting', self.name, 'document_status', 'cancelled')
 
 	def vallidate_home_club(self):
-		if self.total_registered_members <= self.home_club:
+		if self.total_registered_members <= self.home_club and frappe.db.get_single_value("Pranali Settings", "validate_home_club"):
 			frappe.throw("Home Club Attendance cannot be more than Total Registered Members.")
 			
 	def calculate_totals(self):

@@ -6,6 +6,7 @@
  "field_order": [
   "current_rotaract_year",
   "membership_dues",
+  "validate_home_club",
   "column_break_2",
   "site_name",
   "welcome_email_subject",
@@ -114,11 +115,16 @@
    "fieldname": "welcome_email_subject",
    "fieldtype": "Data",
    "label": "Welcome Email Subject"
+  },
+  {
+   "default": "0",
+   "fieldname": "validate_home_club",
+   "fieldtype": "Check",
+   "label": "Validate Home Club attendance against Registered Members"
   }
  ],
- "index_web_pages_for_search": 1,
  "issingle": 1,
- "modified": "2021-06-29 11:57:17.953443",
+ "modified": "2022-07-15 20:38:19.762796",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Pranali Settings",

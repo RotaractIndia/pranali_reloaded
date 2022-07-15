@@ -18,6 +18,7 @@ class Project(Document):
 
 	def on_submit(self):
 		self.validate_account()
+		self.vallidate_home_club()
 		self.validate_reporting_access()
 		frappe.db.set_value('Project', self.name, 'document_status', 'submitted')
 
@@ -50,6 +51,10 @@ class Project(Document):
 	def calculate_totals(self):
 		self.total = cint(self.home_club) + cint(self.other_club) + cint(self.dcm) \
 			+ cint(self.alumini) + cint(self.rotarians) + cint(self.pis) + cint(self.guest) + cint(self.other_district) 
+
+	def vallidate_home_club(self):
+		if cint(self.total_registered_members) <= cint(self.home_club) and frappe.db.get_single_value("Pranali Settings", "validate_home_club"):
+			frappe.throw("Home Club Attendance cannot be more than Total Registered Members.")
 
 	def set_zone(self):
 		self.zone = frappe.db.get_value("Club", self.club, "zone")
