@@ -99,7 +99,7 @@ class Member(Document):
 			user.update({
 				"roles": [
 					{"role": "Club Member - Full Access"}
-				]
+				]													
 			})
 		user.save(ignore_permissions=True)
 		if self.enable_pranali_access:
@@ -119,6 +119,13 @@ class Member(Document):
 		self.remove_club_restriction()
 
 	def restrict_user_to_club(self):
+		dcm_user_permission = frappe.get_all("User Permission", filters={
+			"user": self.user, 
+			"allow": "Document Status"
+		})
+		if dcm_user_permission:
+			frappe.delete_doc("User Permission", dcm_user_permission[0].name)
+
 		user_permissions = frappe.get_all("User Permission", filters={
 			"user": self.user, 
 			"allow": "Club"
