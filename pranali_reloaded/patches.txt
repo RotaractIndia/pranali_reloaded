@@ -4,3 +4,6 @@ pranali_reloaded.patches.create_membership
 pranali_reloaded.patches.set_rotaract_year
 pranali_reloaded.patches.set_percentage_attendance_in_meetings
 pranali_reloaded.patches.set_percentage_attendance_for_bod_meet
+execute:frappe.rename_doc("DocType", 'AARA Nomination', 'Award Nomination', force=True)
+execute:frappe.rename_doc("DocType", 'AARA Nomination Member', 'Award Nomination Member', force=True)
+execute:frappe.rename_doc("DocType", 'AARA Nomination Project', 'Award Nomination Project', force=True)
