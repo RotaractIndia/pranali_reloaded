@@ -81,11 +81,11 @@ def set_desktop_icons():
 			},
 			{
 				"category": "Administration",
-				"label": _('AARA Nomination'),
+				"label": _('Award Nomination'),
 				"icon": "octicon octicon-gift",
 				"type": 'doctype',
-				"name": 'AARA Nomination',
-				"link": '#List/AARA Nomination/List'
+				"name": 'Award Nomination',
+				"link": '#List/Award Nomination/List'
 			}
 		],
 		"Tools": [

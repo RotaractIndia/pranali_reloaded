@@ -1,5 +1,5 @@
 {
- "autoname": "AARA.#####",
+ "autoname": "NOM.#####",
  "creation": "2016-12-01 10:29:29.713223",
  "doctype": "DocType",
  "document_type": "Document",
@@ -45,16 +45,7 @@
    "fieldname": "projects",
    "fieldtype": "Table",
    "label": "Projects",
-   "options": "AARA Nomination Project"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "AARA Nomination",
-   "print_hide": 1,
-   "read_only": 1
+   "options": "Award Nomination Project"
   },
   {
    "fieldname": "rotaract_year",
@@ -76,14 +67,23 @@
    "fieldname": "member_nomination",
    "fieldtype": "Table",
    "label": "Member Nomination",
-   "options": "AARA Nomination Member"
+   "options": "Award Nomination Member"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Award Nomination",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "is_submittable": 1,
- "modified": "2022-05-20 01:25:48.852364",
+ "modified": "2022-07-22 00:52:36.766934",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
- "name": "AARA Nomination",
+ "name": "Award Nomination",
  "owner": "Administrator",
  "permissions": [
   {

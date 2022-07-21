@@ -14,14 +14,14 @@
   "early_reporting_days",
   "column_break_7",
   "reporting_deadline",
-  "aara_deadlines_section",
+  "award_nomination_deadlines_section",
   "quarter_one",
   "quarter_two",
   "yearly_nominations",
   "column_break_13",
   "quarter_three",
   "quarter_four",
-  "aara_nomination_limits_section",
+  "award_nomination_limits_section",
   "joint_project_limit"
  ],
  "fields": [
@@ -41,11 +41,6 @@
    "fieldtype": "Link",
    "label": "Current Rotaract Year",
    "options": "Rotaract Year"
-  },
-  {
-   "fieldname": "aara_deadlines_section",
-   "fieldtype": "Section Break",
-   "label": "AARA Deadlines"
   },
   {
    "fieldname": "quarter_one",
@@ -70,11 +65,6 @@
    "fieldname": "quarter_four",
    "fieldtype": "Datetime",
    "label": "Quarter Four "
-  },
-  {
-   "fieldname": "aara_nomination_limits_section",
-   "fieldtype": "Section Break",
-   "label": "AARA Nomination Limits"
   },
   {
    "description": "per quarter",
@@ -121,10 +111,20 @@
    "fieldname": "validate_home_club",
    "fieldtype": "Check",
    "label": "Validate Home Club attendance against Registered Members"
+  },
+  {
+   "fieldname": "award_nomination_deadlines_section",
+   "fieldtype": "Section Break",
+   "label": "Award Nomination Deadlines"
+  },
+  {
+   "fieldname": "award_nomination_limits_section",
+   "fieldtype": "Section Break",
+   "label": "Award Nomination Limits"
   }
  ],
  "issingle": 1,
- "modified": "2022-07-15 20:38:19.762796",
+ "modified": "2022-07-22 00:53:54.478964",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Pranali Settings",

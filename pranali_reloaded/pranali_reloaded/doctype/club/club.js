@@ -3,7 +3,7 @@
 
 frappe.ui.form.on('Club', {
     refresh: function(frm) {
-        frm.add_custom_button(__('Add Funds to Pranali Walllet'), function () {
+        frm.add_custom_button(__('Add Funds to Pranali Wallet'), function () {
             frm.trigger("add_funds");;
         }).addClass('btn-primary');
     },

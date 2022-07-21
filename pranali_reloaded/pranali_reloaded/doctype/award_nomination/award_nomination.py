@@ -7,7 +7,7 @@ import frappe
 from frappe.model.document import Document
 from frappe.utils import now
 
-class AARANomination(Document):
+class AwardNomination(Document):
 	def validate(self):
 		avenue_list = {}
 		nomination_avenue = []
@@ -60,7 +60,7 @@ class AARANomination(Document):
 	def before_submit(self):
 		self.validate_deadline()
 		rotaract_year = frappe.db.get_single_value("Pranali Settings", "current_rotaract_year")
-		existing_nomination = frappe.get_all("AARA Nomination", filters={"Club": self.club, "Quarter": self.quarter, "docstatus": 1, "rotaract_year": rotaract_year})
+		existing_nomination = frappe.get_all("Award Nomination", filters={"Club": self.club, "Quarter": self.quarter, "docstatus": 1, "rotaract_year": rotaract_year})
 		if existing_nomination:
 			frappe.throw("You have already submitted a Nomination for Quarter {0}. Please cancel {1} to proceed".format(self.quarter, existing_nomination[0].name))
 

@@ -1,7 +1,7 @@
 // Copyright (c) 2016, Rtr.Neil Trini Lasrado and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on('AARA Nomination', {
+frappe.ui.form.on('Award Nomination', {
     onload: function(frm) {
         frm.set_query("project", "projects", function() {
             return {
@@ -44,7 +44,7 @@ frappe.ui.form.on('AARA Nomination', {
     }
 });
 
-frappe.ui.form.on('AARA Nomination Project', {
+frappe.ui.form.on('Award Nomination Project', {
     nominate_for: function(frm, cdn, cdt) {
         var local = locals[cdn][cdt];
         if (local.nominate_for == "Joint") {
@@ -53,7 +53,7 @@ frappe.ui.form.on('AARA Nomination Project', {
         } 
         else {
             frappe.call({
-                method: "pranali_reloaded.pranali_reloaded.doctype.aara_nomination.aara_nomination.get_nomination_avenue",
+                method: "pranali_reloaded.pranali_reloaded.doctype.award_nomination.award_nomination.get_nomination_avenue",
                 args: {
                     "project": local.project,
                     "avenue": local.nominate_for
@@ -67,7 +67,7 @@ frappe.ui.form.on('AARA Nomination Project', {
     }
 });
 
-frappe.ui.form.on('AARA Nomination Member', {
+frappe.ui.form.on('Award Nomination Member', {
     download_form: function(frm, cdn, cdt) {
         var local = locals[cdn][cdt];
 		var win = window.open(local.nomination_form, '_blank');
