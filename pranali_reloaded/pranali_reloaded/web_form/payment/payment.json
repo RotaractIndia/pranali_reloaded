@@ -8,9 +8,9 @@
  "allow_print": 0,
  "amount": 500.0,
  "amount_based_on_field": 1,
- "amount_field": "grand_total",
+ "amount_field": "amount",
  "breadcrumbs": "[{\"label\": _(\"Desk\"), \"route\":\"desk\"}]",
- "button_label": "Pay",
+ "button_label": "Pay Online",
  "client_script": "",
  "creation": "2016-11-16 15:25:36.321389",
  "currency": "INR",
@@ -18,16 +18,17 @@
  "docstatus": 0,
  "doctype": "Web Form",
  "idx": 0,
- "introduction_text": "<p><strong>A 2% </strong><strong style=\"background-color: rgb(255, 255, 255); color: rgb(51, 51, 51);\">Convenience Fee will be charged by RazorPay for Online Payments. </strong><strong>Amount will reflect in the selected clubs Pranali Account.</strong></p>",
+ "introduction_text": "<p>A convenience fee will be charged by RazorPay for Online Payments. The amount will reflect in the selected club's Pranali Account.</p>",
  "is_standard": 1,
  "login_required": 1,
  "max_attachment_size": 0,
- "modified": "2021-11-24 15:25:24.076956",
+ "modified": "2022-07-21 14:42:12.032069",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "payment",
  "owner": "neil@frappe.io",
- "payment_button_label": "Pay Now",
+ "payment_button_help": "Razorpay may charge a minor convenience fee on this transaction.",
+ "payment_button_label": "",
  "payment_gateway": "Razorpay",
  "print_format": "",
  "published": 1,
@@ -38,7 +39,7 @@
  "show_sidebar": 0,
  "sidebar_items": [],
  "success_url": "/desk",
- "title": "Online Payment for Rotaract District",
+ "title": "Online Payment to Rotaract District",
  "web_form_fields": [
   {
    "allow_read_on_all_link_options": 1,
@@ -78,5 +79,5 @@
    "show_in_filter": 0
   }
  ],
- "web_page_link_text": "Online Payment for Rotaract District"
+ "web_page_link_text": "Online Payment "
 }

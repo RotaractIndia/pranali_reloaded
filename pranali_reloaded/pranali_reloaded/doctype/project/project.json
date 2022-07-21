@@ -224,8 +224,7 @@
   {
    "fieldname": "incomes",
    "fieldtype": "Int",
-   "label": "Income",
-   "reqd": 1
+   "label": "Income"
   },
   {
    "fieldname": "column_break_24",
@@ -234,8 +233,7 @@
   {
    "fieldname": "expenditure",
    "fieldtype": "Int",
-   "label": "Expenditure",
-   "reqd": 1
+   "label": "Expenditure"
   },
   {
    "fieldname": "chairperson",
@@ -379,7 +377,7 @@
   }
  ],
  "is_submittable": 1,
- "modified": "2022-07-15 21:00:05.338230",
+ "modified": "2022-07-21 13:32:54.626863",
  "modified_by": "Administrator",
  "module": "Pranali Reloaded",
  "name": "Project",

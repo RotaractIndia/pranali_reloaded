@@ -8,10 +8,6 @@ from frappe.model.document import Document
 from frappe.utils import today
 
 class OnlinePayments(Document):
-	def validate(self):
-		self.convenience_fee = self.amount * 0.02
-		self.grand_total = self.amount * 1.02
-
 	def on_payment_authorized(self, *args, **kwargs):
 			self.db_set('paid', 1)
 			self.make_payment_entry()
