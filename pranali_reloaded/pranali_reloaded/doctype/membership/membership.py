@@ -13,6 +13,9 @@ class Membership(Document):
 		self.rotaract_year = frappe.db.get_single_value("Pranali Settings", "current_rotaract_year")
 		self.valid_till = frappe.db.get_value("Rotaract Year", self.rotaract_year, "end_date")
 		self.membership_amount = flt(frappe.db.get_single_value("Pranali Settings", "membership_dues"))
+		freeze_club_dues = frappe.db.get_value("Club", self.club, "freeze_club_dues") 
+		if freeze_club_dues > 0:
+			self.membership_amount = freeze_club_dues
 		
 	def before_submit(self):
 		self.validate_funds()
@@ -55,8 +58,4 @@ class Membership(Document):
 		
 	def on_cancel(self):
 		self.update_member(False)
-		club = frappe.get_doc("Club", self.club)
-		district_dues = flt(frappe.db.get_single_value("Pranali Settings", "membership_dues"))
-		frappe.db.set_value('Club', self.club, 'amount_spent_from_wallet', club.amount_spent_from_wallet - district_dues)
-		frappe.db.set_value('Club', self.club, 'balance_amount', club.balance_amount + district_dues)
-		frappe.db.set_value('Club', self.club, 'members_registered', club.members_registered - 1)
+		frappe.get_doc("Club", self.club).save()
